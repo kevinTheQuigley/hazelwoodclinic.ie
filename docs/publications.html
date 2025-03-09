@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Ms Clare Quigley - Publications</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/styles.css"> 
+    <style>
+        .publications-header {
+            font-size: 2.6rem;
+        }
+        .publication-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+        .publication-details {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .publication-doi {
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="header-placeholder"></div>
+    
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-blue), rgba(36, 64, 205, 0.2) 50%, transparent), url('assets/img/about.jpg'); height: 30vh;display: flex; align-items: center;">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h2 class="publications-header">Publications</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                
+                <!-- Loading spinner -->
+                <div id="loading-spinner" class="text-center mt-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading publications...</p>
+                </div>
+                
+                <!-- Publications list -->
+                <div id="publications-list" class="mt-4 d-none">
+                </div>
+                
+                <!-- Error message -->
+                <div id="error-message" class="alert alert-danger d-none" role="alert">
+                </div>
+                
+                <!-- No publications message -->
+                <div id="no-publications" class="alert alert-info mt-4 d-none">
+                    No publications are currently available.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Change this to the actual ORCID ID
+    const ORCID_ID = '0000-0001-6914-7447';
+    const CACHE_KEY = 'publications_cache';
+    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+
+    async function loadPublications() {
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const publicationsList = document.getElementById('publications-list');
+        const errorMessage = document.getElementById('error-message');
+        const noPublications = document.getElementById('no-publications');
+        
+        try {
+            // Check cache
+            const cachedData = localStorage.getItem(CACHE_KEY);
+            if (cachedData) {
+                const { publications, timestamp } = JSON.parse(cachedData);
+                if (Date.now() - timestamp < CACHE_DURATION) {
+                    if (publications && publications.length > 0) {
+                        displayPublications(publications);
+                    } else {
+                        showNoPublicationsMessage();
+                    }
+                    return;
+                }
+            }
+            
+            // Try to fetch from ORCID API
+            try {
+                const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch from ORCID');
+                }
+                
+                const data = await response.json();
+                
+                // Process ORCID data to extract publications
+                const publications = [];
+                
+                if (data.group) {
+                    data.group.forEach(group => {
+                        if (group['work-summary'] && group['work-summary'].length > 0) {
+                            const work = group['work-summary'][0];
+                            
+                            // Extract publication details
+                            const pub = {
+                                title: work.title && work.title['title'] ? work.title['title'].value : 'Untitled Work',
+                                journal: work['journal-title'] ? work['journal-title'].value : '',
+                                year: work['publication-date'] && work['publication-date'].year ? 
+                                      work['publication-date'].year.value : '',
+                                doi: ''
+                            };
+                            
+                            // Extract DOI if present
+                            if (work['external-ids'] && work['external-ids']['external-id']) {
+                                const doiId = work['external-ids']['external-id'].find(id => id['external-id-type'] === 'doi');
+                                if (doiId) {
+                                    pub.doi = doiId['external-id-value'];
+                                }
+                            }
+                            
+                            publications.push(pub);
+                        }
+                    });
+                }
+                
+                // Cache the data
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    publications,
+                    timestamp: Date.now()
+                }));
+                
+                if (publications && publications.length > 0) {
+                    displayPublications(publications);
+                } else {
+                    showNoPublicationsMessage();
+                }
+                return;
+                
+            } catch (orcidError) {
+                console.warn('Error fetching from ORCID:', orcidError);
+                showNoPublicationsMessage();
+            }
+            
+        } catch (error) {
+            console.error('Error:', error);
+            loadingSpinner.classList.add('d-none');
+            errorMessage.textContent = 'Unable to load publications at this time.';
+            errorMessage.classList.remove('d-none');
+        }
+    }
+
+    function displayPublications(publications) {
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const publicationsList = document.getElementById('publications-list');
+        
+        let html = '<div class="list-group">';
+        
+        publications.forEach(pub => {
+            html += `
+                <div class="list-group-item border-0 ps-0">
+                    <h5 class="publication-title mb-1">${pub.title}</h5>
+                    <p class="publication-details mb-1">
+                        ${pub.journal ? `<em>${pub.journal}</em>, ` : ''}
+                        ${pub.year || 'Year not specified'}
+                    </p>
+                    ${pub.doi ? `
+                        <small class="publication-doi">
+                            <a href="https://doi.org/${pub.doi}" target="_blank" class="text-primary">
+                                DOI: ${pub.doi}
+                            </a>
+                        </small>
+                    ` : ''}
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        
+        publicationsList.innerHTML = html;
+        loadingSpinner.classList.add('d-none');
+        publicationsList.classList.remove('d-none');
+    }
+    
+    function showNoPublicationsMessage() {
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const publicationsList = document.getElementById('publications-list');
+        const noPublications = document.getElementById('no-publications');
+        
+        loadingSpinner.classList.add('d-none');
+        publicationsList.classList.add('d-none');
+        noPublications.classList.remove('d-none');
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPublications);
+    </script>
+    
+    <!-- Footer-->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Ms. Clare Quigley</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    
+<!-- Include header -->
+    <div id="header-placeholder"></div>
+
+<header class="masthead" style="background-image: 
+    linear-gradient(to right, var(--kq-blue), 
+                       rgba(36, 64, 205, 0.2) 50%, 
+                       transparent),
+    url(assets/img/home.jpg);
+    display: flex; 
+    align-items: center;">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">  
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading text-start">  
+                    <h2 style="font-size: 2.6rem;">Ms Clare Quigley</h2>
+                    <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">MD Msc Sch FRCSI (Ophth) FRCOphth FEBO</p>
+                    <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Consultant Eye Surgeon</p>
+                    <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Clinical Lecturer Ophthalmology TCD School of Medicine</p>
+                    <p class="subheading" style="font-size: 1.1rem;">Irish Medical Council Number 410759</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<style>
+    .image-option {
+        border-radius: 50% !important;
+        width: 556px;
+        height: 556px;
+        object-fit: cover !important;
+    }
+    
+    @media(max-width:768px) {
+        .image-option {
+            border-radius: 50% !important;
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+        }
+    }
+    
+    @media(max-width:768px) {
+        .centervideo {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    .section__about-us {
+        padding: 5rem 0;
+        background-color: #f8f9fa;
+    }
+    
+    .section__action {
+        padding: 5rem 0;
+    }
+    
+    .section__action.alt {
+        background-color: #fff;
+    }
+    
+    .loading-spinner {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border: 0.2rem solid rgba(36, 64, 205, 0.2);
+        border-top-color: #2440cd;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    .about-text-content {
+        min-height: 80px;
+    }
+</style>
+
+
+<section id="profile-section" class="section section__action alt">
+    <div class="action">
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-12 col-lg-6 align-self-center order-1 centervideo">
+                    <img class="img image-option" src="assets/img/homeProfile.jpeg" alt="Clare Quigley, Consultant Eye Surgeon">
+                </div>
+                <div class="col-12 col-lg-5 align-self-center order-2">
+                    <div id="about-text" class="about-text-content">
+                        <div id="loading-about" class="text-center">
+                            <div class="loading-spinner"></div>
+                            <p>Loading content...</p>
+                        </div>
+                        <div id="about-content" style="display: none;"></div>
+                        <div id="about-fallback" style="display: none;">
+                            <p>Clare Quigley is a Consultant Eye Surgeon in private practice in Progressive Vision, Dublin, providing a
+                            comprehensive ophthalmic service, including cataract and oculoplastic surgery. Her professional goal is to
+                            deliver a top-quality patient-centered service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include footer -->
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+
+<!-- Script to load header and footer -->
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+
+    // Google Sheets content loading script
+    document.addEventListener('DOMContentLoaded', loadAboutContent);
+
+    function loadAboutContent() {
+        const CACHE_KEY = 'about_content_cache';
+        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+        const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRewAlXzTwpNdxS_iSBgeyLHW9e54rVkcFq7UwUQ8a6ryyZ5qvTHaiZn9StwjQJfwXtYgu9NvzhRVXr/pub?output=csv";
+        
+        const loadingElement = document.getElementById('loading-about');
+        const contentElement = document.getElementById('about-content');
+        const fallbackElement = document.getElementById('about-fallback');
+        
+        // Clear any existing cache to ensure we get fresh content
+        localStorage.removeItem(CACHE_KEY);
+        
+        // Check cache first
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        if (cachedData) {
+            const { content, timestamp } = JSON.parse(cachedData);
+            const age = Date.now() - timestamp;
+            
+            if (age < CACHE_DURATION) {
+                displayContent(content);
+                return;
+            }
+        }
+        
+        // Fetch content from Google Sheets
+        fetch(csvUrl)
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(csvText => {
+                // Parse the CSV properly including handling quoted values
+                const parsedContent = parseCSV(csvText);
+                if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
+                    const contentValue = parsedContent[1][0]; // Get first column of second row
+                    
+                    // Cache the content
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({
+                        content: contentValue,
+                        timestamp: Date.now()
+                    }));
+                    
+                    displayContent(contentValue);
+                } else {
+                    showFallback();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching content:', error);
+                showFallback();
+            });
+            
+        function displayContent(content) {
+            contentElement.innerHTML = `<p>${content}</p>`;
+            loadingElement.style.display = 'none';
+            contentElement.style.display = 'block';
+        }
+        
+        function showFallback() {
+            loadingElement.style.display = 'none';
+            fallbackElement.style.display = 'block';
+        }
+        
+        // Proper CSV parser that handles quoted cells with line breaks
+        function parseCSV(csvText) {
+            const result = [];
+            let row = [];
+            let currentValue = '';
+            let insideQuotes = false;
+            
+            for (let i = 0; i < csvText.length; i++) {
+                const char = csvText[i];
+                const nextChar = csvText[i + 1];
+                
+                if (char === '"') {
+                    if (insideQuotes && nextChar === '"') {
+                        // Escaped quote inside quotes
+                        currentValue += '"';
+                        i++; // Skip the next quote
+                    } else {
+                        // Toggle quote state
+                        insideQuotes = !insideQuotes;
+                    }
+                } else if (char === ',' && !insideQuotes) {
+                    // End of field
+                    row.push(currentValue);
+                    currentValue = '';
+                } else if ((char === '\r' || char === '\n') && !insideQuotes) {
+                    // End of line
+                    if (currentValue !== '' || row.length > 0) {
+                        row.push(currentValue);
+                        result.push(row);
+                        row = [];
+                        currentValue = '';
+                    }
+                    
+                    // Skip the next character if it's a line feed after a carriage return
+                    if (char === '\r' && nextChar === '\n') {
+                        i++;
+                    }
+                } else {
+                    // Regular character
+                    currentValue += char;
+                }
+            }
+            
+            // Don't forget the last row
+            if (currentValue !== '' || row.length > 0) {
+                row.push(currentValue);
+                result.push(row);
+            }
+            
+            return result;
+        }
+    }
+</script>
+</body>
+</html>

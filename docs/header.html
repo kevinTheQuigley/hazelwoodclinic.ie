@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav"> 
+    <div class="container px-4 px-lg-5">
+        <div class="navbar-brand-container">
+            <a class="navbar-brand" href="index.html">Ms Clare Quigley</a>
+            <div class="navbar-subtitle">Consultant Eye Surgeon</div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="publications.html">Publications</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                <li class="nav-item">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="https://www.researchgate.net/profile/Clare-Quigley" target="_blank">
+                        <i class="fab fa-researchgate fa-2x"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="https://www.linkedin.com/in/clare-quigley-069889149/" target="_blank">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link px-lg-4 py-3 btn btn-primary rounded-pill appointment-btn" href="contact.html">Make An Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+.navbar-brand-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.navbar-brand {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.navbar-subtitle {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Fix for appointment button text color */
+.appointment-btn {
+    color: white !important; /* Force white text at all screen sizes */
+}
+
+/* Override any nav-link:hover styles for the appointment button */
+.appointment-btn:hover, 
+.appointment-btn:focus {
+    color: white !important;
+}
+
+/* Additional mobile styling fixes */
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-link.appointment-btn {
+        color: white !important; /* Ensure text stays white on mobile */
+    }
+    
+    /* Make the appointment button stand out on mobile */
+    .navbar-nav .nav-link.appointment-btn {
+        display: inline-block;
+        margin: 10px auto;
+        font-size: 0.9rem;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        max-width: fit-content;
+        white-space: nowrap;
+    }
+    
+    /* Center the button in its container */
+    .nav-item.d-flex.align-items-center {
+        justify-content: center;
+        width: 100%;
+    }
+}
+</style>
