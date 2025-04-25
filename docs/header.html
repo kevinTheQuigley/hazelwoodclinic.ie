@@ -2,7 +2,10 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> 
     <div class="container px-4 px-lg-5">
         <div class="navbar-brand-container">
-            <a class="navbar-brand" href="index.html">Hazelwood Clinic</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/hazelwoodClinicLogo.png" alt="Hazelwood Clinic Logo" class="brand-logo">
+                <span class="brand-text">Hazelwood Clinic</span>
+            </a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -47,14 +50,24 @@
     </div>
 </nav>
 <style>
+/* Logo styling */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.brand-logo {
+    height: 40px;
+    width: auto;
+}
+.brand-text {
+    font-weight: 700;
+}
 .navbar-brand-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     line-height: 1.2;
-}
-.navbar-brand {
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 .navbar-subtitle {
     font-size: 0.8rem;
@@ -162,6 +175,11 @@ body {
     /* Update body padding for mobile */
     body {
         padding-top: 60px; /* Smaller on mobile */
+    }
+    
+    /* Mobile logo sizing */
+    .brand-logo {
+        height: 32px;
     }
     
     /* Show toggle button on mobile */
