@@ -12,16 +12,28 @@
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="about.html" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         About
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="about.html">About Overview</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
                         <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
                         <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="services.html">Services Overview</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
+                        <!-- Add your service subpages here -->
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resources.html">Resources</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="fees.html">Fees</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="faq.html">FAQ</a></li>
@@ -76,6 +88,10 @@
     .dropdown:hover .dropdown-menu {
         display: block;
     }
+    /* Make the main nav links still work as links when they have dropdowns */
+    .dropdown > .nav-link {
+        pointer-events: auto;
+    }
 }
 /* Additional mobile styling fixes */
 @media (max-width: 991.98px) {
@@ -111,5 +127,32 @@
         color: #212529;
         padding: 0.5rem 1rem;
     }
+    .dropdown-divider {
+        border-color: rgba(0,0,0,0.1);
+        margin: 0.25rem 1rem;
+    }
 }
 </style>
+
+<script>
+// Add this script to help with dropdown navigation
+document.addEventListener('DOMContentLoaded', function() {
+    // For desktop: Allow clicking main nav dropdown links
+    if (window.innerWidth >= 992) {
+        const dropdownToggleLinks = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggleLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    // Only prevent default if clicking the arrow indicator
+                    const clickX = e.clientX;
+                    const linkRect = this.getBoundingClientRect();
+                    const arrowWidth = 20; // Approximate width of dropdown arrow
+                    if (clickX > linkRect.right - arrowWidth) {
+                        e.preventDefault();
+                    }
+                }
+            });
+        });
+    }
+});
+</script>
