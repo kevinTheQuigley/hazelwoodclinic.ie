@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Hazelwood Clinic</title>
+    <meta name="description" content="Learn about the therapeutic approaches and modalities offered at Hazelwood Clinic, including CBT, EMDR, IFS, ACT, CFT, and Psychodynamic Therapy." />
+    <meta name="author" content="Hazelwood Clinic" />
+    <title>Our Therapies - Hazelwood Clinic</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -15,88 +15,99 @@
     <style>
         .about-header {
             font-size: 2.6rem;
+            color: white;
         }
-        .biography-text {
-            white-space: pre-line;
+        
+        .about-content {
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            text-align: center;
+        }
+        
+        .therapy-section {
+            margin-bottom: 2.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: white;
+        }
+        
+        .therapy-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .therapy-header {
+            background-color: var(--kq-green);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            font-family: 'Lora', serif;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .therapy-content {
+            padding: 1.5rem;
+        }
+        
+        .therapy-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
             line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        .profile-img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 0 auto;
-            display: block;
-            border: 4px solid var(--kq-green);
         }
         
-        .profile-container {
+        .therapy-icon {
+            font-size: 2.5rem;
+            color: var(--kq-green);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .conditions-list {
             display: flex;
-            justify-content: center;
-            padding-right: 30px;
+            flex-wrap: wrap;
+            margin-top: 1rem;
         }
         
-        .biography-container {
-            padding-left: 15px;
+        .condition-tag {
+            background-color: var(--kq-greenLight);
+            color: var(--kq-green);
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .tailored-approach {
+            background-color: var(--kq-greenLight);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .tailored-approach h3 {
+            color: var(--kq-green);
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
         }
         
         @media (max-width: 768px) {
-            .profile-img {
-                width: 250px;
-                height: 250px;
-                margin-bottom: 30px;
+            .therapy-header {
+                padding: 1rem 1.25rem;
+                font-size: 1.2rem;
             }
             
-            .profile-container {
-                padding-right: 0;
+            .therapy-content {
+                padding: 1.25rem;
             }
-            
-            .biography-container {
-                padding-left: 0;
-            }
-        }
-        
-        .credentials-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
-            clear: both;
-        }
-        .credentials-section h3 {
-            margin-bottom: 1.5rem;
-            color: var(--kq-green);
-            font-size: 1.5rem;
-        }
-        .credentials-list {
-            margin-bottom: 2rem;
-        }
-        .credentials-list h4 {
-            color: var(--kq-green);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .credentials-list ul {
-            padding-left: 1.2rem;
-        }
-        .credentials-list li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border: 0.25rem solid rgba(20, 88, 43, 0.2);
-            border-top-color: var(--kq-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -110,7 +121,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="page-heading">
-                        <h2 class="about-header">About</h2>
+                        <h2 class="about-header">Our Therapeutic Approaches</h2>
                     </div>
                 </div>
             </div>
@@ -120,195 +131,166 @@
     <!-- Main Content-->
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-10 col-xl-9">
-                <!-- Biography Section with Photo -->
-                <div class="row mt-4">
-                    <div class="col-md-5 mb-4 profile-container">
-                        <img src="assets/img/aboutProfile.jpg" alt="Hazelwood Clinic Team" class="profile-img">
-                    </div>
-                    <div class="col-md-7 biography-container">
-                        <div id="biography-section">
-                            <!-- Loading spinner -->
-                            <div id="loading-biography" class="text-center">
-                                <div class="loading-spinner"></div>
-                                <p class="mt-2">Loading biography...</p>
-                            </div>
-                            <!-- Biography text will be loaded here -->
-                            <div id="biography-content" style="display: none;">
-                            </div>
-                            <!-- Fallback biography -->
-                            <div id="biography-fallback" style="display: none;">
-                                <div class="biography-text">Welcome to Hazelwood Clinic. Our team is dedicated to providing compassionate and professional psychological care to help you navigate life's challenges.</div>
-                            </div>
+            <div class="col-md-10 col-lg-10">
+                <!-- Introduction -->
+                <div class="intro-text">
+                    <p class="lead">At Hazelwood Clinic, we specialize in a range of evidence-based therapeutic approaches to meet the unique needs of our clients. Each modality offers distinct benefits and can be used alone or in combination to provide the most effective treatment for your specific concerns.</p>
+                </div>
+                
+                <!-- CBT Section -->
+                <div class="therapy-section">
+                    <h3 class="therapy-header">Cognitive Behavioural Therapy (CBT)</h3>
+                    <div class="therapy-content">
+                        <div class="therapy-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <p>CBT is one of the most widely researched therapies, proven effective for conditions such as anxiety disorders, depression, PTSD, and OCD. It helps clients identify unhelpful thought patterns, challenge them, and replace them with healthier ways of thinking and behaving.</p>
+                        
+                        <p>This approach is structured and goal-oriented, focusing on the connections between thoughts, feelings, and behaviors in the present rather than issues from the past. Through CBT, clients develop practical skills and strategies they can apply in their daily lives to manage symptoms and improve functioning.</p>
+                        
+                        <p>Our clinicians find CBT particularly effective in treating OCD and anxiety-related conditions, where identifying and challenging cognitive distortions plays a crucial role in recovery.</p>
+                        
+                        <div class="conditions-list">
+                            <span class="condition-tag">Anxiety Disorders</span>
+                            <span class="condition-tag">Depression</span>
+                            <span class="condition-tag">PTSD</span>
+                            <span class="condition-tag">OCD</span>
+                            <span class="condition-tag">Phobias</span>
+                            <span class="condition-tag">Panic Disorder</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Credentials and Awards Section -->
-                <div class="credentials-section">
-                    <h3>Credentials & Achievements</h3>
-                    
-                    <div class="credentials-list">
-                        <h4>Qualifications</h4>
-                        <ul>
-                            <li>Registered Clinical Psychologist</li>
-                            <li>PhD in Clinical Psychology</li>
-                            <li>Member of the Psychological Society of Ireland</li>
-                        </ul>
+                <!-- EMDR Section -->
+                <div class="therapy-section">
+                    <h3 class="therapy-header">Eye Movement Desensitization and Reprocessing (EMDR)</h3>
+                    <div class="therapy-content">
+                        <div class="therapy-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <p>EMDR is a structured therapy specifically designed to help individuals process and resolve traumatic memories. Through bilateral stimulation techniques, such as eye movements, clients can reprocess distressing experiences in a safe and controlled way.</p>
+                        
+                        <p>This approach not only reduces trauma symptoms but often enhances self-esteem and resilience, enabling clients to move forward with confidence. EMDR works by helping the brain process traumatic memories in a way that reduces their emotional impact while maintaining the important lessons learned from these experiences.</p>
+                        
+                        <p>Our clinicians find EMDR particularly effective in treating single-incident traumas, with a blend of EMDR and other modalities being used for complex trauma. Unlike some traditional therapies, EMDR doesn't require detailed descriptions of the traumatic event or extensive homework between sessions.</p>
+                        
+                        <div class="conditions-list">
+                            <span class="condition-tag">PTSD</span>
+                            <span class="condition-tag">Trauma Recovery</span>
+                            <span class="condition-tag">Anxiety</span>
+                            <span class="condition-tag">Phobias</span>
+                            <span class="condition-tag">Grief</span>
+                            <span class="condition-tag">Performance Anxiety</span>
+                        </div>
                     </div>
-                    
-                    <div class="credentials-list">
-                        <h4>Specializations</h4>
-                        <ul>
-                            <li>Cognitive Behavioral Therapy (CBT)</li>
-                            <li>Trauma-Focused Therapy</li>
-                            <li>Anxiety and Depression Treatment</li>
-                            <li>Family and Relationship Counseling</li>
-                        </ul>
+                </div>
+                
+                <!-- IFS Section -->
+                <div class="therapy-section">
+                    <h3 class="therapy-header">Internal Family Systems (IFS)</h3>
+                    <div class="therapy-content">
+                        <div class="therapy-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p>IFS is an innovative approach that views the mind as composed of distinct "parts," each with its own feelings and roles. This therapy is especially effective for trauma, emotional regulation, and self-esteem issues, as it fosters a greater sense of self-compassion.</p>
+                        
+                        <p>By addressing wounded parts and nurturing the "Self," clients can achieve deeper healing and emotional harmony. IFS helps clients understand their internal system and learn to harmonize the parts that may be in conflict with one another, relieving psychological suffering and promoting overall wellbeing.</p>
+                        
+                        <p>This non-pathologizing approach recognizes that all parts have positive intentions, even if their methods of protection may cause difficulties. Through IFS, clients develop a relationship with each part, leading to greater internal harmony and external functioning.</p>
+                        
+                        <div class="conditions-list">
+                            <span class="condition-tag">Trauma</span>
+                            <span class="condition-tag">Emotional Regulation</span>
+                            <span class="condition-tag">Self-Esteem Issues</span>
+                            <span class="condition-tag">Anxiety</span>
+                            <span class="condition-tag">Depression</span>
+                            <span class="condition-tag">Relationship Difficulties</span>
+                        </div>
                     </div>
-                    
-                    <div class="credentials-list">
-                        <h4>Professional Development</h4>
-                        <ul>
-                            <li>Certified in EMDR Therapy</li>
-                            <li>Advanced Training in Mindfulness-Based Interventions</li>
-                            <li>Continuing Professional Development in Evidence-Based Practices</li>
-                        </ul>
+                </div>
+                
+                <!-- ACT Section -->
+                <div class="therapy-section">
+                    <h3 class="therapy-header">Acceptance and Commitment Therapy (ACT)</h3>
+                    <div class="therapy-content">
+                        <div class="therapy-icon">
+                            <i class="fas fa-heart-circle-check"></i>
+                        </div>
+                        <p>ACT helps clients manage difficult thoughts and emotions by promoting acceptance and psychological flexibility. Grounded in mindfulness and behavioural change principles, ACT encourages individuals to focus on what truly matters to them and take actions aligned with their values.</p>
+                        
+                        <p>Rather than fighting against uncomfortable thoughts and feelings, ACT teaches clients to observe them with openness and curiosity, reducing their impact while redirecting energy toward meaningful living. This "psychological flexibility" allows clients to respond more effectively to life's challenges.</p>
+                        
+                        <p>This approach is particularly helpful for anxiety, depression, chronic stress, and life transitions, allowing clients to build meaningful and fulfilling lives even in the face of difficult circumstances or painful emotions.</p>
+                        
+                        <div class="conditions-list">
+                            <span class="condition-tag">Anxiety</span>
+                            <span class="condition-tag">Depression</span>
+                            <span class="condition-tag">Chronic Stress</span>
+                            <span class="condition-tag">Life Transitions</span>
+                            <span class="condition-tag">Chronic Pain</span>
+                            <span class="condition-tag">Work-related Stress</span>
+                        </div>
                     </div>
+                </div>
+                
+                <!-- CFT Section -->
+                <div class="therapy-section">
+                    <h3 class="therapy-header">Compassion-Focused Therapy (CFT)</h3>
+                    <div class="therapy-content">
+                        <div class="therapy-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <p>CFT is designed for individuals struggling with self-criticism, shame, and emotional pain. By cultivating compassion for themselves and others, clients develop skills to soothe inner conflict and promote emotional resilience.</p>
+                        
+                        <p>This therapy integrates mindfulness, neuroscience, and evolutionary psychology to help clients foster a sense of safety and kindness toward themselves. CFT helps clients understand how their brains have evolved and how certain patterns of thinking and feeling developed as protective mechanisms that may no longer be helpful.</p>
+                        
+                        <p>Through compassion-focused exercises and practices, clients learn to relate to themselves with the same kindness they might show to a good friend, transforming harsh self-criticism into supportive self-guidance.</p>
+                        
+                        <div class="conditions-list">
+                            <span class="condition-tag">Self-Criticism</span>
+                            <span class="condition-tag">Shame</span>
+                            <span class="condition-tag">Perfectionism</span>
+                            <span class="condition-tag">Depression</span>
+                            <span class="condition-tag">Anxiety</span>
+                            <span class="condition-tag">Trauma Recovery</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Psychodynamic Section -->
+                <div class="therapy-section">
+                    <h3 class="therapy-header">Psychodynamic Psychotherapy</h3>
+                    <div class="therapy-content">
+                        <div class="therapy-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <p>This modality focuses on exploring the unconscious influences of past relationships and experiences on current behaviours and emotions. Psychodynamic therapy is particularly helpful for clients seeking to understand relational patterns, identity struggles, and unresolved emotional pain.</p>
+                        
+                        <p>By examining recurring themes and patterns in a person's thoughts, feelings, and behaviors, psychodynamic therapy helps clients gain insight into how past experiences shape present circumstances. This increased awareness creates opportunities for more conscious choices and personal growth.</p>
+                        
+                        <p>It provides insight into underlying issues and helps clients build more meaningful connections with themselves and others. The therapeutic relationship itself often becomes an important vehicle for change, as patterns that emerge in therapy may reflect patterns in other relationships.</p>
+                        
+                        <div class="conditions-list">
+                            <span class="condition-tag">Relationship Issues</span>
+                            <span class="condition-tag">Identity Struggles</span>
+                            <span class="condition-tag">Unresolved Grief</span>
+                            <span class="condition-tag">Recurring Life Patterns</span>
+                            <span class="condition-tag">Depression</span>
+                            <span class="condition-tag">Personality Concerns</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tailored Approach Section -->
+                <div class="tailored-approach">
+                    <h3>A Collaborative, Client-Centered Approach</h3>
+                    <p>At Hazelwood Clinic, we tailor these methods to suit each client, ensuring a collaborative and client-centered therapeutic process. Our clinicians are skilled in multiple modalities and can integrate different approaches to create the most effective treatment plan for your unique situation.</p>
+                    <p>We believe that the therapeutic relationship is a key factor in successful outcomes, and we prioritize creating a safe, supportive environment where healing can occur.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', loadBiography);
-
-    function loadBiography() {
-        const CACHE_KEY = 'about_biography_cache';
-        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
-        
-        // Base URL for the published Google Sheet
-        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
-        // Add the gid parameter to specify the 'About' sheet
-        const aboutSheetGid = "159040093";
-        const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-        
-        const loadingElement = document.getElementById('loading-biography');
-        const contentElement = document.getElementById('biography-content');
-        const fallbackElement = document.getElementById('biography-fallback');
-        
-        // Check cache first
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        if (cachedData) {
-            const { content, timestamp } = JSON.parse(cachedData);
-            const age = Date.now() - timestamp;
-            
-            if (age < CACHE_DURATION) {
-                displayContent(content);
-                return;
-            }
-        }
-        
-        // Fetch content from Google Sheets
-        fetch(csvUrl)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                return response.text();
-            })
-            .then(csvText => {
-                // Parse the CSV properly including handling quoted values
-                try {
-                    const parsedContent = parseCSV(csvText);
-                    
-                    if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
-                        const contentValue = parsedContent[1][0]; // Get first column of second row
-                        
-                        // Cache the content
-                        localStorage.setItem(CACHE_KEY, JSON.stringify({
-                            content: contentValue,
-                            timestamp: Date.now()
-                        }));
-                        
-                        displayContent(contentValue);
-                    } else {
-                        showFallback();
-                    }
-                } catch (e) {
-                    console.error('Error parsing CSV:', e);
-                    showFallback();
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching content:', error);
-                showFallback();
-            });
-            
-        function displayContent(content) {
-            contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
-            loadingElement.style.display = 'none';
-            contentElement.style.display = 'block';
-        }
-        
-        function showFallback() {
-            loadingElement.style.display = 'none';
-            fallbackElement.style.display = 'block';
-        }
-    }
-    
-    // Proper CSV parser that handles quoted cells with line breaks
-    function parseCSV(csvText) {
-        const result = [];
-        let row = [];
-        let currentValue = '';
-        let insideQuotes = false;
-        
-        for (let i = 0; i < csvText.length; i++) {
-            const char = csvText[i];
-            const nextChar = csvText[i + 1];
-            
-            if (char === '"') {
-                if (insideQuotes && nextChar === '"') {
-                    // Escaped quote inside quotes
-                    currentValue += '"';
-                    i++; // Skip the next quote
-                } else {
-                    // Toggle quote state
-                    insideQuotes = !insideQuotes;
-                }
-            } else if (char === ',' && !insideQuotes) {
-                // End of field
-                row.push(currentValue);
-                currentValue = '';
-            } else if ((char === '\r' || char === '\n') && !insideQuotes) {
-                // End of line
-                if (currentValue !== '' || row.length > 0) {
-                    row.push(currentValue);
-                    result.push(row);
-                    row = [];
-                    currentValue = '';
-                }
-                
-                // Skip the next character if it's a line feed after a carriage return
-                if (char === '\r' && nextChar === '\n') {
-                    i++;
-                }
-            } else {
-                // Regular character
-                currentValue += char;
-            }
-        }
-        
-        // Don't forget the last row
-        if (currentValue !== '' || row.length > 0) {
-            row.push(currentValue);
-            result.push(row);
-        }
-        
-        return result;
-    }
-    </script>
-    
     <!-- Footer-->
     <div id="footer-placeholder"></div>
     

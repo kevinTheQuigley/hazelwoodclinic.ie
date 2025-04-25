@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Hazelwood Clinic</title>
+    <meta name="description" content="Learn about Hazelwood Clinic, our approach to psychological care, and our team of experienced professionals." />
+    <meta name="author" content="Hazelwood Clinic" />
+    <title>About - Hazelwood Clinic</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -15,12 +15,21 @@
     <style>
         .about-header {
             font-size: 2.6rem;
+            color: white;
         }
-        .biography-text {
-            white-space: pre-line;
-            line-height: 1.6;
-            font-size: 0.95rem;
+        
+        .about-content {
+            line-height: 1.7;
+            font-size: 1rem;
         }
+        
+        .section-title {
+            color: var(--kq-green);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            font-family: 'Lora', serif;
+        }
+        
         .profile-img {
             border-radius: 50%;
             width: 300px;
@@ -36,10 +45,71 @@
             display: flex;
             justify-content: center;
             padding-right: 30px;
+            margin-bottom: 2rem;
         }
         
-        .biography-container {
-            padding-left: 15px;
+        .about-section {
+            margin-bottom: 3rem;
+        }
+        
+        .approach-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .approach-card h4 {
+            color: var(--kq-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .team-section {
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--kq-green);
+        }
+        
+        .team-name {
+            font-weight: 600;
+            color: var(--kq-green);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        
+        .team-title {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .bullet-list {
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .bullet-list li {
+            margin-bottom: 0.75rem;
         }
         
         @media (max-width: 768px) {
@@ -52,51 +122,6 @@
             .profile-container {
                 padding-right: 0;
             }
-            
-            .biography-container {
-                padding-left: 0;
-            }
-        }
-        
-        .credentials-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
-            clear: both;
-        }
-        .credentials-section h3 {
-            margin-bottom: 1.5rem;
-            color: var(--kq-green);
-            font-size: 1.5rem;
-        }
-        .credentials-list {
-            margin-bottom: 2rem;
-        }
-        .credentials-list h4 {
-            color: var(--kq-green);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .credentials-list ul {
-            padding-left: 1.2rem;
-        }
-        .credentials-list li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border: 0.25rem solid rgba(20, 88, 43, 0.2);
-            border-top-color: var(--kq-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -110,7 +135,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="page-heading">
-                        <h2 class="about-header">About</h2>
+                        <h2 class="about-header">About Hazelwood Clinic</h2>
                     </div>
                 </div>
             </div>
@@ -121,194 +146,104 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-10 col-xl-9">
-                <!-- Biography Section with Photo -->
-                <div class="row mt-4">
-                    <div class="col-md-5 mb-4 profile-container">
-                        <img src="assets/img/aboutProfile.jpg" alt="Hazelwood Clinic Team" class="profile-img">
-                    </div>
-                    <div class="col-md-7 biography-container">
-                        <div id="biography-section">
-                            <!-- Loading spinner -->
-                            <div id="loading-biography" class="text-center">
-                                <div class="loading-spinner"></div>
-                                <p class="mt-2">Loading biography...</p>
-                            </div>
-                            <!-- Biography text will be loaded here -->
-                            <div id="biography-content" style="display: none;">
-                            </div>
-                            <!-- Fallback biography -->
-                            <div id="biography-fallback" style="display: none;">
-                                <div class="biography-text">Welcome to Hazelwood Clinic. Our team is dedicated to providing compassionate and professional psychological care to help you navigate life's challenges.</div>
+                <!-- Introduction Section -->
+                <div class="about-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="about-content">
+                                <p>Hazelwood Clinic is a frontline, private clinic offering a comprehensive range of psychological services for adults, children, and adolescents in a warm, non-judgmental environment.</p>
+                                
+                                <p>Our team of experienced Senior Clinical Psychologists brings over a decade of experience across diverse settings, including Community-Based Teams, Disability Services, and both Child and Adolescent and Adult Mental Health Services.</p>
+                                
+                                <p>We believe in providing evidence-based, person-centered care that acknowledges and respects the unique experiences, needs, and goals of each client.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Credentials and Awards Section -->
-                <div class="credentials-section">
-                    <h3>Credentials & Achievements</h3>
-                    
-                    <div class="credentials-list">
-                        <h4>Qualifications</h4>
-                        <ul>
-                            <li>Registered Clinical Psychologist</li>
-                            <li>PhD in Clinical Psychology</li>
-                            <li>Member of the Psychological Society of Ireland</li>
+                <!-- Services Available Section -->
+                <div class="about-section">
+                    <h3 class="section-title">Services Available</h3>
+                    <div class="about-content">
+                        <p>Hazelwood Clinic offers a wide range of services related to the neurodiversity-affirming identification and support of various forms of neurodivergence. We also assess and treat forms of learning, emotional, behavioral, mental health, and other psychological difficulties.</p>
+                        
+                        <p>In addition to offering individual therapy, consultation and assessment services, we also provide specialized support for:</p>
+                        
+                        <ul class="bullet-list">
+                            <li>Anxiety and mood disorders</li>
+                            <li>Trauma and PTSD</li>
+                            <li>Neurodiversity-related issues (ADHD, Autism)</li>
+                            <li>LGBTQI+ and polyamorous community support</li>
+                            <li>Identity and relational challenges</li>
+                            <li>Treatment-resistant mental health disorders</li>
                         </ul>
+                        
+                        <p>At Hazelwood Clinic, our clinicians work with clients of all ages to develop developmentally appropriate evidence-based plans to help individuals work to their potentials in all settings, while addressing any barriers that might be standing in the way of navigating life's challenges.</p>
+                        
+                        <p>The clinic also liaises with external professionals and refers clients — where necessary — for other specialist services (e.g., Speech and Language Therapy, Occupational Therapy, Psychiatry, etc.).</p>
                     </div>
-                    
-                    <div class="credentials-list">
-                        <h4>Specializations</h4>
-                        <ul>
-                            <li>Cognitive Behavioral Therapy (CBT)</li>
-                            <li>Trauma-Focused Therapy</li>
-                            <li>Anxiety and Depression Treatment</li>
-                            <li>Family and Relationship Counseling</li>
-                        </ul>
+                </div>
+                
+                <!-- Our Approach Section -->
+                <div class="about-section">
+                    <h3 class="section-title">Our Therapeutic Approach</h3>
+                    <div class="about-content">
+                        <p>We integrate multiple evidence-based therapeutic modalities tailored to each client's unique needs:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="approach-card">
+                                    <h4>Compassionate Care</h4>
+                                    <p>We create a safe, supportive space where clients feel respected and understood, establishing trust through empathetic listening and genuine concern for your wellbeing.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="approach-card">
+                                    <h4>Evidence-Based Practice</h4>
+                                    <p>Our interventions are grounded in scientific research and validated therapeutic methods, ensuring you receive the most effective care for your specific concerns.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="approach-card">
+                                    <h4>Holistic Perspective</h4>
+                                    <p>We consider all aspects of your life—mind, body, relationships, and environment—recognizing that wellbeing encompasses more than symptom reduction.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="approach-card">
+                                    <h4>Collaborative Partnership</h4>
+                                    <p>We work together with you as active participants in the therapeutic process, establishing goals together and adapting our approach based on your feedback and progress.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="credentials-list">
-                        <h4>Professional Development</h4>
-                        <ul>
-                            <li>Certified in EMDR Therapy</li>
-                            <li>Advanced Training in Mindfulness-Based Interventions</li>
-                            <li>Continuing Professional Development in Evidence-Based Practices</li>
+                </div>
+                
+                <!-- Credentials Section -->
+                <div class="about-section">
+                    <h3 class="section-title">Our Professional Standards</h3>
+                    <div class="about-content">
+                        <p>All clinicians at Hazelwood Clinic maintain the highest professional standards and credentials:</p>
+                        
+                        <ul class="bullet-list">
+                            <li>Registered with the Psychological Society of Ireland (PSI)</li>
+                            <li>Doctoral-level qualification in clinical psychology</li>
+                            <li>Regular continuing professional development training</li>
+                            <li>Specialized training in evidence-based therapeutic approaches including CBT, EMDR, IFS, ACT, CFT, and Psychodynamic Psychotherapy</li>
+                            <li>Extensive experience in both public and private healthcare settings</li>
+                            <li>Commitment to ethical practice and confidentiality</li>
                         </ul>
+                        
+                        <p>We are dedicated to providing high-quality care and continually enhancing our knowledge and skills to better serve our clients.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', loadBiography);
-
-    function loadBiography() {
-        const CACHE_KEY = 'about_biography_cache';
-        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
-        
-        // Base URL for the published Google Sheet
-        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
-        // Add the gid parameter to specify the 'About' sheet
-        const aboutSheetGid = "159040093";
-        const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-        
-        const loadingElement = document.getElementById('loading-biography');
-        const contentElement = document.getElementById('biography-content');
-        const fallbackElement = document.getElementById('biography-fallback');
-        
-        // Check cache first
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        if (cachedData) {
-            const { content, timestamp } = JSON.parse(cachedData);
-            const age = Date.now() - timestamp;
-            
-            if (age < CACHE_DURATION) {
-                displayContent(content);
-                return;
-            }
-        }
-        
-        // Fetch content from Google Sheets
-        fetch(csvUrl)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                return response.text();
-            })
-            .then(csvText => {
-                // Parse the CSV properly including handling quoted values
-                try {
-                    const parsedContent = parseCSV(csvText);
-                    
-                    if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
-                        const contentValue = parsedContent[1][0]; // Get first column of second row
-                        
-                        // Cache the content
-                        localStorage.setItem(CACHE_KEY, JSON.stringify({
-                            content: contentValue,
-                            timestamp: Date.now()
-                        }));
-                        
-                        displayContent(contentValue);
-                    } else {
-                        showFallback();
-                    }
-                } catch (e) {
-                    console.error('Error parsing CSV:', e);
-                    showFallback();
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching content:', error);
-                showFallback();
-            });
-            
-        function displayContent(content) {
-            contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
-            loadingElement.style.display = 'none';
-            contentElement.style.display = 'block';
-        }
-        
-        function showFallback() {
-            loadingElement.style.display = 'none';
-            fallbackElement.style.display = 'block';
-        }
-    }
-    
-    // Proper CSV parser that handles quoted cells with line breaks
-    function parseCSV(csvText) {
-        const result = [];
-        let row = [];
-        let currentValue = '';
-        let insideQuotes = false;
-        
-        for (let i = 0; i < csvText.length; i++) {
-            const char = csvText[i];
-            const nextChar = csvText[i + 1];
-            
-            if (char === '"') {
-                if (insideQuotes && nextChar === '"') {
-                    // Escaped quote inside quotes
-                    currentValue += '"';
-                    i++; // Skip the next quote
-                } else {
-                    // Toggle quote state
-                    insideQuotes = !insideQuotes;
-                }
-            } else if (char === ',' && !insideQuotes) {
-                // End of field
-                row.push(currentValue);
-                currentValue = '';
-            } else if ((char === '\r' || char === '\n') && !insideQuotes) {
-                // End of line
-                if (currentValue !== '' || row.length > 0) {
-                    row.push(currentValue);
-                    result.push(row);
-                    row = [];
-                    currentValue = '';
-                }
-                
-                // Skip the next character if it's a line feed after a carriage return
-                if (char === '\r' && nextChar === '\n') {
-                    i++;
-                }
-            } else {
-                // Regular character
-                currentValue += char;
-            }
-        }
-        
-        // Don't forget the last row
-        if (currentValue !== '' || row.length > 0) {
-            row.push(currentValue);
-            result.push(row);
-        }
-        
-        return result;
-    }
-    </script>
-    
     <!-- Footer-->
     <div id="footer-placeholder"></div>
     
