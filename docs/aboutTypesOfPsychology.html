@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Hazelwood Clinic</title>
+    <meta name="description" content="Learn about psychology, how psychological services work, and what to expect from therapy at Hazelwood Clinic." />
+    <meta name="author" content="Hazelwood Clinic" />
+    <title>About Psychology - Hazelwood Clinic</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -13,90 +13,240 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/styles.css"> 
     <style>
-        .about-header {
+        .psychology-header {
             font-size: 2.6rem;
-        }
-        .biography-text {
-            white-space: pre-line;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        .profile-img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 0 auto;
-            display: block;
-            border: 4px solid var(--kq-green);
+            color: white;
         }
         
-        .profile-container {
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .section-title {
+            color: var(--kq-green);
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem 0;
+            font-family: 'Lora', serif;
+            border-bottom: 2px solid var(--kq-green);
+            padding-bottom: 0.5rem;
+        }
+        
+        .psychology-content {
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quote-box {
+            background-color: var(--kq-greenLight);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: """;
+            font-family: 'Lora', serif;
+            font-size: 6rem;
+            color: var(--kq-green);
+            opacity: 0.2;
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+        }
+        
+        .quote-text {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-attribution {
+            font-weight: 600;
+            text-align: right;
+            margin-top: 1rem;
+            color: var(--kq-green);
+        }
+        
+        .info-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .info-card-title {
+            color: var(--kq-green);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
             display: flex;
-            justify-content: center;
-            padding-right: 30px;
+            align-items: center;
         }
         
-        .biography-container {
-            padding-left: 15px;
+        .info-card-title i {
+            margin-right: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        .bullet-list {
+            padding-left: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .bullet-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .myth-fact-container {
+            margin: 2.5rem 0;
+        }
+        
+        .myth-fact-item {
+            margin-bottom: 2rem;
+        }
+        
+        .myth {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .myth i {
+            margin-right: 0.75rem;
+        }
+        
+        .fact {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem 1.5rem;
+            border-radius: 0 0 8px 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fact i {
+            margin-right: 0.75rem;
+        }
+        
+        .explanation {
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-left: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        .journey-steps {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .journey-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1.25rem;
+            width: 2px;
+            background-color: var(--kq-green);
+            transform: translateX(-50%);
+        }
+        
+        .journey-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--kq-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--kq-green);
+            margin-bottom: 0.75rem;
+        }
+        
+        .cta-section {
+            background-color: var(--kq-greenLight);
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-title {
+            color: var(--kq-green);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--kq-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1b5e20;
+            color: white;
+            text-decoration: none;
         }
         
         @media (max-width: 768px) {
-            .profile-img {
-                width: 250px;
-                height: 250px;
-                margin-bottom: 30px;
+            .journey-line {
+                left: 1rem;
             }
             
-            .profile-container {
-                padding-right: 0;
+            .journey-step {
+                padding-left: 2.5rem;
             }
             
-            .biography-container {
-                padding-left: 0;
+            .step-number {
+                width: 2rem;
+                height: 2rem;
+                font-size: 0.9rem;
             }
-        }
-        
-        .credentials-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
-            clear: both;
-        }
-        .credentials-section h3 {
-            margin-bottom: 1.5rem;
-            color: var(--kq-green);
-            font-size: 1.5rem;
-        }
-        .credentials-list {
-            margin-bottom: 2rem;
-        }
-        .credentials-list h4 {
-            color: var(--kq-green);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .credentials-list ul {
-            padding-left: 1.2rem;
-        }
-        .credentials-list li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border: 0.25rem solid rgba(20, 88, 43, 0.2);
-            border-top-color: var(--kq-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -110,7 +260,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="page-heading">
-                        <h2 class="about-header">About</h2>
+                        <h2 class="psychology-header">About Psychology</h2>
                     </div>
                 </div>
             </div>
@@ -120,195 +270,206 @@
     <!-- Main Content-->
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-10 col-xl-9">
-                <!-- Biography Section with Photo -->
-                <div class="row mt-4">
-                    <div class="col-md-5 mb-4 profile-container">
-                        <img src="assets/img/aboutProfile.jpg" alt="Hazelwood Clinic Team" class="profile-img">
+            <div class="col-md-10 col-lg-10">
+                <!-- Introduction -->
+                <div class="intro-text">
+                    <p>Psychology is the scientific study of the mind and behavior, exploring how we think, feel, act, and relate to others and our environment. At Hazelwood Clinic, we apply psychological principles to help individuals better understand themselves, develop coping strategies, and improve their overall wellbeing.</p>
+                </div>
+                
+                <!-- What is Psychology Section -->
+                <h3 class="section-title">What is Psychology?</h3>
+                <div class="psychology-content">
+                    <p>Psychology encompasses a vast field that studies human experiences, behaviors, and mental processes. It combines scientific research and practical applications to understand and address the complexities of human functioning. Clinical psychology, the focus of our practice at Hazelwood Clinic, applies this knowledge to assess, diagnose, and treat psychological difficulties and promote mental wellbeing.</p>
+                    
+                    <p>Psychology recognizes that we are shaped by biological, psychological, and social factors, all of which interact to influence how we think, feel, and behave. By understanding these interactions, psychologists can help people develop insights into their patterns and make meaningful changes in their lives.</p>
+                </div>
+                
+                <div class="quote-box">
+                    <p class="quote-text">Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.</p>
+                    <p class="quote-attribution">Viktor E. Frankl</p>
+                </div>
+                
+                <!-- How Psychology Can Help Section -->
+                <h3 class="section-title">How Psychology Can Help</h3>
+                <div class="psychology-content">
+                    <p>Psychological approaches offer numerous benefits for individuals facing various challenges in life. Here are some of the key ways psychology can help:</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-lightbulb"></i> Understanding Yourself</h4>
+                            <p>Psychology provides frameworks to help you understand your thoughts, feelings, and behaviors, giving you greater insight into your patterns and motivations.</p>
+                        </div>
                     </div>
-                    <div class="col-md-7 biography-container">
-                        <div id="biography-section">
-                            <!-- Loading spinner -->
-                            <div id="loading-biography" class="text-center">
-                                <div class="loading-spinner"></div>
-                                <p class="mt-2">Loading biography...</p>
-                            </div>
-                            <!-- Biography text will be loaded here -->
-                            <div id="biography-content" style="display: none;">
-                            </div>
-                            <!-- Fallback biography -->
-                            <div id="biography-fallback" style="display: none;">
-                                <div class="biography-text">Welcome to Hazelwood Clinic. Our team is dedicated to providing compassionate and professional psychological care to help you navigate life's challenges.</div>
-                            </div>
+                    
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-tools"></i> Developing Coping Skills</h4>
+                            <p>Learn evidence-based strategies to manage stress, anxiety, depression, and other psychological challenges, enhancing your resilience in difficult situations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-comments"></i> Improving Relationships</h4>
+                            <p>Gain insights into relationship patterns and develop communication skills to create healthier connections with others.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-brain"></i> Neurological Understanding</h4>
+                            <p>Psychology helps explain how the brain influences our experiences and behaviors, including in neurodiversity and various psychological conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-heart"></i> Self-Compassion</h4>
+                            <p>Develop a kinder relationship with yourself, reducing self-criticism and fostering emotional wellbeing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h4 class="info-card-title"><i class="fas fa-balance-scale"></i> Life Balance</h4>
+                            <p>Clarify your values and priorities to create a more meaningful and balanced life aligned with what matters most to you.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Credentials and Awards Section -->
-                <div class="credentials-section">
-                    <h3>Credentials & Achievements</h3>
-                    
-                    <div class="credentials-list">
-                        <h4>Qualifications</h4>
-                        <ul>
-                            <li>Registered Clinical Psychologist</li>
-                            <li>PhD in Clinical Psychology</li>
-                            <li>Member of the Psychological Society of Ireland</li>
-                        </ul>
+                <!-- Common Myths Section -->
+                <h3 class="section-title">Common Myths About Psychology</h3>
+                <div class="psychology-content">
+                    <p>Despite the scientific foundations of psychology, several misconceptions persist about psychological therapy and services. Let's address some common myths:</p>
+                </div>
+                
+                <div class="myth-fact-container">
+                    <div class="myth-fact-item">
+                        <div class="myth">
+                            <i class="fas fa-times-circle"></i> <strong>MYTH:</strong> Therapy is only for people with severe mental illness.
+                        </div>
+                        <div class="explanation">
+                            <p>Many people believe that seeking psychological help is only necessary in extreme circumstances or crises.</p>
+                        </div>
+                        <div class="fact">
+                            <i class="fas fa-check-circle"></i> <strong>FACT:</strong> Psychology benefits people across a wide spectrum of needs and challenges.
+                        </div>
                     </div>
                     
-                    <div class="credentials-list">
-                        <h4>Specializations</h4>
-                        <ul>
-                            <li>Cognitive Behavioral Therapy (CBT)</li>
-                            <li>Trauma-Focused Therapy</li>
-                            <li>Anxiety and Depression Treatment</li>
-                            <li>Family and Relationship Counseling</li>
-                        </ul>
+                    <div class="myth-fact-item">
+                        <div class="myth">
+                            <i class="fas fa-times-circle"></i> <strong>MYTH:</strong> Psychologists just listen while you talk about your problems.
+                        </div>
+                        <div class="explanation">
+                            <p>There's a misconception that therapy is passive and simply involves talking about feelings without practical outcomes.</p>
+                        </div>
+                        <div class="fact">
+                            <i class="fas fa-check-circle"></i> <strong>FACT:</strong> Modern psychological approaches are active, collaborative, and often involve practical strategies and skills development.
+                        </div>
                     </div>
                     
-                    <div class="credentials-list">
-                        <h4>Professional Development</h4>
-                        <ul>
-                            <li>Certified in EMDR Therapy</li>
-                            <li>Advanced Training in Mindfulness-Based Interventions</li>
-                            <li>Continuing Professional Development in Evidence-Based Practices</li>
-                        </ul>
+                    <div class="myth-fact-item">
+                        <div class="myth">
+                            <i class="fas fa-times-circle"></i> <strong>MYTH:</strong> Going to therapy means you're weak or can't handle your own problems.
+                        </div>
+                        <div class="explanation">
+                            <p>Some people worry that seeking help indicates personal failure or weakness.</p>
+                        </div>
+                        <div class="fact">
+                            <i class="fas fa-check-circle"></i> <strong>FACT:</strong> Seeking psychological support demonstrates self-awareness and strength, just as consulting any specialist for their expertise.
+                        </div>
                     </div>
+                    
+                    <div class="myth-fact-item">
+                        <div class="myth">
+                            <i class="fas fa-times-circle"></i> <strong>MYTH:</strong> Therapy takes years of weekly sessions to be effective.
+                        </div>
+                        <div class="explanation">
+                            <p>Media portrayals often depict therapy as a never-ending process with limited results.</p>
+                        </div>
+                        <div class="fact">
+                            <i class="fas fa-check-circle"></i> <strong>FACT:</strong> Many evidence-based approaches can produce significant improvements in relatively short timeframes, often within 8-20 sessions.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- What to Expect Section -->
+                <h3 class="section-title">The Psychological Journey</h3>
+                <div class="psychology-content">
+                    <p>When you engage with psychological services at Hazelwood Clinic, you begin a journey of self-discovery and growth. While each person's experience is unique, here's what you might expect:</p>
+                </div>
+                
+                <div class="journey-steps">
+                    <div class="journey-line"></div>
+                    
+                    <div class="journey-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Initial Consultation</div>
+                        <p>Your first appointment focuses on understanding your concerns, gathering relevant history, and establishing your goals for therapy. This session helps determine the most appropriate approach for your specific needs.</p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Assessment</div>
+                        <p>Depending on your situation, we may conduct a comprehensive assessment to better understand your challenges. This might include standardized measures, interviews, and exploration of relevant factors in your life.</p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Collaborative Planning</div>
+                        <p>Together, we'll develop a treatment plan tailored to your needs and preferences. We'll discuss potential approaches, expected timeframes, and how progress will be measured.</p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Active Therapy</div>
+                        <p>During regular sessions, we'll work on addressing your concerns using evidence-based techniques. This may involve developing new skills, exploring patterns, processing emotions, or changing behaviors.</p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-number">5</div>
+                        <div class="step-title">Progress Monitoring</div>
+                        <p>We'll regularly review your progress toward your goals, making adjustments to our approach as needed. This ensures that therapy remains effective and aligned with your evolving needs.</p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <div class="step-number">6</div>
+                        <div class="step-title">Conclusion and Maintenance</div>
+                        <p>As you achieve your goals, we'll work on consolidating your gains and developing strategies to maintain progress. Some clients benefit from occasional "booster" sessions to reinforce skills and prevent relapse.</p>
+                    </div>
+                </div>
+                
+                <!-- Who Benefits Section -->
+                <h3 class="section-title">Who Benefits from Psychological Services?</h3>
+                <div class="psychology-content">
+                    <p>Psychological approaches can benefit almost anyone interested in improving their mental wellbeing or addressing specific concerns. At Hazelwood Clinic, we work with:</p>
+                    
+                    <ul class="bullet-list">
+                        <li><strong>Individuals experiencing psychological distress</strong> such as anxiety, depression, trauma, or stress</li>
+                        <li><strong>People seeking to understand themselves better</strong> and improve their self-awareness</li>
+                        <li><strong>Those navigating life transitions</strong> such as career changes, relationship shifts, or identity development</li>
+                        <li><strong>Individuals with neurodevelopmental differences</strong> such as ADHD or autism seeking support for related challenges</li>
+                        <li><strong>People wanting to improve their relationships</strong> with partners, family members, friends, or colleagues</li>
+                        <li><strong>Those seeking to overcome past traumas</strong> and build resilience</li>
+                        <li><strong>Individuals looking to develop better coping skills</strong> for managing difficult emotions or situations</li>
+                        <li><strong>People interested in personal growth</strong> and maximizing their potential</li>
+                    </ul>
+                    
+                    <p>Our psychological services are available to adults, adolescents, and children, with approaches tailored to each age group and developmental stage.</p>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h3 class="cta-title">Begin Your Journey with Hazelwood Clinic</h3>
+                    <p>Whether you're facing specific challenges or simply interested in personal growth, our team of experienced psychologists is here to support you.</p>
+                    <a href="#contact" class="cta-button">Book an Initial Consultation</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', loadBiography);
-
-    function loadBiography() {
-        const CACHE_KEY = 'about_biography_cache';
-        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
-        
-        // Base URL for the published Google Sheet
-        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
-        // Add the gid parameter to specify the 'About' sheet
-        const aboutSheetGid = "159040093";
-        const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-        
-        const loadingElement = document.getElementById('loading-biography');
-        const contentElement = document.getElementById('biography-content');
-        const fallbackElement = document.getElementById('biography-fallback');
-        
-        // Check cache first
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        if (cachedData) {
-            const { content, timestamp } = JSON.parse(cachedData);
-            const age = Date.now() - timestamp;
-            
-            if (age < CACHE_DURATION) {
-                displayContent(content);
-                return;
-            }
-        }
-        
-        // Fetch content from Google Sheets
-        fetch(csvUrl)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                return response.text();
-            })
-            .then(csvText => {
-                // Parse the CSV properly including handling quoted values
-                try {
-                    const parsedContent = parseCSV(csvText);
-                    
-                    if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
-                        const contentValue = parsedContent[1][0]; // Get first column of second row
-                        
-                        // Cache the content
-                        localStorage.setItem(CACHE_KEY, JSON.stringify({
-                            content: contentValue,
-                            timestamp: Date.now()
-                        }));
-                        
-                        displayContent(contentValue);
-                    } else {
-                        showFallback();
-                    }
-                } catch (e) {
-                    console.error('Error parsing CSV:', e);
-                    showFallback();
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching content:', error);
-                showFallback();
-            });
-            
-        function displayContent(content) {
-            contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
-            loadingElement.style.display = 'none';
-            contentElement.style.display = 'block';
-        }
-        
-        function showFallback() {
-            loadingElement.style.display = 'none';
-            fallbackElement.style.display = 'block';
-        }
-    }
-    
-    // Proper CSV parser that handles quoted cells with line breaks
-    function parseCSV(csvText) {
-        const result = [];
-        let row = [];
-        let currentValue = '';
-        let insideQuotes = false;
-        
-        for (let i = 0; i < csvText.length; i++) {
-            const char = csvText[i];
-            const nextChar = csvText[i + 1];
-            
-            if (char === '"') {
-                if (insideQuotes && nextChar === '"') {
-                    // Escaped quote inside quotes
-                    currentValue += '"';
-                    i++; // Skip the next quote
-                } else {
-                    // Toggle quote state
-                    insideQuotes = !insideQuotes;
-                }
-            } else if (char === ',' && !insideQuotes) {
-                // End of field
-                row.push(currentValue);
-                currentValue = '';
-            } else if ((char === '\r' || char === '\n') && !insideQuotes) {
-                // End of line
-                if (currentValue !== '' || row.length > 0) {
-                    row.push(currentValue);
-                    result.push(row);
-                    row = [];
-                    currentValue = '';
-                }
-                
-                // Skip the next character if it's a line feed after a carriage return
-                if (char === '\r' && nextChar === '\n') {
-                    i++;
-                }
-            } else {
-                // Regular character
-                currentValue += char;
-            }
-        }
-        
-        // Don't forget the last row
-        if (currentValue !== '' || row.length > 0) {
-            row.push(currentValue);
-            result.push(row);
-        }
-        
-        return result;
-    }
-    </script>
-    
     <!-- Footer-->
     <div id="footer-placeholder"></div>
     
