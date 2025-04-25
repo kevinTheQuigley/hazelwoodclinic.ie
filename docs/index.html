@@ -3,342 +3,794 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Hazelwood Clinic</title>
+    <meta name="description" content="Hazelwood Clinic - Professional psychological services for adults, adolescents, and children in a warm, personal environment." />
+    <meta name="author" content="Hazelwood Clinic" />
+    <title>Hazelwood Clinic - Professional Psychological Services</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/styles.css"> 
-</head>
-<body>
-    
-<!-- Include header -->
-    <div id="header-placeholder"></div>
-
-<header class="masthead" style="background-image: 
-    linear-gradient(to right, var(--kq-green), 
-                       rgba(20, 88, 43, 0.2) 50%, 
-                       transparent),
-    url(assets/img/home.jpg);
-    display: flex; 
-    align-items: center;
-    min-height: 600px;">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5">  
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading text-start">  
-                    <h2 style="font-size: 2.6rem;">Hazelwood Clinic</h2>
-                    
-                    <div id="about-text" class="about-text-content mt-4">
-                        <div id="loading-about" class="text-center">
-                            <div class="loading-spinner"></div>
-                            <p>Loading content...</p>
-                        </div>
-                        <div id="about-content" style="display: none;"></div>
-                        <div id="about-fallback" style="display: none;">
-                            <p>Welcome to Hazelwood Clinic, a dedicated psychology practice providing strength through support to adults, adolescents, and children. We are a team of qualified and experienced psychological professionals committed to delivering compassionate mental health services in a personal and friendly environment. At Hazelwood Clinic, we pride ourselves on offering fast and easy access to confidential psychological support, whether through face-to-face appointments or online sessions.
-                                
-                                Our approach is centered on meeting you where you are and providing the right support at the right time. Rest assured that all our practitioners maintain the highest standards of care and expertise, with appropriate accreditations and specialized training in their respective fields. Your mental wellbeing is our priority—we're here to support you through life's challenges with understanding and professional guidance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Services Section -->
-<section class="section__services py-5">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <h2 class="section-heading text-center mb-4">Services</h2>
-                <div class="services-list">
-                    <div class="service-item">
-                        <i class="fas fa-brain service-icon"></i>
-                        <p>Psychology & Mental Health Services</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-comments service-icon"></i>
-                        <p>Professional Counseling & Therapy</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-users service-icon"></i>
-                        <p>Individual, Couple & Family Support</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-clipboard-check service-icon"></i>
-                        <p>Evidence-based Treatment Approaches</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    :root {
-        --kq-green: #14582B;
-        --kq-greenLight: #4B8860;
-    }
-    
-    .masthead {
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-    }
-    
-    .about-text-content {
-        min-height: 80px;
-        color: #fff;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        max-width: 90%;
-    }
-    
-    .section__about-us {
-        padding: 5rem 0;
-        background-color: #f8f9fa;
-    }
-    
-    .section__action {
-        padding: 5rem 0;
-    }
-    
-    .section__action.alt {
-        background-color: #fff;
-    }
-    
-    .loading-spinner {
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        border: 0.2rem solid rgba(255, 255, 255, 0.2);
-        border-top-color: #ffffff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-    
-    /* Make text more readable on the masthead */
-    #about-content p, #about-fallback p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-top: 1rem;
-    }
-    
-    /* Services section styles */
-    .section__services {
-        background-color: #f8f9fa;
-    }
-    
-    .section-heading {
-        color: var(--kq-green);
-        font-weight: 700;
-        margin-bottom: 2rem;
-    }
-    
-    .services-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .service-item {
-        display: flex;
-        align-items: center;
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .service-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    .service-icon {
-        color: var(--kq-green);
-        font-size: 1.8rem;
-        margin-right: 1.5rem;
-        min-width: 2.5rem;
-        text-align: center;
-    }
-    
-    .service-item p {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: #333;
-    }
-    
-    /* Responsive adjustments */
-    @media(max-width:768px) {
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Custom Styles for Enhanced Home Page */
+        :root {
+            --transition-speed: 0.4s;
+        }
+        
         .masthead {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-            min-height: 500px;
+            position: relative;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            transition: all var(--transition-speed) ease;
         }
         
         .about-text-content {
-            max-width: 100%;
+            min-height: 150px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            position: relative;
         }
         
-        .service-item {
-            padding: 1.2rem;
+        #about-text p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
         
-        .service-icon {
+        .welcome-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--kq-greenLight);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transform: translateY(0);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--kq-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--kq-greenLight);
+            transform: translateY(-3px);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--kq-green);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--kq-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
+        
+        .feature-content {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--kq-green);
+            font-family: 'Lora', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-img-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-card:hover .team-img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--kq-green);
+            margin-bottom: 0.5rem;
+            font-family: 'Lora', serif;
+        }
+        
+        .team-position {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .team-description {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 5rem 0;
+            background-color: #f5f8f5;
+            position: relative;
+        }
+        
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            text-align: center;
+            position: relative;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 2.5rem;
+            color: var(--kq-greenLight);
+            opacity: 0.3;
+            position: absolute;
+            font-family: 'Lora', serif;
+        }
+        
+        .testimonial-text::before {
+            left: -15px;
+            top: -20px;
+        }
+        
+        .testimonial-text::after {
+            right: -15px;
+            bottom: -40px;
+        }
+        
+        .client-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--kq-green);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .client-position {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: var(--kq-green);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            background-color: white;
+        }
+        
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--kq-green);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: #f0f5f0;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 1.5rem 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .masthead {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .masthead {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            
+            #about-text p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial {
+                padding: 1.5rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Floating Contact Button */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--kq-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .floating-contact:hover {
+            background-color: var(--kq-greenLight);
+            transform: scale(1.1);
+        }
+        
+        .floating-contact i {
             font-size: 1.5rem;
-            margin-right: 1rem;
         }
-    }
-</style>
-
-<!-- Include footer -->
-<div id="footer-placeholder"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/scripts.js"></script>
-
-<!-- Script to load header and footer -->
-<script>
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background-color: rgba(75, 136, 96, 0.7);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--kq-green);
+            transform: translateY(-5px);
+        }
+        
+        /* Animation for page elements */
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Statistics counter */
+        .stats-section {
+            padding: 4rem 0;
+            background-color: var(--kq-green);
+            color: white;
+        }
+        
+        .stats-container {
+            text-align: center;
+        }
+        
+        .stat-item {
+            margin-bottom: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Lora', serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include header -->
+    <div id="header-placeholder"></div>
     
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-
-    // Google Sheets content loading script
-    document.addEventListener('DOMContentLoaded', loadAboutContent);
-
-    function loadAboutContent() {
-        const CACHE_KEY = 'about_content_cache';
-        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
-        const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
-        const loadingElement = document.getElementById('loading-about');
-        const contentElement = document.getElementById('about-content');
-        const fallbackElement = document.getElementById('about-fallback');
-        
-        // Clear any existing cache to ensure we get fresh content
-        localStorage.removeItem(CACHE_KEY);
-        
-        // Check cache first
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        if (cachedData) {
-            const { content, timestamp } = JSON.parse(cachedData);
-            const age = Date.now() - timestamp;
+    <!-- Masthead/Hero Section -->
+    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/home.jpg');">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">  
+                <div class="col-md-10 col-lg-8">
+                    <div class="site-heading text-start"> 
+                        <span class="welcome-badge">Welcome to</span>
+                        <h1 style="font-size: 3rem; color: white; margin-bottom: 1.5rem;">Hazelwood Clinic</h1>
+                        
+                        <div id="about-text" class="about-text-content mt-4 animate">
+                            <div id="loading-about" class="text-center">
+                                <div class="spinner-border text-light" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2">Loading content...</p>
+                            </div>
+                            <div id="about-content" style="display: none;"></div>
+                            <div id="about-fallback" style="display: none;">
+                                <p>Welcome to Hazelwood Clinic, a dedicated psychology practice providing strength through support to adults, adolescents, and children. We are a team of qualified and experienced psychological professionals committed to delivering compassionate mental health services in a personal and friendly environment.</p>
+                                <p>At Hazelwood Clinic, we pride ourselves on offering fast and easy access to confidential psychological support, whether through face-to-face appointments or online sessions. Our approach is centered on meeting you where you are and providing the right support at the right time.</p>
+                                <a href="contact.html" class="cta-button">Book a Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container px-4 px-lg-5">
+            <h2 class="section-title animate">Why Choose Hazelwood Clinic</h2>
+            <p class="section-subtitle animate">Our commitment to personalized care and evidence-based approaches sets us apart.</p>
             
-            if (age < CACHE_DURATION) {
-                displayContent(content);
-                return;
-            }
-        }
-        
-        // Fetch content from Google Sheets
-        fetch(csvUrl)
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-            })
-            .then(csvText => {
-                // Parse the CSV properly including handling quoted values
-                const parsedContent = parseCSV(csvText);
-                if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
-                    const contentValue = parsedContent[1][0]; // Get first column of second row
-                    
-                    // Cache the content
-                    localStorage.setItem(CACHE_KEY, JSON.stringify({
-                        content: contentValue,
-                        timestamp: Date.now()
-                    }));
-                    
-                    displayContent(contentValue);
-                } else {
-                    showFallback();
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching content:', error);
-                showFallback();
-            });
-            
-        function displayContent(content) {
-            contentElement.innerHTML = `<p>${content}</p>`;
-            loadingElement.style.display = 'none';
-            contentElement.style.display = 'block';
-        }
-        
-        function showFallback() {
-            loadingElement.style.display = 'none';
-            fallbackElement.style.display = 'block';
-        }
-        
-        // Proper CSV parser that handles quoted cells with line breaks
-        function parseCSV(csvText) {
-            const result = [];
-            let row = [];
-            let currentValue = '';
-            let insideQuotes = false;
-            
-            for (let i = 0; i < csvText.length; i++) {
-                const char = csvText[i];
-                const nextChar = csvText[i + 1];
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="feature-title">Holistic Care</h3>
+                        <p class="feature-content">We provide comprehensive psychological care that addresses the whole person, not just symptoms.</p>
+                    </div>
+                </div>
                 
-                if (char === '"') {
-                    if (insideQuotes && nextChar === '"') {
-                        // Escaped quote inside quotes
-                        currentValue += '"';
-                        i++; // Skip the next quote
-                    } else {
-                        // Toggle quote state
-                        insideQuotes = !insideQuotes;
-                    }
-                } else if (char === ',' && !insideQuotes) {
-                    // End of field
-                    row.push(currentValue);
-                    currentValue = '';
-                } else if ((char === '\r' || char === '\n') && !insideQuotes) {
-                    // End of line
-                    if (currentValue !== '' || row.length > 0) {
-                        row.push(currentValue);
-                        result.push(row);
-                        row = [];
-                        currentValue = '';
-                    }
-                    
-                    // Skip the next character if it's a line feed after a carriage return
-                    if (char === '\r' && nextChar === '\n') {
-                        i++;
-                    }
-                } else {
-                    // Regular character
-                    currentValue += char;
-                }
-            }
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="feature-title">Qualified Experts</h3>
+                        <p class="feature-content">Our team consists of certified professionals with extensive experience in various psychological specialties.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="feature-title">Evidence-Based</h3>
+                        <p class="feature-content">We utilize clinically-proven approaches, including ACT, CBT, and other evidence-based therapies.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="feature-card animate">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="feature-title">Compassionate Support</h3>
+                        <p class="feature-content">A warm, non-judgmental environment where you can feel safe and supported.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item animate">
+                        <div class="stat-number" id="years-counter">0</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="stat-item animate">
+                        <div class="stat-number" id="clients-counter">0</div>
+                        <div class="stat-label">Clients Helped</div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="stat-item animate">
+                        <div class="stat-number" id="specialists-counter">0</div>
+                        <div class="stat-label">Specialists</div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="stat-item animate">
+                        <div class="stat-number" id="satisfaction-counter">0</div>
+                        <div class="stat-label">% Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="team-section">
+        <div class="container px-4 px-lg-5">
+            <h2 class="section-title animate">Our Services</h2>
+            <p class="section-subtitle animate">We offer a wide range of psychological services to meet the diverse needs of our clients.</p>
             
-            // Don't forget the last row
-            if (currentValue !== '' || row.length > 0) {
-                row.push(currentValue);
-                result.push(row);
-            }
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="team-card animate" onclick="window.location.href='servicesAssessment.html'">
+                        <div class="team-img-container">
+                            <img src="assets/img/services.jpg" alt="Assessment Services" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Assessment Services</h3>
+                            <p class="team-description">Comprehensive evaluations to identify specific needs and develop personalized treatment plans.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="team-card animate" onclick="window.location.href='servicesTreatment.html'">
+                        <div class="team-img-container">
+                            <img src="assets/img/home.jpg" alt="Treatment Options" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Treatment Options</h3>
+                            <p class="team-description">Evidence-based therapeutic services for anxiety, mood disorders, trauma recovery, and more.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="team-card animate" onclick="window.location.href='servicesConsultation.html'">
+                        <div class="team-img-container">
+                            <img src="assets/img/about.jpg" alt="Consultation Services" class="team-img">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Consultation Services</h3>
+                            <p class="team-description">Professional consultations for practitioners, organizations, and educational institutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            return result;
-        }
-    }
-</script>
-</body>
-</html>
+            <div class="text-center mt-4">
+                <a href="services.html" class="cta-button animate">View All Services</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container px-4 px-lg-5">
+            <h2 class="section-title animate">What Our Clients Say</h2>
+            <p class="section-subtitle animate">We're dedicated to providing the highest quality of care for all our clients.</p>
+            
+            <div class="testimonials-container animate">
+                <div class="testimonial active">
+                    <div class="testimonial-text">
+                        The support I received at Hazelwood Clinic was transformative. Their compassionate approach and evidence-based techniques helped me develop effective coping strategies that I continue to use years later.
+                    </div>
+                    <div class="client-info">
+                        <div class="client-name">M.D.</div>
+                        <div class="client-position">Client</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        As a parent, I was concerned about finding the right support for my teenager. The team at Hazelwood Clinic were exceptional in creating a safe space where my child felt comfortable opening up and working through their challenges.
+                    </div>
+                    <div class="client-info">
+                        <div class="client-name">J.T.</div>
+                        <div class="client-position">Parent</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        The assessment process was thorough and insightful. For the first time, I felt truly understood, and the personalized treatment plan has made a significant difference in my daily life and overall wellbeing.
+                    </div>
+                    <div class="client-info">
+                        <div class="client-name">S.K.</div>
+                        <div class="client-position">Client</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container px-4 px-lg-5">
+            <h2 class="section-title animate">Frequently Asked Questions</h2>
+            <p class="section-subtitle animate">Find answers to common questions about our services.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What types of therapy do you offer?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>At Hazelwood Clinic, we offer a variety of evidence-based therapeutic approaches, including Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), Eye Movement Desensitization and Reprocessing (EMDR), Internal Family Systems (IFS), and more. Our clinicians tailor their approach to meet your specific needs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>How long does therapy typically last?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>The duration of therapy varies based on individual needs and goals. While some clients may experience significant improvements in 8-12 sessions, others may benefit from longer-term support. We regularly review progress and adjust our approach accordingly to ensure you're receiving the right level of care.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>Do you offer both in-person and online sessions?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, we provide both in-person appointments at our clinic and secure online sessions. Many of our services can be delivered effectively through telehealth, offering flexibility and accessibility for those who prefer or require remote options.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>What age groups do you work with?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our services are available to children, adolescents, and adults. We have specialists experienced in working with different age groups and developmental stages, ensuring appropriate and effective care for all our clients.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>How can I schedule an appointment?</span>
