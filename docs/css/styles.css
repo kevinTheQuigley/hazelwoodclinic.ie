@@ -3658,8 +3658,8 @@ textarea.form-control-lg {
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: var(--kq-blue);
-  --bs-navbar-brand-hover-color: var(--kq-blueLight);
+  --bs-navbar-brand-color: var(--kq-green);
+  --bs-navbar-brand-hover-color: var(--kq-greenLight);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -10595,7 +10595,7 @@ blockquote {
   right: 0;
   z-index: 1030;
   border-bottom: 1px solid #dee2e6;
-  color: var(--kq-blue);
+  color: var(--kq-green);
   font-family: "Roboto", sans-serif;
   /*font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
 }
@@ -10610,7 +10610,7 @@ blockquote {
   background-color: white; /* Add this line */
 }
 #mainNav .navbar-nav > li.nav-item > a.nav-link {
-  color: var(--kq-blue); 
+  color: var(--kq-green); 
   font-size: 0.9rem;
   font-weight: 1000;
   letter-spacing: 0.0625em;
@@ -10618,7 +10618,7 @@ blockquote {
 }
 @media (max-width: 992px) {
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
-    color: var(--kq-blue); /* Use kq-blue for reduced screen widths */
+    color: var(--kq-green); /* Use kq-green for reduced screen widths */
   }
 }
 @media (min-width: 992px) {
@@ -10628,19 +10628,19 @@ blockquote {
     /*background: transparent;*/
   }
   #mainNav .navbar-brand {
-    color: var(--kq-blue); 
+    color: var(--kq-green); 
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: var(--kq-blueLight);
+    color: var(--kq-greenLight);
     /*color: rgba(255, 255, 255, 0.8);*/
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
-    color: var(--kq-blue);
+    color: var(--kq-green);
     /*color: #fff;*/
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-    color: var(--kq-blueLight);
-    /*color: lighten(var(--kq-blue), 30%);*/
+    color: var(--kq-greenLight);
+    /*color: lighten(var(--kq-green), 30%);*/
     /*color: rgba(255, 255, 255, 0.8);*/
   }
 }
@@ -10665,7 +10665,7 @@ blockquote {
     color: #0085A1;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: var(--kq-blue);
+    color: var(--kq-green);
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
     color: #0085A1;
@@ -10854,20 +10854,20 @@ header.masthead .post-heading .meta a {
 
 @media (max-width: 991.98px) {
     .navbar-nav .nav-link {
-        color: var(--kq-blue) !important; /* Set text to kq-blue for small screens */
+        color: var(--kq-green) !important; /* Set text to kq-green for small screens */
     }
 
     .navbar-nav .nav-link:hover, 
     .navbar-nav .nav-link:focus {
-        color: var(--kq-blueLight) !important; /* Optional hover/focus effect */
+        color: var(--kq-greenLight) !important; /* Optional hover/focus effect */
     }
 
     .navbar-collapse .dropdown-item {
-        color: var(--kq-blue) !important; /* Ensure dropdown items are blue */
+        color: var(--kq-green) !important; /* Ensure dropdown items are blue */
     }
 
     .navbar-collapse .dropdown-item:hover {
         color: var(--bs-white) !important; /* Optional: Change color on hover */
-        background-color: var(--kq-blueLight) !important; /* Add hover background */
+        background-color: var(--kq-greenLight) !important; /* Add hover background */
     }
 }
