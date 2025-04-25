@@ -31,10 +31,6 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading text-start">  
                     <h2 style="font-size: 2.6rem;">Hazelwood Clinic</h2>
-                    <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Psychology & Mental Health Services</p>
-                    <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Professional Counseling & Therapy</p>
-                    <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Individual, Couple & Family Support</p>
-                    <p class="subheading" style="font-size: 1.1rem;">Evidence-based Treatment Approaches</p>
                     
                     <div id="about-text" class="about-text-content mt-4">
                         <div id="loading-about" class="text-center">
@@ -54,6 +50,34 @@
     </div>
 </header>
 
+<!-- Services Section -->
+<section class="section__services py-5">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h2 class="section-heading text-center mb-4">Services</h2>
+                <div class="services-list">
+                    <div class="service-item">
+                        <i class="fas fa-brain service-icon"></i>
+                        <p>Psychology & Mental Health Services</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-comments service-icon"></i>
+                        <p>Professional Counseling & Therapy</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-users service-icon"></i>
+                        <p>Individual, Couple & Family Support</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-clipboard-check service-icon"></i>
+                        <p>Evidence-based Treatment Approaches</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
     :root {
@@ -107,6 +131,53 @@
         margin-top: 1rem;
     }
     
+    /* Services section styles */
+    .section__services {
+        background-color: #f8f9fa;
+    }
+    
+    .section-heading {
+        color: var(--kq-green);
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+    
+    .services-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .service-item {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-icon {
+        color: var(--kq-green);
+        font-size: 1.8rem;
+        margin-right: 1.5rem;
+        min-width: 2.5rem;
+        text-align: center;
+    }
+    
+    .service-item p {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    
     /* Responsive adjustments */
     @media(max-width:768px) {
         .masthead {
@@ -117,6 +188,15 @@
         
         .about-text-content {
             max-width: 100%;
+        }
+        
+        .service-item {
+            padding: 1.2rem;
+        }
+        
+        .service-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
         }
     }
 </style>
