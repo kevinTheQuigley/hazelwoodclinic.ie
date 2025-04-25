@@ -310,5 +310,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial body padding based on header height
     const headerHeight = navbar.offsetHeight;
     document.body.style.paddingTop = headerHeight + 'px';
+
+    // Make sure Bootstrap's collapse and dropdown functionality is initialized
+    if (typeof bootstrap !== 'undefined') {
+        // Initialize all dropdowns
+        var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+        dropdownElementList.map(function (dropdownToggleEl) {
+            return new bootstrap.Dropdown(dropdownToggleEl)
+        });
+    }
 });
 </script>
