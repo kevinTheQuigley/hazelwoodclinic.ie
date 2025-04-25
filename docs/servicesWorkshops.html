@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Comprehensive psychological services offered by Hazelwood Clinic including assessments, treatment, and therapeutic approaches" />
+        <meta name="description" content="Professional consultation services for practitioners, organizations, and educational institutions from Hazelwood Clinic" />
         <meta name="author" content="Hazelwood Clinic" />
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-        <title>Services - Hazelwood Clinic</title>
+        <title>Consultation Services - Hazelwood Clinic</title>
         <link rel="stylesheet" href="css/styles.css">
         <style>
             :root {
@@ -31,7 +31,7 @@
             
             .service-section {
                 margin: 2rem auto;
-                max-width: 1200px;
+                max-width: 900px;
                 padding: 0 1rem;
             }
             
@@ -42,11 +42,6 @@
                 border-radius: 8px;
                 margin-bottom: 2rem;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                transition: transform 0.3s ease;
-            }
-            
-            .service-card:hover {
-                transform: translateY(-5px);
             }
             
             .service-card h2 {
@@ -101,31 +96,67 @@
                 color: var(--text-color);
             }
             
-            .insurance-note {
-                background-color: var(--kq-greenLight);
+            .breadcrumb {
+                background-color: transparent;
+                padding: 0.5rem 0;
+                margin-bottom: 1rem;
+            }
+            
+            .breadcrumb-item a {
+                color: var(--kq-green);
+                text-decoration: none;
+            }
+            
+            .breadcrumb-item.active {
+                color: var(--text-color);
+            }
+            
+            .consultation-item {
+                background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
+                border-radius: 6px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .consultation-item h3 {
+                color: var(--kq-greenLight);
+                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            
+            .consultation-benefits {
+                margin-top: 2rem;
+                background-color: rgba(255,255,255,0.1);
+                padding: 1.5rem;
+                border-radius: 6px;
+            }
+            
+            .consultation-benefits h3 {
+                color: var(--kq-greenLight);
+                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            
+            .cta-section {
+                background-color: var(--kq-greenLight);
+                padding: 2rem;
                 border-radius: 8px;
                 margin-top: 3rem;
                 text-align: center;
             }
             
-            .insurance-note h3 {
+            .cta-section h3 {
                 color: var(--kq-green);
                 margin-bottom: 1rem;
                 font-family: 'Lora', serif;
             }
             
-            .therapy-subheading {
-                color: var(--kq-greenLight);
-                font-weight: 600;
-                margin-top: 1rem;
-                margin-bottom: 0.5rem;
-            }
-            
             .cta-button {
                 display: inline-block;
-                background-color: var(--kq-greenLight);
-                color: var(--kq-green);
+                background-color: var(--kq-green);
+                color: white;
                 padding: 0.75rem 1.5rem;
                 border-radius: 4px;
                 font-weight: 600;
@@ -135,7 +166,9 @@
             }
             
             .cta-button:hover {
-                background-color: white;
+                background-color: var(--kq-greenDark);
+                color: white;
+                text-decoration: none;
             }
             
             @media (max-width: 768px) {
@@ -157,7 +190,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading text-center text-white">
-                            <h2 class="services-header">Services</h2>
+                            <h2 class="services-header">Consultation Services</h2>
                         </div>
                     </div>
                 </div>
@@ -168,8 +201,15 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+                                <li class="breadcrumb-item active">Consultation Services</li>
+                            </ol>
+                        </nav>
+                        
                         <div class="service-intro">
-                            <p class="lead">Hazelwood Clinic offers comprehensive psychological services for adults, children, and adolescents in a warm, non-judgmental environment, delivered by experienced Senior Clinical Psychologists.</p>
+                            <p class="lead">Hazelwood Clinic offers professional consultation services for fellow practitioners, organizations, and educational institutions, providing specialized expertise and guidance.</p>
                         </div>
                     </div>
                 </div>
@@ -177,92 +217,87 @@
             
             <div class="service-section">
                 <div class="service-card">
-                    <h2>Assessment Services</h2>
-                    <p>Comprehensive psychological evaluations tailored to identify specific needs and develop personalized treatment plans.</p>
-                    <ul>
-                        <li>ADHD Assessments for children and adults, including comprehensive evaluations using clinical interviews, standardized measures, and behavioral analysis</li>
-                        <li>Court-Mandated Assessments for legal proceedings, including custody disputes and parental capacity evaluations</li>
-                        <li>Voice of the Child Reports to ensure children's perspectives are represented in family law cases</li>
-                        <li>General psychological assessments for learning difficulties, mood disorders, anxiety, and other mental health conditions</li>
-                        <li>Neurodiversity assessments related to autism spectrum and other developmental conditions</li>
-                    </ul>
-                    <p>Each assessment includes thorough documentation and practical recommendations to support your journey forward.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h2>Treatment Options</h2>
-                    <p>Evidence-based therapeutic services addressing a wide range of psychological concerns:</p>
-                    <ul>
-                        <li>Anxiety and mood disorders, including depression and bipolar disorder</li>
-                        <li>Trauma recovery and PTSD treatment</li>
-                        <li>Support for neurodiversity-related challenges (ADHD, Autism)</li>
-                        <li>LGBTQI+ and polyamorous community support</li>
-                        <li>Identity exploration and development</li>
-                        <li>Treatment-resistant mental health disorders</li>
-                        <li>Relational challenges and interpersonal difficulties</li>
-                    </ul>
-                    <p>Dr. Quigley specializes in working with clients who have not found success with previous therapy approaches, offering new pathways for healing and growth.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h2>Types of Therapies</h2>
-                    <p>Dr. Quigley integrates multiple evidence-based approaches to meet each client's unique needs:</p>
-                    
-                    <div class="therapy-subheading">Cognitive Behavioural Therapy (CBT)</div>
-                    <p>A widely researched therapy proven effective for anxiety disorders, depression, PTSD, and OCD. CBT helps identify unhelpful thought patterns, challenge them, and replace them with healthier ways of thinking and behaving. Particularly effective for treating OCD.</p>
-                    
-                    <div class="therapy-subheading">Eye Movement Desensitization and Reprocessing (EMDR)</div>
-                    <p>A structured therapy specifically designed to help process and resolve traumatic memories through bilateral stimulation techniques. EMDR reduces trauma symptoms while enhancing self-esteem and resilience. Especially effective for single-incident traumas, with a blended approach used for complex trauma.</p>
-                    
-                    <div class="therapy-subheading">Internal Family Systems (IFS)</div>
-                    <p>An innovative approach that views the mind as composed of distinct "parts," each with unique feelings and roles. Effective for trauma, emotional regulation, and self-esteem issues, IFS fosters greater self-compassion by addressing wounded parts and nurturing the "Self."</p>
-                    
-                    <div class="therapy-subheading">Acceptance and Commitment Therapy (ACT)</div>
-                    <p>Promotes acceptance and psychological flexibility to manage difficult thoughts and emotions. Based in mindfulness and behavioral change principles, ACT helps clients focus on their values and take aligned actions. Particularly helpful for anxiety, depression, chronic stress, and life transitions.</p>
-                    
-                    <div class="therapy-subheading">Compassion-Focused Therapy (CFT)</div>
-                    <p>Designed for individuals struggling with self-criticism, shame, and emotional pain. CFT cultivates self-compassion and emotional resilience by integrating mindfulness, neuroscience, and evolutionary psychology to foster safety and self-kindness.</p>
-                    
-                    <div class="therapy-subheading">Psychodynamic Psychotherapy</div>
-                    <p>Explores unconscious influences of past relationships and experiences on current behaviors and emotions. Helpful for understanding relational patterns, identity struggles, and unresolved emotional pain, building more meaningful connections with self and others.</p>
-                </div>
-                
-                <div class="service-card">
                     <h2>Consultation Services</h2>
-                    <p>Professional consultation services for fellow practitioners, organizations, and educational institutions:</p>
-                    <ul>
-                        <li>Clinical case consultation for complex or treatment-resistant cases</li>
-                        <li>Supervision for early-career psychologists and therapists</li>
-                        <li>Collaborative care coordination with other healthcare providers</li>
-                        <li>Guidance on integrating evidence-based therapeutic approaches</li>
-                        <li>Specialized consultation on neurodiversity-affirming practices</li>
-                    </ul>
-                    <p>Dr. Quigley welcomes collaboration with other mental health professionals and is available to provide second opinions or adjunctive support alongside existing treatment.</p>
+                    <p>Dr. Quigley welcomes collaboration with other mental health professionals and is available to provide expert consultation, second opinions, or adjunctive support alongside existing treatment. Our consultation services include:</p>
+                    
+                    <div class="consultation-item">
+                        <h3>Clinical Case Consultation</h3>
+                        <p>Expert guidance for complex or treatment-resistant cases:</p>
+                        <ul>
+                            <li>Diagnostic clarification and treatment planning</li>
+                            <li>Case conceptualization from multiple theoretical perspectives</li>
+                            <li>Guidance on addressing therapeutic impasses</li>
+                            <li>Recommendations for additional assessment or intervention approaches</li>
+                            <li>Support for cases involving trauma, neurodiversity, or complex presentations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consultation-item">
+                        <h3>Supervision for Mental Health Professionals</h3>
+                        <p>Supportive supervision for early-career psychologists and therapists:</p>
+                        <ul>
+                            <li>Clinical skills development and enhancement</li>
+                            <li>Ethical decision-making guidance</li>
+                            <li>Support for personal and professional development</li>
+                            <li>Case-based learning and reflective practice</li>
+                            <li>Preparation for professional registration and accreditation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consultation-item">
+                        <h3>Collaborative Care Coordination</h3>
+                        <p>Coordination with other healthcare providers for integrated care:</p>
+                        <ul>
+                            <li>Multidisciplinary team consultation</li>
+                            <li>Liaison with physicians, psychiatrists, and other specialists</li>
+                            <li>Input for comprehensive treatment planning</li>
+                            <li>Supporting transitions between different levels of care</li>
+                            <li>Coordinated approach for complex or high-risk cases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consultation-item">
+                        <h3>Therapeutic Approach Integration</h3>
+                        <p>Guidance on integrating evidence-based therapeutic approaches:</p>
+                        <ul>
+                            <li>Training in specific therapeutic modalities (CBT, EMDR, IFS, etc.)</li>
+                            <li>Support for integrating multiple approaches</li>
+                            <li>Adapting therapeutic techniques for specific populations</li>
+                            <li>Implementing evidence-based protocols</li>
+                            <li>Enhancing therapeutic effectiveness through tailored approaches</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consultation-item">
+                        <h3>Neurodiversity-Affirming Practices</h3>
+                        <p>Specialized consultation on working with neurodivergent individuals:</p>
+                        <ul>
+                            <li>Understanding neurodiversity from a strengths-based perspective</li>
+                            <li>Adapting clinical practices for neurodivergent clients</li>
+                            <li>Creating neurodiversity-affirming environments</li>
+                            <li>Addressing sensory and executive functioning needs</li>
+                            <li>Supporting neurodivergent individuals across different contexts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consultation-benefits">
+                        <h3>Benefits of Professional Consultation</h3>
+                        <ul>
+                            <li>Enhanced clinical effectiveness and client outcomes</li>
+                            <li>Fresh perspectives on challenging cases</li>
+                            <li>Reduced professional isolation and burnout</li>
+                            <li>Opportunities for professional development</li>
+                            <li>Support for ethical decision-making</li>
+                            <li>Access to specialized knowledge and expertise</li>
+                            <li>Increased confidence in clinical approach</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <h2>Workshops & Training</h2>
-                    <p>Educational opportunities for professionals, organizations, and community groups:</p>
-                    <ul>
-                        <li>Professional development workshops on evidence-based therapeutic techniques</li>
-                        <li>Educational sessions on neurodiversity and inclusive practices</li>
-                        <li>Skill-building workshops for managing anxiety, stress, and trauma responses</li>
-                        <li>Customized training programs for healthcare teams and educational institutions</li>
-                        <li>Community workshops on mental wellness and psychological resilience</li>
-                    </ul>
-                    <p>Workshops can be tailored to specific audiences and needs. Contact us to discuss developing a workshop for your organization or group.</p>
-                </div>
-                
-                <div class="insurance-note">
-                    <h3>Insurance Coverage</h3>
-                    <p>Many Irish health insurance providers cover some or all of the costs of sessions with a Chartered Clinical Psychologist:</p>
-                    <ul style="display: inline-block; text-align: left;">
-                        <li>Irish Life: Covers up to 50% of costs, depending on the policy</li>
-                        <li>Laya Healthcare: Covers 50% of costs for up to 8 sessions annually under certain policies</li>
-                        <li>HSF Health Plan: Offers varying levels of reimbursement for clinical psychologist fees</li>
-                    </ul>
-                    <p>Dr. Quigley is happy to assist clients in navigating their insurance options to ensure they can access support.</p>
-                    <a href="#contact" class="cta-button">Book an Appointment</a>
+                <div class="cta-section">
+                    <h3>Interested in Consultation Services?</h3>
+                    <p>Contact Hazelwood Clinic to discuss your consultation needs and schedule an appointment. Consultation services can be arranged in person or via secure video conferencing.</p>
+                    <a href="contact.html" class="cta-button">Request Consultation</a>
                 </div>
             </div>
         </main>
