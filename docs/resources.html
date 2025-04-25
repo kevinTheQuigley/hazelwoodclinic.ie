@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Resources </title>
+    <meta name="description" content="Helpful resources and tools for mental health and wellbeing from Hazelwood Clinic" />
+    <meta name="author" content="Hazelwood Clinic" />
+    <title>Resources - Hazelwood Clinic</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -13,34 +13,334 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/styles.css"> 
     <style>
-        .publications-header {
+        .resources-header {
             font-size: 2.6rem;
+            color: white;
         }
-        .publication-title {
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
+        
+        .resources-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 0 1rem;
         }
-        .publication-details {
+        
+        .resource-section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            color: var(--kq-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--kq-green);
+            font-family: 'Lora', serif;
+        }
+        
+        .resource-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .resource-title {
+            color: var(--kq-green);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .resource-description {
+            margin-bottom: 1rem;
             font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .resource-link {
+            display: inline-block;
+            color: var(--kq-green);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            color: #1b5e20;
+            text-decoration: underline;
+        }
+        
+        .resource-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .resource-tag {
+            background-color: var(--kq-greenLight);
+            color: var(--kq-green);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
             margin-bottom: 0.5rem;
         }
-        .publication-doi {
-            font-size: 0.85rem;
+        
+        .download-item {
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-item:hover {
+            background-color: var(--kq-greenLight);
+        }
+        
+        .download-icon {
+            color: var(--kq-green);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        .download-content {
+            flex: 1;
+        }
+        
+        .download-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--kq-green);
+        }
+        
+        .download-description {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .download-button {
+            background-color: var(--kq-green);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .download-button:hover {
+            background-color: #1b5e20;
+        }
+        
+        .crisis-resources {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 3rem;
+        }
+        
+        .crisis-resources h3 {
+            color: #721c24;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .crisis-resources p {
+            margin-bottom: 1rem;
+            color: #721c24;
+        }
+        
+        .crisis-resources a {
+            font-weight: 600;
+        }
+        
+        .emergency-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #721c24;
+        }
+        
+        .contact-us-cta {
+            background-color: var(--kq-greenLight);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .contact-us-cta h3 {
+            color: var(--kq-green);
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--kq-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1b5e20;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .app-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .app-image {
+            height: 150px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .app-image i {
+            font-size: 3rem;
+            color: var(--kq-green);
+        }
+        
+        .app-info {
+            padding: 1.25rem;
+        }
+        
+        .app-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--kq-green);
+        }
+        
+        .app-description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .app-link {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--kq-green);
+            text-decoration: none;
+        }
+        
+        .app-link:hover {
+            text-decoration: underline;
+        }
+        
+        .book-section {
+            margin-bottom: 4rem;
+        }
+        
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .book-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .book-cover {
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .book-cover i {
+            font-size: 3rem;
+            color: var(--kq-green);
+        }
+        
+        .book-info {
+            padding: 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .book-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--kq-green);
+        }
+        
+        .book-author {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.75rem;
+        }
+        
+        .book-description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+            flex-grow: 1;
         }
     </style>
 </head>
-
 
 <body>
     <div id="header-placeholder"></div>
     
     <!-- Page Header-->
-    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent), url('assets/img/about.jpg'); height: 30vh;display: flex; align-items: center;">
+    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent), url('assets/img/resources.jpg'); height: 30vh;display: flex; align-items: center;">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="page-heading">
-                        <h2 class="publications-header">Publications</h2>
+                        <h2 class="resources-header">Resources</h2>
                     </div>
                 </div>
             </div>
@@ -50,174 +350,304 @@
     <!-- Main Content-->
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="col-md-10">
+                <div class="resources-intro">
+                    <p class="lead">We've compiled a collection of trusted resources to support your mental health journey. These tools complement the therapeutic work we do at Hazelwood Clinic, but are not substitutes for professional help if you're experiencing distress.</p>
+                </div>
                 
-                <!-- Loading spinner -->
-                <div id="loading-spinner" class="text-center mt-4">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                <!-- Crisis Resources Section -->
+                <div class="crisis-resources">
+                    <h3><i class="fas fa-exclamation-triangle me-2"></i> Crisis Resources</h3>
+                    <p>If you or someone you know is experiencing a mental health emergency, please use these resources:</p>
+                    <ul>
+                        <li><strong>Emergency Services:</strong> <span class="emergency-number">999/112</span></li>
+                        <li><strong>Samaritans Ireland:</strong> 116 123 (24/7 support)</li>
+                        <li><strong>Pieta House:</strong> 1800 247 247 (suicide prevention helpline)</li>
+                        <li><strong>Text About It:</strong> Text HELLO to 50808 (24/7 crisis text service)</li>
+                        <li><strong>Your GP</strong> or nearest Emergency Department</li>
+                    </ul>
+                </div>
+                
+                <!-- Self-Help Resources Section -->
+                <div class="resource-section">
+                    <h3 class="section-title">Self-Help Worksheets & Guides</h3>
+                    <p class="mb-4">These downloadable resources can help you develop skills and strategies to manage various mental health challenges.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-content">
+                                    <div class="download-title">Anxiety Management Toolkit</div>
+                                    <div class="download-description">Practical exercises and techniques for managing anxiety symptoms in daily life.</div>
+                                </div>
+                                <button class="download-button">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-content">
+                                    <div class="download-title">Thought Record Worksheet</div>
+                                    <div class="download-description">A CBT-based worksheet for identifying and challenging unhelpful thought patterns.</div>
+                                </div>
+                                <button class="download-button">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-content">
+                                    <div class="download-title">Mindfulness Practice Guide</div>
+                                    <div class="download-description">Introduction to mindfulness with simple exercises to incorporate into your routine.</div>
+                                </div>
+                                <button class="download-button">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-content">
+                                    <div class="download-title">Sleep Hygiene Checklist</div>
+                                    <div class="download-description">Tips and strategies for improving sleep quality and establishing healthy sleep habits.</div>
+                                </div>
+                                <button class="download-button">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-content">
+                                    <div class="download-title">Emotional Regulation Skills</div>
+                                    <div class="download-description">DBT-inspired techniques for managing intense emotions effectively.</div>
+                                </div>
+                                <button class="download-button">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="download-item">
+                                <div class="download-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="download-content">
+                                    <div class="download-title">Self-Compassion Exercises</div>
+                                    <div class="download-description">Activities to develop a kinder relationship with yourself and reduce self-criticism.</div>
+                                </div>
+                                <button class="download-button">Download</button>
+                            </div>
+                        </div>
                     </div>
-                    <p class="mt-2">Loading publications...</p>
                 </div>
                 
-                <!-- Publications list -->
-                <div id="publications-list" class="mt-4 d-none">
+                <!-- Recommended Apps Section -->
+                <div class="resource-section">
+                    <h3 class="section-title">Recommended Apps</h3>
+                    <p class="mb-4">These mobile applications can support your mental health between therapy sessions. Available on iOS and Android devices.</p>
+                    
+                    <div class="app-grid">
+                        <div class="app-card">
+                            <div class="app-image">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4 class="app-title">Headspace</h4>
+                                <p class="app-description">Guided meditation and mindfulness practices for stress reduction and improved focus.</p>
+                                <a href="#" class="app-link">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <div class="app-image">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4 class="app-title">Calm</h4>
+                                <p class="app-description">Sleep stories, meditation, and relaxation techniques to improve sleep and reduce anxiety.</p>
+                                <a href="#" class="app-link">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <div class="app-image">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4 class="app-title">MoodKit</h4>
+                                <p class="app-description">CBT-based activities and mood tracking to help manage depression and anxiety.</p>
+                                <a href="#" class="app-link">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="app-card">
+                            <div class="app-image">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="app-info">
+                                <h4 class="app-title">Woebot</h4>
+                                <p class="app-description">AI chatbot that uses CBT principles to help you track and manage your mood.</p>
+                                <a href="#" class="app-link">Learn More <i class="fas fa-external-link-alt ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Error message -->
-                <div id="error-message" class="alert alert-danger d-none" role="alert">
+                <!-- Recommended Books Section -->
+                <div class="resource-section">
+                    <h3 class="section-title">Recommended Books</h3>
+                    <p class="mb-4">These books offer valuable insights and practical strategies for various mental health concerns.</p>
+                    
+                    <div class="book-list">
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">The Compassionate Mind</h4>
+                                <p class="book-author">By Paul Gilbert</p>
+                                <p class="book-description">Based on Compassion-Focused Therapy, this book offers techniques to develop self-compassion and overcome self-criticism.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">The Body Keeps the Score</h4>
+                                <p class="book-author">By Bessel van der Kolk</p>
+                                <p class="book-description">Explores the effects of trauma on the body and mind, and offers pathways to recovery and healing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">Unwinding Anxiety</h4>
+                                <p class="book-author">By Judson Brewer</p>
+                                <p class="book-description">Science-based approach to breaking the cycle of worry and fear to heal the anxious mind.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="book-info">
+                                <h4 class="book-title">No Self, No Problem</h4>
+                                <p class="book-author">By Chris Niebauer</p>
+                                <p class="book-description">How neuropsychology is helping us understand mindfulness and the benefits of present-moment awareness.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- No publications message -->
-                <div id="no-publications" class="alert alert-info mt-4 d-none">
-                    No publications are currently available.
+                <!-- Trusted Websites Section -->
+                <div class="resource-section">
+                    <h3 class="section-title">Trusted Websites & Organizations</h3>
+                    <p class="mb-4">These reputable organizations provide valuable information and resources about mental health.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="resource-card">
+                                <h4 class="resource-title">Mental Health Ireland</h4>
+                                <p class="resource-description">National organization promoting positive mental health and wellbeing to all individuals and communities in Ireland.</p>
+                                <a href="https://www.mentalhealthireland.ie/" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <div class="resource-tags">
+                                    <span class="resource-tag">General Mental Health</span>
+                                    <span class="resource-tag">Support Services</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="resource-card">
+                                <h4 class="resource-title">HSE Mental Health</h4>
+                                <p class="resource-description">Information about HSE mental health services, including how to access support and resources for mental wellbeing.</p>
+                                <a href="https://www2.hse.ie/mental-health/" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <div class="resource-tags">
+                                    <span class="resource-tag">HSE Services</span>
+                                    <span class="resource-tag">Public Resources</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="resource-card">
+                                <h4 class="resource-title">ADHD Ireland</h4>
+                                <p class="resource-description">Support and information for people with ADHD and their families, with resources for children and adults.</p>
+                                <a href="https://adhdireland.ie/" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <div class="resource-tags">
+                                    <span class="resource-tag">ADHD</span>
+                                    <span class="resource-tag">Neurodiversity</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="resource-card">
+                                <h4 class="resource-title">AsIAm</h4>
+                                <p class="resource-description">Ireland's national autism charity, providing support, advocacy, and information for the autism community.</p>
+                                <a href="https://asiam.ie/" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <div class="resource-tags">
+                                    <span class="resource-tag">Autism</span>
+                                    <span class="resource-tag">Neurodiversity</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="resource-card">
+                                <h4 class="resource-title">Psychological Society of Ireland</h4>
+                                <p class="resource-description">Professional body for psychology in Ireland with resources for finding psychologists and information about psychological issues.</p>
+                                <a href="https://www.psychologicalsociety.ie/" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <div class="resource-tags">
+                                    <span class="resource-tag">Psychology Resources</span>
+                                    <span class="resource-tag">Professional Information</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="resource-card">
+                                <h4 class="resource-title">Jigsaw</h4>
+                                <p class="resource-description">Ireland's national centre for youth mental health, providing support for young people aged 12-25.</p>
+                                <a href="https://jigsaw.ie/" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <div class="resource-tags">
+                                    <span class="resource-tag">Youth</span>
+                                    <span class="resource-tag">Adolescents</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="contact-us-cta">
+                    <h3>Need Personalized Support?</h3>
+                    <p>While these resources can be helpful, they are not substitutes for professional support. If you're struggling with mental health concerns, we're here to help.</p>
+                    <a href="#contact" class="cta-button">Contact Us</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-    // Change this to the actual ORCID ID
-    const ORCID_ID = '0000-0001-6914-7447';
-    const CACHE_KEY = 'publications_cache';
-    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
-
-    async function loadPublications() {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const publicationsList = document.getElementById('publications-list');
-        const errorMessage = document.getElementById('error-message');
-        const noPublications = document.getElementById('no-publications');
-        
-        try {
-            // Check cache
-            const cachedData = localStorage.getItem(CACHE_KEY);
-            if (cachedData) {
-                const { publications, timestamp } = JSON.parse(cachedData);
-                if (Date.now() - timestamp < CACHE_DURATION) {
-                    if (publications && publications.length > 0) {
-                        displayPublications(publications);
-                    } else {
-                        showNoPublicationsMessage();
-                    }
-                    return;
-                }
-            }
-            
-            // Try to fetch from ORCID API
-            try {
-                const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch from ORCID');
-                }
-                
-                const data = await response.json();
-                
-                // Process ORCID data to extract publications
-                const publications = [];
-                
-                if (data.group) {
-                    data.group.forEach(group => {
-                        if (group['work-summary'] && group['work-summary'].length > 0) {
-                            const work = group['work-summary'][0];
-                            
-                            // Extract publication details
-                            const pub = {
-                                title: work.title && work.title['title'] ? work.title['title'].value : 'Untitled Work',
-                                journal: work['journal-title'] ? work['journal-title'].value : '',
-                                year: work['publication-date'] && work['publication-date'].year ? 
-                                      work['publication-date'].year.value : '',
-                                doi: ''
-                            };
-                            
-                            // Extract DOI if present
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                const doiId = work['external-ids']['external-id'].find(id => id['external-id-type'] === 'doi');
-                                if (doiId) {
-                                    pub.doi = doiId['external-id-value'];
-                                }
-                            }
-                            
-                            publications.push(pub);
-                        }
-                    });
-                }
-                
-                // Cache the data
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    publications,
-                    timestamp: Date.now()
-                }));
-                
-                if (publications && publications.length > 0) {
-                    displayPublications(publications);
-                } else {
-                    showNoPublicationsMessage();
-                }
-                return;
-                
-            } catch (orcidError) {
-                console.warn('Error fetching from ORCID:', orcidError);
-                showNoPublicationsMessage();
-            }
-            
-        } catch (error) {
-            console.error('Error:', error);
-            loadingSpinner.classList.add('d-none');
-            errorMessage.textContent = 'Unable to load publications at this time.';
-            errorMessage.classList.remove('d-none');
-        }
-    }
-
-    function displayPublications(publications) {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const publicationsList = document.getElementById('publications-list');
-        
-        let html = '<div class="list-group">';
-        
-        publications.forEach(pub => {
-            html += `
-                <div class="list-group-item border-0 ps-0">
-                    <h5 class="publication-title mb-1">${pub.title}</h5>
-                    <p class="publication-details mb-1">
-                        ${pub.journal ? `<em>${pub.journal}</em>, ` : ''}
-                        ${pub.year || 'Year not specified'}
-                    </p>
-                    ${pub.doi ? `
-                        <small class="publication-doi">
-                            <a href="https://doi.org/${pub.doi}" target="_blank" class="text-primary">
-                                DOI: ${pub.doi}
-                            </a>
-                        </small>
-                    ` : ''}
-                </div>
-            `;
-        });
-        
-        html += '</div>';
-        
-        publicationsList.innerHTML = html;
-        loadingSpinner.classList.add('d-none');
-        publicationsList.classList.remove('d-none');
-    }
-    
-    function showNoPublicationsMessage() {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const publicationsList = document.getElementById('publications-list');
-        const noPublications = document.getElementById('no-publications');
-        
-        loadingSpinner.classList.add('d-none');
-        publicationsList.classList.add('d-none');
-        noPublications.classList.remove('d-none');
-    }
-
-    document.addEventListener('DOMContentLoaded', loadPublications);
-    </script>
-    
     <!-- Footer-->
     <div id="footer-placeholder"></div>
     
