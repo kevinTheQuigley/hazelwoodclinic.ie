@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Fees </title>
+    <meta name="description" content="Information about fees and insurance coverage for psychological services at Hazelwood Clinic" />
+    <meta name="author" content="Hazelwood Clinic" />
+    <title>Fees - Hazelwood Clinic</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -13,34 +13,230 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/styles.css"> 
     <style>
-        .publications-header {
+        .fees-header {
             font-size: 2.6rem;
+            color: white;
         }
-        .publication-title {
-            font-size: 1.15rem;
+        
+        .fees-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        .fees-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .fee-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .fee-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fee-title {
+            color: var(--kq-green);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--kq-greenLight);
+            padding-bottom: 0.5rem;
+        }
+        
+        .fee-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .fee-amount {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--kq-green);
+            background-color: var(--kq-greenLight);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+        
+        .fee-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .fee-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .fee-detail-label {
+            font-weight: 600;
+        }
+        
+        .section-title {
+            color: var(--kq-green);
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--kq-green);
+        }
+        
+        .insurance-card {
+            background-color: var(--kq-greenLight);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .insurance-title {
+            color: var(--kq-green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .insurance-logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .insurance-company {
+            margin-bottom: 1.5rem;
+        }
+        
+        .insurance-coverage {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .coverage-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .coverage-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .payment-options {
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .payment-method {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+        }
+        
+        .payment-icon {
+            font-size: 2rem;
+            color: var(--kq-green);
+            margin-right: 1rem;
+        }
+        
+        .note-box {
+            background-color: #fdf7e2;
+            border-left: 5px solid #f5c518;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        .note-title {
+            color: #856404;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
         }
-        .publication-details {
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+        
+        .note-title i {
+            margin-right: 0.5rem;
         }
-        .publication-doi {
-            font-size: 0.85rem;
+        
+        .note-content {
+            color: #856404;
+        }
+        
+        .contact-cta {
+            background-color: var(--kq-greenLight);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 4rem 0 2rem 0;
+        }
+        
+        .contact-cta h3 {
+            color: var(--kq-green);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--kq-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1b5e20;
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .fee-detail {
+                flex-direction: column;
+            }
+            
+            .fee-detail-value {
+                margin-top: 0.25rem;
+            }
         }
     </style>
 </head>
-
 
 <body>
     <div id="header-placeholder"></div>
     
     <!-- Page Header-->
-    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent), url('assets/img/about.jpg'); height: 30vh;display: flex; align-items: center;">
+    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent), url('assets/img/fees.jpg'); height: 30vh; display: flex; align-items: center;">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="page-heading">
-                        <h2 class="publications-header">Publications</h2>
+                        <h2 class="fees-header">Fees & Insurance</h2>
                     </div>
                 </div>
             </div>
@@ -50,174 +246,239 @@
     <!-- Main Content-->
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="col-md-10">
+                <div class="fees-intro">
+                    <p class="lead">Hazelwood Clinic is committed to providing high-quality psychological care at transparent and competitive rates. Many of our services may be partially covered by health insurance.</p>
+                </div>
                 
-                <!-- Loading spinner -->
-                <div id="loading-spinner" class="text-center mt-4">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                <div class="fees-container">
+                    <!-- Service Fees Section -->
+                    <h3 class="section-title">Service Fees</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="fee-card">
+                                <h4 class="fee-title">Initial Consultation</h4>
+                                <p class="fee-description">A comprehensive 60-minute session to discuss your concerns, gather relevant history, and develop initial treatment recommendations.</p>
+                                <div class="fee-amount">€140</div>
+                                <div class="fee-details">
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Duration</span>
+                                        <span class="fee-detail-value">60 minutes</span>
+                                    </div>
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Frequency</span>
+                                        <span class="fee-detail-value">One-time</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="fee-card">
+                                <h4 class="fee-title">Individual Therapy</h4>
+                                <p class="fee-description">Regular therapy sessions using evidence-based approaches tailored to your unique needs and goals.</p>
+                                <div class="fee-amount">€120</div>
+                                <div class="fee-details">
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Duration</span>
+                                        <span class="fee-detail-value">50 minutes</span>
+                                    </div>
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Frequency</span>
+                                        <span class="fee-detail-value">Weekly or as recommended</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="fee-card">
+                                <h4 class="fee-title">ADHD Assessment</h4>
+                                <p class="fee-description">Comprehensive assessment for ADHD including clinical interviews, standardized measures, and detailed recommendations.</p>
+                                <div class="fee-amount">€750</div>
+                                <div class="fee-details">
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Sessions</span>
+                                        <span class="fee-detail-value">3-4 appointments</span>
+                                    </div>
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Includes</span>
+                                        <span class="fee-detail-value">Comprehensive report & feedback</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="fee-card">
+                                <h4 class="fee-title">Psychological Assessment</h4>
+                                <p class="fee-description">General assessment for mood disorders, anxiety, or other mental health concerns with personalized recommendations.</p>
+                                <div class="fee-amount">€450</div>
+                                <div class="fee-details">
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Sessions</span>
+                                        <span class="fee-detail-value">2-3 appointments</span>
+                                    </div>
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Includes</span>
+                                        <span class="fee-detail-value">Written report & recommendations</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="fee-card">
+                                <h4 class="fee-title">Court-Mandated Assessment</h4>
+                                <p class="fee-description">Specialized psychological evaluations for legal proceedings or custody disputes with detailed documentation.</p>
+                                <div class="fee-amount">€900</div>
+                                <div class="fee-details">
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Sessions</span>
+                                        <span class="fee-detail-value">Multiple appointments as needed</span>
+                                    </div>
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Includes</span>
+                                        <span class="fee-detail-value">Comprehensive legal report</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="fee-card">
+                                <h4 class="fee-title">Professional Consultation</h4>
+                                <p class="fee-description">Consultation services for healthcare providers, organizations, or educational institutions.</p>
+                                <div class="fee-amount">€150</div>
+                                <div class="fee-details">
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Duration</span>
+                                        <span class="fee-detail-value">60 minutes</span>
+                                    </div>
+                                    <div class="fee-detail">
+                                        <span class="fee-detail-label">Format</span>
+                                        <span class="fee-detail-value">In-person or virtual</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="mt-2">Loading publications...</p>
-                </div>
-                
-                <!-- Publications list -->
-                <div id="publications-list" class="mt-4 d-none">
-                </div>
-                
-                <!-- Error message -->
-                <div id="error-message" class="alert alert-danger d-none" role="alert">
-                </div>
-                
-                <!-- No publications message -->
-                <div id="no-publications" class="alert alert-info mt-4 d-none">
-                    No publications are currently available.
+                    
+                    <div class="note-box">
+                        <h4 class="note-title"><i class="fas fa-info-circle"></i> Custom Services</h4>
+                        <p class="note-content">Workshops, group sessions, and specialized services are priced individually based on specific requirements. Please contact us for a customized quote.</p>
+                    </div>
+                    
+                    <!-- Insurance Section -->
+                    <h3 class="section-title">Insurance Coverage</h3>
+                    <p>Many Irish health insurance providers cover sessions with a Chartered Clinical Psychologist. The amount covered varies depending on your specific plan. We are happy to assist you in navigating your insurance options.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="insurance-company">
+                                <h4>Irish Life Health</h4>
+                                <div class="insurance-coverage">
+                                    <div class="coverage-detail">
+                                        <span>Coverage</span>
+                                        <span>Up to 50%</span>
+                                    </div>
+                                    <div class="coverage-detail">
+                                        <span>Depends on</span>
+                                        <span>Specific policy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="insurance-company">
+                                <h4>Laya Healthcare</h4>
+                                <div class="insurance-coverage">
+                                    <div class="coverage-detail">
+                                        <span>Coverage</span>
+                                        <span>50% of costs</span>
+                                    </div>
+                                    <div class="coverage-detail">
+                                        <span>Annual limit</span>
+                                        <span>Up to 8 sessions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="insurance-company">
+                                <h4>HSF Health Plan</h4>
+                                <div class="insurance-coverage">
+                                    <div class="coverage-detail">
+                                        <span>Coverage</span>
+                                        <span>Varies by plan</span>
+                                    </div>
+                                    <div class="coverage-detail">
+                                        <span>Reimbursement</span>
+                                        <span>After treatment</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <h4 class="note-title"><i class="fas fa-info-circle"></i> Insurance Verification</h4>
+                        <p class="note-content">We recommend contacting your insurance provider directly before your first appointment to verify your specific coverage for psychological services. Upon request, we can provide you with the necessary documentation for insurance reimbursement.</p>
+                    </div>
+                    
+                    <!-- Payment Options Section -->
+                    <h3 class="section-title">Payment Options</h3>
+                    <p>We offer several convenient payment methods to make your experience as smooth as possible:</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <div class="payment-icon">
+                                <i class="far fa-credit-card"></i>
+                            </div>
+                            <div>Credit/Debit Card</div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <div class="payment-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>Bank Transfer</div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <div class="payment-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div>Cash</div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <div class="payment-icon">
+                                <i class="fas fa-receipt"></i>
+                            </div>
+                            <div>HSE Forms</div>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <h4 class="note-title"><i class="fas fa-exclamation-circle"></i> Cancellation Policy</h4>
+                        <p class="note-content">We understand that circumstances can change. If you need to cancel or reschedule your appointment, please provide at least 48 hours' notice to avoid a cancellation fee. Late cancellations or missed appointments without notice will incur a fee of 50% of the session cost.</p>
+                    </div>
+                    
+                    <!-- Contact CTA -->
+                    <div class="contact-cta">
+                        <h3>Have Questions About Fees or Insurance?</h3>
+                        <p>Our team is happy to answer any questions you might have about our fees, insurance coverage, or payment options.</p>
+                        <a href="#contact" class="cta-button">Contact Us</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-    // Change this to the actual ORCID ID
-    const ORCID_ID = '0000-0001-6914-7447';
-    const CACHE_KEY = 'publications_cache';
-    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
-
-    async function loadPublications() {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const publicationsList = document.getElementById('publications-list');
-        const errorMessage = document.getElementById('error-message');
-        const noPublications = document.getElementById('no-publications');
-        
-        try {
-            // Check cache
-            const cachedData = localStorage.getItem(CACHE_KEY);
-            if (cachedData) {
-                const { publications, timestamp } = JSON.parse(cachedData);
-                if (Date.now() - timestamp < CACHE_DURATION) {
-                    if (publications && publications.length > 0) {
-                        displayPublications(publications);
-                    } else {
-                        showNoPublicationsMessage();
-                    }
-                    return;
-                }
-            }
-            
-            // Try to fetch from ORCID API
-            try {
-                const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch from ORCID');
-                }
-                
-                const data = await response.json();
-                
-                // Process ORCID data to extract publications
-                const publications = [];
-                
-                if (data.group) {
-                    data.group.forEach(group => {
-                        if (group['work-summary'] && group['work-summary'].length > 0) {
-                            const work = group['work-summary'][0];
-                            
-                            // Extract publication details
-                            const pub = {
-                                title: work.title && work.title['title'] ? work.title['title'].value : 'Untitled Work',
-                                journal: work['journal-title'] ? work['journal-title'].value : '',
-                                year: work['publication-date'] && work['publication-date'].year ? 
-                                      work['publication-date'].year.value : '',
-                                doi: ''
-                            };
-                            
-                            // Extract DOI if present
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                const doiId = work['external-ids']['external-id'].find(id => id['external-id-type'] === 'doi');
-                                if (doiId) {
-                                    pub.doi = doiId['external-id-value'];
-                                }
-                            }
-                            
-                            publications.push(pub);
-                        }
-                    });
-                }
-                
-                // Cache the data
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    publications,
-                    timestamp: Date.now()
-                }));
-                
-                if (publications && publications.length > 0) {
-                    displayPublications(publications);
-                } else {
-                    showNoPublicationsMessage();
-                }
-                return;
-                
-            } catch (orcidError) {
-                console.warn('Error fetching from ORCID:', orcidError);
-                showNoPublicationsMessage();
-            }
-            
-        } catch (error) {
-            console.error('Error:', error);
-            loadingSpinner.classList.add('d-none');
-            errorMessage.textContent = 'Unable to load publications at this time.';
-            errorMessage.classList.remove('d-none');
-        }
-    }
-
-    function displayPublications(publications) {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const publicationsList = document.getElementById('publications-list');
-        
-        let html = '<div class="list-group">';
-        
-        publications.forEach(pub => {
-            html += `
-                <div class="list-group-item border-0 ps-0">
-                    <h5 class="publication-title mb-1">${pub.title}</h5>
-                    <p class="publication-details mb-1">
-                        ${pub.journal ? `<em>${pub.journal}</em>, ` : ''}
-                        ${pub.year || 'Year not specified'}
-                    </p>
-                    ${pub.doi ? `
-                        <small class="publication-doi">
-                            <a href="https://doi.org/${pub.doi}" target="_blank" class="text-primary">
-                                DOI: ${pub.doi}
-                            </a>
-                        </small>
-                    ` : ''}
-                </div>
-            `;
-        });
-        
-        html += '</div>';
-        
-        publicationsList.innerHTML = html;
-        loadingSpinner.classList.add('d-none');
-        publicationsList.classList.remove('d-none');
-    }
-    
-    function showNoPublicationsMessage() {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const publicationsList = document.getElementById('publications-list');
-        const noPublications = document.getElementById('no-publications');
-        
-        loadingSpinner.classList.add('d-none');
-        publicationsList.classList.add('d-none');
-        noPublications.classList.remove('d-none');
-    }
-
-    document.addEventListener('DOMContentLoaded', loadPublications);
-    </script>
-    
     <!-- Footer-->
     <div id="footer-placeholder"></div>
     
