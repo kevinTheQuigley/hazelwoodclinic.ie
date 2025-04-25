@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Hazelwood Clinic</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/styles.css"> 
+    <style>
+        .about-header {
+            font-size: 2.6rem;
+        }
+        .biography-text {
+            white-space: pre-line;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .profile-img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            display: block;
+            border: 4px solid var(--kq-green);
+        }
+        
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            padding-right: 30px;
+        }
+        
+        .biography-container {
+            padding-left: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-img {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 30px;
+            }
+            
+            .profile-container {
+                padding-right: 0;
+            }
+            
+            .biography-container {
+                padding-left: 0;
+            }
+        }
+        
+        .credentials-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            clear: both;
+        }
+        .credentials-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--kq-green);
+            font-size: 1.5rem;
+        }
+        .credentials-list {
+            margin-bottom: 2rem;
+        }
+        .credentials-list h4 {
+            color: var(--kq-green);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .credentials-list ul {
+            padding-left: 1.2rem;
+        }
+        .credentials-list li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 0.25rem solid rgba(20, 88, 43, 0.2);
+            border-top-color: var(--kq-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg'); height: 30vh;display: flex; align-items: center;">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h2 class="about-header">About</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-10 col-xl-9">
+                <!-- Biography Section with Photo -->
+                <div class="row mt-4">
+                    <div class="col-md-5 mb-4 profile-container">
+                        <img src="assets/img/aboutProfile.jpg" alt="Hazelwood Clinic Team" class="profile-img">
+                    </div>
+                    <div class="col-md-7 biography-container">
+                        <div id="biography-section">
+                            <!-- Loading spinner -->
+                            <div id="loading-biography" class="text-center">
+                                <div class="loading-spinner"></div>
+                                <p class="mt-2">Loading biography...</p>
+                            </div>
+                            <!-- Biography text will be loaded here -->
+                            <div id="biography-content" style="display: none;">
+                            </div>
+                            <!-- Fallback biography -->
+                            <div id="biography-fallback" style="display: none;">
+                                <div class="biography-text">Welcome to Hazelwood Clinic. Our team is dedicated to providing compassionate and professional psychological care to help you navigate life's challenges.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Credentials and Awards Section -->
+                <div class="credentials-section">
+                    <h3>Credentials & Achievements</h3>
+                    
+                    <div class="credentials-list">
+                        <h4>Qualifications</h4>
+                        <ul>
+                            <li>Registered Clinical Psychologist</li>
+                            <li>PhD in Clinical Psychology</li>
+                            <li>Member of the Psychological Society of Ireland</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="credentials-list">
+                        <h4>Specializations</h4>
+                        <ul>
+                            <li>Cognitive Behavioral Therapy (CBT)</li>
+                            <li>Trauma-Focused Therapy</li>
+                            <li>Anxiety and Depression Treatment</li>
+                            <li>Family and Relationship Counseling</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="credentials-list">
+                        <h4>Professional Development</h4>
+                        <ul>
+                            <li>Certified in EMDR Therapy</li>
+                            <li>Advanced Training in Mindfulness-Based Interventions</li>
+                            <li>Continuing Professional Development in Evidence-Based Practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', loadBiography);
+
+    function loadBiography() {
+        const CACHE_KEY = 'about_biography_cache';
+        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+        
+        // Base URL for the published Google Sheet
+        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
+        
+        // Add the gid parameter to specify the 'About' sheet
+        const aboutSheetGid = "159040093";
+        const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
+        
+        const loadingElement = document.getElementById('loading-biography');
+        const contentElement = document.getElementById('biography-content');
+        const fallbackElement = document.getElementById('biography-fallback');
+        
+        // Check cache first
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        if (cachedData) {
+            const { content, timestamp } = JSON.parse(cachedData);
+            const age = Date.now() - timestamp;
+            
+            if (age < CACHE_DURATION) {
+                displayContent(content);
+                return;
+            }
+        }
+        
+        // Fetch content from Google Sheets
+        fetch(csvUrl)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+                return response.text();
+            })
+            .then(csvText => {
+                // Parse the CSV properly including handling quoted values
+                try {
+                    const parsedContent = parseCSV(csvText);
+                    
+                    if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
+                        const contentValue = parsedContent[1][0]; // Get first column of second row
+                        
+                        // Cache the content
+                        localStorage.setItem(CACHE_KEY, JSON.stringify({
+                            content: contentValue,
+                            timestamp: Date.now()
+                        }));
+                        
+                        displayContent(contentValue);
+                    } else {
+                        showFallback();
+                    }
+                } catch (e) {
+                    console.error('Error parsing CSV:', e);
+                    showFallback();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching content:', error);
+                showFallback();
+            });
+            
+        function displayContent(content) {
+            contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
+            loadingElement.style.display = 'none';
+            contentElement.style.display = 'block';
+        }
+        
+        function showFallback() {
+            loadingElement.style.display = 'none';
+            fallbackElement.style.display = 'block';
+        }
+    }
+    
+    // Proper CSV parser that handles quoted cells with line breaks
+    function parseCSV(csvText) {
+        const result = [];
+        let row = [];
+        let currentValue = '';
+        let insideQuotes = false;
+        
+        for (let i = 0; i < csvText.length; i++) {
+            const char = csvText[i];
+            const nextChar = csvText[i + 1];
+            
+            if (char === '"') {
+                if (insideQuotes && nextChar === '"') {
+                    // Escaped quote inside quotes
+                    currentValue += '"';
+                    i++; // Skip the next quote
+                } else {
+                    // Toggle quote state
+                    insideQuotes = !insideQuotes;
+                }
+            } else if (char === ',' && !insideQuotes) {
+                // End of field
+                row.push(currentValue);
+                currentValue = '';
+            } else if ((char === '\r' || char === '\n') && !insideQuotes) {
+                // End of line
+                if (currentValue !== '' || row.length > 0) {
+                    row.push(currentValue);
+                    result.push(row);
+                    row = [];
+                    currentValue = '';
+                }
+                
+                // Skip the next character if it's a line feed after a carriage return
+                if (char === '\r' && nextChar === '\n') {
+                    i++;
+                }
+            } else {
+                // Regular character
+                currentValue += char;
+            }
+        }
+        
+        // Don't forget the last row
+        if (currentValue !== '' || row.length > 0) {
+            row.push(currentValue);
+            result.push(row);
+        }
+        
+        return result;
+    }
+    </script>
+    
+    <!-- Footer-->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -11,7 +11,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
+                        <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
+                        <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resources.html">Resources</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="fees.html">Fees</a></li>
@@ -30,28 +39,44 @@
     flex-direction: column;
     line-height: 1.2;
 }
-
 .navbar-brand {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
 .navbar-subtitle {
     font-size: 0.8rem;
     color: #6c757d;
 }
-
 /* Fix for appointment button text color */
 .appointment-btn {
     color: white !important; /* Force white text at all screen sizes */
 }
-
 /* Override any nav-link:hover styles for the appointment button */
 .appointment-btn:hover, 
 .appointment-btn:focus {
     color: white !important;
 }
-
+/* Dropdown menu styling */
+.dropdown-menu {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: none;
+    padding: 0.5rem 0;
+}
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+/* Show dropdown on hover for desktop */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
 /* Additional mobile styling fixes */
 @media (max-width: 991.98px) {
     .navbar-nav .nav-link.appointment-btn {
@@ -73,6 +98,18 @@
     .nav-item.d-flex.align-items-center {
         justify-content: center;
         width: 100%;
+    }
+    
+    /* Mobile dropdown styling */
+    .dropdown-menu {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        padding-left: 1.5rem;
+    }
+    .dropdown-item {
+        color: #212529;
+        padding: 0.5rem 1rem;
     }
 }
 </style>
