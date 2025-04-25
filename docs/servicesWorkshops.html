@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Comprehensive psychological services offered by Hazelwood Clinic including assessments, treatment, and therapeutic approaches" />
+        <meta name="author" content="Hazelwood Clinic" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <title>Services - Hazelwood Clinic</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <style>
+            :root {
+                --text-color: #333333;
+                --light-text: #ffffff;
+            }
+            
+            body {
+                font-family: 'Open Sans', sans-serif;
+                line-height: 1.6;
+                color: var(--text-color);
+            }
+            
+            .services-header {
+                font-size: 2.6rem;
+                font-family: 'Lora', serif;
+            }
+            
+            .service-section {
+                margin: 2rem auto;
+                max-width: 1200px;
+                padding: 0 1rem;
+            }
+            
+            .service-card {
+                background-color: var(--kq-green);
+                color: white;
+                padding: 2rem;
+                border-radius: 8px;
+                margin-bottom: 2rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .service-card h2 {
+                color: white;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+                font-size: 1.6rem;
+                font-family: 'Lora', serif;
+                border-bottom: 2px solid rgba(255,255,255,0.3);
+                padding-bottom: 0.5rem;
+            }
+            
+            .service-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+            
+            .service-card ul {
+                list-style-type: none;
+                padding-left: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .service-card li {
+                margin-bottom: 0.75rem;
+                padding-left: 1.5rem;
+                position: relative;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .service-card li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: var(--kq-greenLight);
+                font-weight: bold;
+            }
+            
+            .service-intro {
+                margin-bottom: 3rem;
+                text-align: center;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 1rem;
+            }
+            
+            .service-intro .lead {
+                font-size: 1.1rem;
+                color: var(--text-color);
+            }
+            
+            .insurance-note {
+                background-color: var(--kq-greenLight);
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-top: 3rem;
+                text-align: center;
+            }
+            
+            .insurance-note h3 {
+                color: var(--kq-green);
+                margin-bottom: 1rem;
+                font-family: 'Lora', serif;
+            }
+            
+            .therapy-subheading {
+                color: var(--kq-greenLight);
+                font-weight: 600;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .cta-button {
+                display: inline-block;
+                background-color: var(--kq-greenLight);
+                color: var(--kq-green);
+                padding: 0.75rem 1.5rem;
+                border-radius: 4px;
+                font-weight: 600;
+                text-decoration: none;
+                margin-top: 1rem;
+                transition: background-color 0.3s ease;
+            }
+            
+            .cta-button:hover {
+                background-color: white;
+            }
+            
+            @media (max-width: 768px) {
+                .service-card {
+                    padding: 1.5rem;
+                }
+                
+                .services-header {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+        
+        <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/services.jpg'); height: 30vh; display: flex; align-items: center;">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading text-center text-white">
+                            <h2 class="services-header">Services</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="mb-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="service-intro">
+                            <p class="lead">Hazelwood Clinic offers comprehensive psychological services for adults, children, and adolescents in a warm, non-judgmental environment, delivered by experienced Senior Clinical Psychologists.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-section">
+                <div class="service-card">
+                    <h2>Assessment Services</h2>
+                    <p>Comprehensive psychological evaluations tailored to identify specific needs and develop personalized treatment plans.</p>
+                    <ul>
+                        <li>ADHD Assessments for children and adults, including comprehensive evaluations using clinical interviews, standardized measures, and behavioral analysis</li>
+                        <li>Court-Mandated Assessments for legal proceedings, including custody disputes and parental capacity evaluations</li>
+                        <li>Voice of the Child Reports to ensure children's perspectives are represented in family law cases</li>
+                        <li>General psychological assessments for learning difficulties, mood disorders, anxiety, and other mental health conditions</li>
+                        <li>Neurodiversity assessments related to autism spectrum and other developmental conditions</li>
+                    </ul>
+                    <p>Each assessment includes thorough documentation and practical recommendations to support your journey forward.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>Treatment Options</h2>
+                    <p>Evidence-based therapeutic services addressing a wide range of psychological concerns:</p>
+                    <ul>
+                        <li>Anxiety and mood disorders, including depression and bipolar disorder</li>
+                        <li>Trauma recovery and PTSD treatment</li>
+                        <li>Support for neurodiversity-related challenges (ADHD, Autism)</li>
+                        <li>LGBTQI+ and polyamorous community support</li>
+                        <li>Identity exploration and development</li>
+                        <li>Treatment-resistant mental health disorders</li>
+                        <li>Relational challenges and interpersonal difficulties</li>
+                    </ul>
+                    <p>Dr. Quigley specializes in working with clients who have not found success with previous therapy approaches, offering new pathways for healing and growth.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>Types of Therapies</h2>
+                    <p>Dr. Quigley integrates multiple evidence-based approaches to meet each client's unique needs:</p>
+                    
+                    <div class="therapy-subheading">Cognitive Behavioural Therapy (CBT)</div>
+                    <p>A widely researched therapy proven effective for anxiety disorders, depression, PTSD, and OCD. CBT helps identify unhelpful thought patterns, challenge them, and replace them with healthier ways of thinking and behaving. Particularly effective for treating OCD.</p>
+                    
+                    <div class="therapy-subheading">Eye Movement Desensitization and Reprocessing (EMDR)</div>
+                    <p>A structured therapy specifically designed to help process and resolve traumatic memories through bilateral stimulation techniques. EMDR reduces trauma symptoms while enhancing self-esteem and resilience. Especially effective for single-incident traumas, with a blended approach used for complex trauma.</p>
+                    
+                    <div class="therapy-subheading">Internal Family Systems (IFS)</div>
+                    <p>An innovative approach that views the mind as composed of distinct "parts," each with unique feelings and roles. Effective for trauma, emotional regulation, and self-esteem issues, IFS fosters greater self-compassion by addressing wounded parts and nurturing the "Self."</p>
+                    
+                    <div class="therapy-subheading">Acceptance and Commitment Therapy (ACT)</div>
+                    <p>Promotes acceptance and psychological flexibility to manage difficult thoughts and emotions. Based in mindfulness and behavioral change principles, ACT helps clients focus on their values and take aligned actions. Particularly helpful for anxiety, depression, chronic stress, and life transitions.</p>
+                    
+                    <div class="therapy-subheading">Compassion-Focused Therapy (CFT)</div>
+                    <p>Designed for individuals struggling with self-criticism, shame, and emotional pain. CFT cultivates self-compassion and emotional resilience by integrating mindfulness, neuroscience, and evolutionary psychology to foster safety and self-kindness.</p>
+                    
+                    <div class="therapy-subheading">Psychodynamic Psychotherapy</div>
+                    <p>Explores unconscious influences of past relationships and experiences on current behaviors and emotions. Helpful for understanding relational patterns, identity struggles, and unresolved emotional pain, building more meaningful connections with self and others.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>Consultation Services</h2>
+                    <p>Professional consultation services for fellow practitioners, organizations, and educational institutions:</p>
+                    <ul>
+                        <li>Clinical case consultation for complex or treatment-resistant cases</li>
+                        <li>Supervision for early-career psychologists and therapists</li>
+                        <li>Collaborative care coordination with other healthcare providers</li>
+                        <li>Guidance on integrating evidence-based therapeutic approaches</li>
+                        <li>Specialized consultation on neurodiversity-affirming practices</li>
+                    </ul>
+                    <p>Dr. Quigley welcomes collaboration with other mental health professionals and is available to provide second opinions or adjunctive support alongside existing treatment.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>Workshops & Training</h2>
+                    <p>Educational opportunities for professionals, organizations, and community groups:</p>
+                    <ul>
+                        <li>Professional development workshops on evidence-based therapeutic techniques</li>
+                        <li>Educational sessions on neurodiversity and inclusive practices</li>
+                        <li>Skill-building workshops for managing anxiety, stress, and trauma responses</li>
+                        <li>Customized training programs for healthcare teams and educational institutions</li>
+                        <li>Community workshops on mental wellness and psychological resilience</li>
+                    </ul>
+                    <p>Workshops can be tailored to specific audiences and needs. Contact us to discuss developing a workshop for your organization or group.</p>
+                </div>
+                
+                <div class="insurance-note">
+                    <h3>Insurance Coverage</h3>
+                    <p>Many Irish health insurance providers cover some or all of the costs of sessions with a Chartered Clinical Psychologist:</p>
+                    <ul style="display: inline-block; text-align: left;">
+                        <li>Irish Life: Covers up to 50% of costs, depending on the policy</li>
+                        <li>Laya Healthcare: Covers 50% of costs for up to 8 sessions annually under certain policies</li>
+                        <li>HSF Health Plan: Offers varying levels of reimbursement for clinical psychologist fees</li>
+                    </ul>
+                    <p>Dr. Quigley is happy to assist clients in navigating their insurance options to ensure they can access support.</p>
+                    <a href="#contact" class="cta-button">Book an Appointment</a>
+                </div>
+            </div>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
