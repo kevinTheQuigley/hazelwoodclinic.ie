@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<nav class="navbar navbar-expand-lg navbar-light" id="mainNav"> 
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> 
     <div class="container px-4 px-lg-5">
         <div class="navbar-brand-container">
             <a class="navbar-brand" href="index.html">Hazelwood Clinic</a>
@@ -58,6 +58,20 @@
 .navbar-subtitle {
     font-size: 0.8rem;
     color: #6c757d;
+}
+/* Sticky header styles */
+#mainNav {
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#mainNav.is-scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+/* Add padding to body to prevent content from hiding behind fixed navbar */
+body {
+    padding-top: 70px; /* Adjust this value based on your navbar height */
 }
 /* Fix for appointment button text color */
 .appointment-btn {
@@ -135,7 +149,7 @@
 </style>
 
 <script>
-// Add this script to help with dropdown navigation
+// Add this script to help with dropdown navigation and sticky header
 document.addEventListener('DOMContentLoaded', function() {
     // For desktop: Allow clicking main nav dropdown links
     if (window.innerWidth >= 992) {
@@ -154,5 +168,22 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Sticky header functionality
+    const navbar = document.getElementById('mainNav');
+    
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('is-scrolled');
+        } else {
+            navbar.classList.remove('is-scrolled');
+        }
+    }
+    
+    // Initial check in case page loads scrolled down
+    handleScroll();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
 });
 </script>
