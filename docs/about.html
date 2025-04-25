@@ -84,6 +84,20 @@
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
         }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 0.25rem solid rgba(36, 64, 205, 0.2);
+            border-top-color: #2440cd;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 
@@ -116,17 +130,16 @@
                     <div class="col-md-7 biography-container">
                         <div id="biography-section">
                             <!-- Loading spinner -->
-                            <div id="loading-spinner" class="text-center">
-                                <div class="spinner-border text-primary" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
+                            <div id="loading-biography" class="text-center">
+                                <div class="loading-spinner"></div>
                                 <p class="mt-2">Loading biography...</p>
                             </div>
                             <!-- Biography text will be loaded here -->
-                            <div id="biography-content" class="d-none">
+                            <div id="biography-content" style="display: none;">
                             </div>
-                            <!-- Error message -->
-                            <div id="error-message" class="alert alert-danger d-none" role="alert">
+                            <!-- Fallback biography -->
+                            <div id="biography-fallback" style="display: none;">
+                                <div class="biography-text">Welcome to Hazelwood Clinic. Our team is dedicated to providing compassionate and professional psychological care to help you navigate life's challenges.</div>
                             </div>
                         </div>
                     </div>
@@ -169,89 +182,123 @@
     </div>
 
     <script>
-    // Change this to the actual ORCID ID
-    const ORCID_ID = '0000-0001-6914-7447'; // REPLACE WITH YOUR ACTUAL ORCID ID
-    const CACHE_KEY = 'orcid_bio_cache';
-    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-    
-    // Default biography to use if ORCID fetching fails
-    const DEFAULT_BIOGRAPHY = 'Clare Quigley is a consultant eye surgeon specializing in cornea and external eye diseases.';
+    document.addEventListener('DOMContentLoaded', loadBiography);
 
-    async function loadBiography() {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const biographyContent = document.getElementById('biography-content');
-        const errorMessage = document.getElementById('error-message');
+    function loadBiography() {
+        const CACHE_KEY = 'about_biography_cache';
+        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+        const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv&gid=1147790412"; // Use gid parameter to specify the second sheet
         
-        try {
-            // Check cache first
-            const cachedData = localStorage.getItem(CACHE_KEY);
-            if (cachedData) {
-                const { biography, timestamp } = JSON.parse(cachedData);
-                const age = Date.now() - timestamp;
-                
-                if (age < CACHE_DURATION) {
-                    displayBiography(biography);
-                    return;
-                }
-            }
+        const loadingElement = document.getElementById('loading-biography');
+        const contentElement = document.getElementById('biography-content');
+        const fallbackElement = document.getElementById('biography-fallback');
+        
+        // Clear any existing cache to ensure we get fresh content
+        localStorage.removeItem(CACHE_KEY);
+        
+        // Check cache first
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        if (cachedData) {
+            const { content, timestamp } = JSON.parse(cachedData);
+            const age = Date.now() - timestamp;
             
-            // Fetch directly from ORCID's public API
-            try {
-                const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/person`, {
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch from ORCID');
-                }
-                
-                const data = await response.json();
-                
-                // Extract biography from the ORCID data
-                let biography = DEFAULT_BIOGRAPHY;
-                
-                if (data.biography && data.biography.content) {
-                    biography = data.biography.content;
-                }
-                
-                // Save to cache
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    biography: biography,
-                    timestamp: Date.now()
-                }));
-                
-                displayBiography(biography);
+            if (age < CACHE_DURATION) {
+                displayContent(content);
                 return;
+            }
+        }
+        
+        // Fetch content from Google Sheets
+        fetch(csvUrl)
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(csvText => {
+                // Parse the CSV properly including handling quoted values
+                const parsedContent = parseCSV(csvText);
+                if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
+                    const contentValue = parsedContent[1][0]; // Get first column of second row
+                    
+                    // Cache the content
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({
+                        content: contentValue,
+                        timestamp: Date.now()
+                    }));
+                    
+                    displayContent(contentValue);
+                } else {
+                    showFallback();
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching content:', error);
+                showFallback();
+            });
+            
+        function displayContent(content) {
+            contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
+            loadingElement.style.display = 'none';
+            contentElement.style.display = 'block';
+        }
+        
+        function showFallback() {
+            loadingElement.style.display = 'none';
+            fallbackElement.style.display = 'block';
+        }
+        
+        // Proper CSV parser that handles quoted cells with line breaks
+        function parseCSV(csvText) {
+            const result = [];
+            let row = [];
+            let currentValue = '';
+            let insideQuotes = false;
+            
+            for (let i = 0; i < csvText.length; i++) {
+                const char = csvText[i];
+                const nextChar = csvText[i + 1];
                 
-            } catch (fetchError) {
-                console.warn('Could not fetch from ORCID:', fetchError);
-                // Fall back to default biography
-                displayBiography(DEFAULT_BIOGRAPHY);
+                if (char === '"') {
+                    if (insideQuotes && nextChar === '"') {
+                        // Escaped quote inside quotes
+                        currentValue += '"';
+                        i++; // Skip the next quote
+                    } else {
+                        // Toggle quote state
+                        insideQuotes = !insideQuotes;
+                    }
+                } else if (char === ',' && !insideQuotes) {
+                    // End of field
+                    row.push(currentValue);
+                    currentValue = '';
+                } else if ((char === '\r' || char === '\n') && !insideQuotes) {
+                    // End of line
+                    if (currentValue !== '' || row.length > 0) {
+                        row.push(currentValue);
+                        result.push(row);
+                        row = [];
+                        currentValue = '';
+                    }
+                    
+                    // Skip the next character if it's a line feed after a carriage return
+                    if (char === '\r' && nextChar === '\n') {
+                        i++;
+                    }
+                } else {
+                    // Regular character
+                    currentValue += char;
+                }
             }
             
-        } catch (error) {
-            console.error('Error:', error);
-            loadingSpinner.classList.add('d-none');
-            errorMessage.textContent = 'Unable to load biography at this time.';
-            errorMessage.classList.remove('d-none');
+            // Don't forget the last row
+            if (currentValue !== '' || row.length > 0) {
+                row.push(currentValue);
+                result.push(row);
+            }
+            
+            return result;
         }
     }
-
-    function displayBiography(text) {
-        const loadingSpinner = document.getElementById('loading-spinner');
-        const biographyContent = document.getElementById('biography-content');
-        
-        // Using a <div> with the biography-text class to preserve formatting
-        biographyContent.innerHTML = `<div class="biography-text">${text}</div>`;
-        
-        loadingSpinner.classList.add('d-none');
-        biographyContent.classList.remove('d-none');
-    }
-
-    // Load biography when page loads
-    document.addEventListener('DOMContentLoaded', loadBiography);
     </script>
     
     <!-- Footer-->
