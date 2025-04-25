@@ -12,7 +12,8 @@
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
                 <li class="nav-item menu-item-has-children dropdown">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About <span class="dropdown-icon">▼</span></a>
+                    <a class="nav-link px-lg-3 py-3 py-lg-4 parent-link" href="about.html">About <span class="dropdown-icon">▼</span></a>
+                    <a class="mobile-dropdown-toggle d-lg-none" href="javascript:void(0);"><span class="sr-only">Toggle Dropdown</span></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
                         <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
@@ -20,7 +21,8 @@
                     </ul>
                 </li>
                 <li class="nav-item menu-item-has-children dropdown">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services <span class="dropdown-icon">▼</span></a>
+                    <a class="nav-link px-lg-3 py-3 py-lg-4 parent-link" href="services.html">Services <span class="dropdown-icon">▼</span></a>
+                    <a class="mobile-dropdown-toggle d-lg-none" href="javascript:void(0);"><span class="sr-only">Toggle Dropdown</span></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="servicesAssessment.html">Assessment</a></li>
                         <li><a class="dropdown-item" href="servicesTreatment.html">Treatment</a></li>
@@ -105,6 +107,17 @@ body {
 .dropdown-item:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+/* Mobile dropdown toggle button */
+.mobile-dropdown-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    line-height: 3.5;
+    display: none;
+}
 /* Desktop menu behavior */
 @media (min-width: 992px) {
     /* Menu item with children (dropdown) */
@@ -153,12 +166,19 @@ body {
         position: relative;
     }
     
-    /* Rotate arrow when expanded */
-    .menu-item-has-children.show .dropdown-icon {
-        transform: rotate(180deg);
+    /* Show mobile dropdown toggle */
+    .mobile-dropdown-toggle {
+        display: block;
     }
     
+    /* Adjust padding for parent links to accommodate toggle button */
+    .menu-item-has-children .parent-link {
+        padding-right: 50px !important;
+    }
+    
+    /* Hide dropdown menus by default */
     .dropdown-menu {
+        display: none;
         background-color: transparent;
         border: none;
         box-shadow: none;
@@ -167,9 +187,15 @@ body {
         float: none;
     }
     
+    /* Style for mobile dropdown items */
     .dropdown-item {
         color: #212529;
         padding: 0.5rem 1rem;
+    }
+    
+    /* Show dropdown when the parent is toggled */
+    .menu-item-has-children.show > .dropdown-menu {
+        display: block;
     }
 }
 </style>
@@ -177,29 +203,41 @@ body {
 <script>
 // Add this script to handle mobile dropdown toggles and sticky header
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle mobile dropdown toggles
-    if (window.innerWidth < 992) {
-        const dropdownItems = document.querySelectorAll('.menu-item-has-children > a');
-        
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                // Only prevent default if we're in mobile view and clicking the parent item
-                const parent = this.parentElement;
-                if (window.innerWidth < 992) {
-                    e.preventDefault();
-                    parent.classList.toggle('show');
-                    const subMenu = parent.querySelector('.dropdown-menu');
-                    if (subMenu) {
-                        if (subMenu.style.display === 'block') {
-                            subMenu.style.display = 'none';
-                        } else {
-                            subMenu.style.display = 'block';
-                        }
-                    }
+    // Mobile menu dropdown handling
+    const mobileToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    
+    mobileToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            const dropdownMenu = parent.querySelector('.dropdown-menu');
+            
+            // Toggle the show class on the parent
+            parent.classList.toggle('show');
+            
+            // Toggle the display of the dropdown menu
+            if (dropdownMenu) {
+                if (parent.classList.contains('show')) {
+                    dropdownMenu.style.display = 'block';
+                } else {
+                    dropdownMenu.style.display = 'none';
                 }
-            });
+            }
         });
-    }
+    });
+    
+    // Make sure parent links work correctly on mobile
+    const parentLinks = document.querySelectorAll('.parent-link');
+    
+    parentLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // On mobile, don't prevent navigation when clicking the link
+            // The dropdown will be handled by the toggle button
+            if (window.innerWidth < 992) {
+                // Don't prevent default - allow navigation to the href
+            }
+        });
+    });
     
     // Sticky header functionality
     const navbar = document.getElementById('mainNav');
