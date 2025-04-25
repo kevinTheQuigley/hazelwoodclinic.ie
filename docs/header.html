@@ -11,19 +11,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                <li class="nav-item menu-item-has-children dropdown">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4 parent-link" href="about.html">About <span class="dropdown-icon">▼</span></a>
-                    <a class="mobile-dropdown-toggle d-lg-none" href="javascript:void(0);"><span class="sr-only">Toggle Dropdown</span></a>
-                    <ul class="dropdown-menu">
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="about.html" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                         <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
                         <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
                         <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
                     </ul>
                 </li>
-                <li class="nav-item menu-item-has-children dropdown">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4 parent-link" href="services.html">Services <span class="dropdown-icon">▼</span></a>
-                    <a class="mobile-dropdown-toggle d-lg-none" href="javascript:void(0);"><span class="sr-only">Toggle Dropdown</span></a>
-                    <ul class="dropdown-menu">
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                         <li><a class="dropdown-item" href="servicesAssessment.html">Assessment</a></li>
                         <li><a class="dropdown-item" href="servicesTreatment.html">Treatment</a></li>
                         <li><a class="dropdown-item" href="servicesConsultation.html">Consultation</a></li>
@@ -55,17 +53,6 @@
 .navbar-subtitle {
     font-size: 0.8rem;
     color: #6c757d;
-}
-/* Dropdown icon styling */
-.dropdown-icon {
-    font-size: 0.7em;
-    vertical-align: middle;
-    margin-left: 4px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-.menu-item-has-children.show .dropdown-icon {
-    transform: rotate(180deg);
 }
 /* Sticky header styles */
 #mainNav {
@@ -107,41 +94,26 @@ body {
 .dropdown-item:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
-/* Mobile dropdown toggle button */
-.mobile-dropdown-toggle {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 50px;
-    text-align: center;
-    line-height: 3.5;
-    display: none;
-}
 /* Desktop menu behavior */
 @media (min-width: 992px) {
-    /* Menu item with children (dropdown) */
-    .menu-item-has-children {
-        position: relative;
-    }
-    
-    /* Show dropdown on hover */
-    .menu-item-has-children:hover > .dropdown-menu {
+    .dropdown:hover .dropdown-menu {
         display: block;
     }
     
-    /* Position the dropdown */
-    .menu-item-has-children > .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 200px;
+    /* Make the dropdown toggle links (About, Services) work as actual links on desktop */
+    .dropdown-toggle {
+        pointer-events: auto;
+    }
+    
+    /* For desktop, add a divider between custom dropdown toggle and menu */
+    .dropdown-divider {
+        margin: 0.5rem 0;
     }
 }
 /* Additional mobile styling fixes */
 @media (max-width: 991.98px) {
     .navbar-nav .nav-link.appointment-btn {
-        color: white !important; /* Ensure text stays white on mobile */
+        color: white !important;
     }
     
     /* Make the appointment button stand out on mobile */
@@ -161,84 +133,23 @@ body {
         width: 100%;
     }
     
-    /* Mobile dropdown styling */
-    .menu-item-has-children {
-        position: relative;
-    }
-    
-    /* Show mobile dropdown toggle */
-    .mobile-dropdown-toggle {
-        display: block;
-    }
-    
-    /* Adjust padding for parent links to accommodate toggle button */
-    .menu-item-has-children .parent-link {
-        padding-right: 50px !important;
-    }
-    
-    /* Hide dropdown menus by default */
+    /* Adjust dropdown appearance on mobile */
     .dropdown-menu {
-        display: none;
         background-color: transparent;
         border: none;
         box-shadow: none;
         padding-left: 1.5rem;
-        position: static;
-        float: none;
     }
     
-    /* Style for mobile dropdown items */
     .dropdown-item {
         color: #212529;
         padding: 0.5rem 1rem;
-    }
-    
-    /* Show dropdown when the parent is toggled */
-    .menu-item-has-children.show > .dropdown-menu {
-        display: block;
     }
 }
 </style>
 
 <script>
-// Add this script to handle mobile dropdown toggles and sticky header
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu dropdown handling
-    const mobileToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-    
-    mobileToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const parent = this.parentElement;
-            const dropdownMenu = parent.querySelector('.dropdown-menu');
-            
-            // Toggle the show class on the parent
-            parent.classList.toggle('show');
-            
-            // Toggle the display of the dropdown menu
-            if (dropdownMenu) {
-                if (parent.classList.contains('show')) {
-                    dropdownMenu.style.display = 'block';
-                } else {
-                    dropdownMenu.style.display = 'none';
-                }
-            }
-        });
-    });
-    
-    // Make sure parent links work correctly on mobile
-    const parentLinks = document.querySelectorAll('.parent-link');
-    
-    parentLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // On mobile, don't prevent navigation when clicking the link
-            // The dropdown will be handled by the toggle button
-            if (window.innerWidth < 992) {
-                // Don't prevent default - allow navigation to the href
-            }
-        });
-    });
-    
     // Sticky header functionality
     const navbar = document.getElementById('mainNav');
     
@@ -255,5 +166,129 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
+    
+    // Custom handling for dropdown toggles on mobile and desktop
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // On desktop, we want the link to work normally unless clicking the arrow
+            if (window.innerWidth >= 992) {
+                // Desktop behavior - allow normal navigation for most of the link
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX;
+                
+                // If clicking near the right edge (where the arrow is),
+                // prevent default to allow dropdown to show
+                if (x > rect.right - 20) {
+                    e.preventDefault();
+                }
+                // Otherwise the link works normally
+            } else {
+                // Mobile behavior
+                e.preventDefault();
+                
+                // Get the dropdown menu for this toggle
+                const parent = this.parentElement;
+                const dropdownMenu = parent.querySelector('.dropdown-menu');
+                
+                // Close all other open dropdowns
+                document.querySelectorAll('.dropdown.show').forEach(item => {
+                    if (item !== parent) {
+                        item.classList.remove('show');
+                        const menu = item.querySelector('.dropdown-menu');
+                        if (menu) menu.style.display = 'none';
+                    }
+                });
+                
+                // Toggle this dropdown
+                parent.classList.toggle('show');
+                
+                if (dropdownMenu) {
+                    if (parent.classList.contains('show')) {
+                        dropdownMenu.style.display = 'block';
+                    } else {
+                        dropdownMenu.style.display = 'none';
+                    }
+                }
+            }
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown.show').forEach(item => {
+                item.classList.remove('show');
+                const menu = item.querySelector('.dropdown-menu');
+                if (menu) menu.style.display = 'none';
+            });
+        }
+    });
+    
+    // Handle navigation to the parent page when clicking on mobile
+    if (window.innerWidth < 992) {
+        document.querySelectorAll('.dropdown').forEach(item => {
+            const toggle = item.querySelector('.dropdown-toggle');
+            const url = toggle.getAttribute('href');
+            
+            // Create a clickable area that takes you to the page
+            const navButton = document.createElement('a');
+            navButton.className = 'nav-to-page';
+            navButton.innerHTML = 'Go to page →';
+            navButton.style.display = 'block';
+            navButton.style.padding = '0.5rem 1.5rem';
+            navButton.style.color = '#0d6efd';
+            navButton.style.fontWeight = '500';
+            navButton.href = url;
+            
+            // Add as first item in dropdown
+            const dropdownMenu = item.querySelector('.dropdown-menu');
+            if (dropdownMenu) {
+                dropdownMenu.insertBefore(navButton, dropdownMenu.firstChild);
+            }
+        });
+    }
+    
+    // Reinitialize menu when window is resized
+    window.addEventListener('resize', function() {
+        // Reset all dropdown menus
+        document.querySelectorAll('.dropdown').forEach(item => {
+            item.classList.remove('show');
+            const menu = item.querySelector('.dropdown-menu');
+            if (menu) menu.style.display = '';
+        });
+        
+        // Clean up any "Go to page" links if we're switching to desktop
+        if (window.innerWidth >= 992) {
+            document.querySelectorAll('.nav-to-page').forEach(item => {
+                item.remove();
+            });
+        }
+        // Add "Go to page" links if we're switching to mobile
+        else {
+            // Only add if they don't already exist
+            if (document.querySelectorAll('.nav-to-page').length === 0) {
+                document.querySelectorAll('.dropdown').forEach(item => {
+                    const toggle = item.querySelector('.dropdown-toggle');
+                    const url = toggle.getAttribute('href');
+                    
+                    const navButton = document.createElement('a');
+                    navButton.className = 'nav-to-page';
+                    navButton.innerHTML = 'Go to page →';
+                    navButton.style.display = 'block';
+                    navButton.style.padding = '0.5rem 1.5rem';
+                    navButton.style.color = '#0d6efd';
+                    navButton.style.fontWeight = '500';
+                    navButton.href = url;
+                    
+                    const dropdownMenu = item.querySelector('.dropdown-menu');
+                    if (dropdownMenu && !dropdownMenu.querySelector('.nav-to-page')) {
+                        dropdownMenu.insertBefore(navButton, dropdownMenu.firstChild);
+                    }
+                });
+            }
+        }
+    });
 });
 </script>
