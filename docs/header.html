@@ -2,7 +2,10 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> 
     <div class="container px-4 px-lg-5">
         <div class="navbar-brand-container">
-            <a class="navbar-brand" href="index.html">Hazelwood Clinic</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/hazelwoodClinicLogo.png" alt="Hazelwood Clinic Logo" class="brand-logo">
+                <span class="brand-text">Hazelwood Clinic</span>
+            </a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -11,29 +14,25 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
+                <li class="nav-item custom-dropdown">
                     <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a>
-                    <button class="dropdown-toggle-btn" aria-label="Toggle dropdown">
-                        <i class="dropdown-arrow">▼</i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
-                        <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
-                        <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
-                    </ul>
+                    <span class="mobile-dropdown-toggle">▼</span>
+                    <div class="submenu">
+                        <a href="aboutStephen.html">Stephen Quigley</a>
+                        <a href="aboutTypesOfPsychology.html">Clinical Psychology</a>
+                        <a href="aboutTherapyTypes.html">Types of Therapy</a>
+                    </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item custom-dropdown">
                     <a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services</a>
-                    <button class="dropdown-toggle-btn" aria-label="Toggle dropdown">
-                        <i class="dropdown-arrow">▼</i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="servicesAssessment.html">Assessment</a></li>
-                        <li><a class="dropdown-item" href="servicesTreatment.html">Treatment</a></li>
-                        <li><a class="dropdown-item" href="servicesConsultation.html">Consultation</a></li>
-                        <li><a class="dropdown-item" href="servicesWorkshops.html">Workshops</a></li>
-                        <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
-                    </ul>
+                    <span class="mobile-dropdown-toggle">▼</span>
+                    <div class="submenu">
+                        <a href="servicesAssessment.html">Assessment</a>
+                        <a href="servicesTreatment.html">Treatment</a>
+                        <a href="servicesConsultation.html">Consultation</a>
+                        <a href="servicesWorkshops.html">Workshops</a>
+                        <a href="aboutTherapyTypes.html">Types of Therapy</a>
+                    </div>
                 </li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resources.html">Resources</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="fees.html">Fees</a></li>
@@ -46,159 +45,140 @@
         </div>
     </div>
 </nav>
+
 <style>
-.navbar-brand-container {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+/* Logo styling */
+.brand-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 .navbar-brand {
-    margin-bottom: 0;
-    padding-bottom: 0;
+    display: flex;
+    align-items: center;
 }
-.navbar-subtitle {
-    font-size: 0.8rem;
-    color: #6c757d;
+.brand-text {
+    font-weight: bold;
 }
+
 /* Sticky header styles */
 #mainNav {
-    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 9999;
 }
-#mainNav.is-scrolled {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
+
 /* Add padding to body to prevent content from hiding behind fixed navbar */
 body {
-    padding-top: 70px; /* Adjust this value based on your navbar height */
+    padding-top: 80px;
 }
-/* Fix for appointment button text color */
+
+/* Appointment button styling */
 .appointment-btn {
-    color: white !important; /* Force white text at all screen sizes */
+    color: white !important;
 }
-/* Override any nav-link:hover styles for the appointment button */
 .appointment-btn:hover, 
 .appointment-btn:focus {
     color: white !important;
 }
-/* Dropdown menu styling */
-.dropdown-menu {
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    border: none;
-    padding: 0.5rem 0;
-    margin-top: 0;
-    display: none;
+
+/* Custom dropdown styling - completely independent from Bootstrap */
+.custom-dropdown {
+    position: relative;
 }
-.dropdown-item {
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-}
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-/* Dropdown toggle button */
-.dropdown-toggle-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    font-size: 12px;
-    cursor: pointer;
-    display: none;
-}
-.dropdown-arrow {
-    font-style: normal;
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-.dropdown.show .dropdown-arrow {
-    transform: rotate(180deg);
-}
-/* Desktop menu behavior */
+
+/* Desktop: Show submenu on hover */
 @media (min-width: 992px) {
-    /* Dropdown item positioning */
-    .dropdown {
-        position: relative;
-    }
-    
-    /* Show dropdown on hover for desktop */
-    .dropdown:hover .dropdown-menu {
+    .custom-dropdown:hover .submenu {
         display: block;
     }
     
-    /* Position dropdown menu */
-    .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 200px;
-        z-index: 1000;
-    }
-    
-    /* Add dropdown indicator to nav links */
-    .dropdown > .nav-link::after {
-        content: '▼';
+    .custom-dropdown .nav-link:after {
+        content: ' ▼';
         font-size: 0.7em;
         vertical-align: middle;
-        margin-left: 4px;
-        display: inline-block;
+    }
+    
+    .mobile-dropdown-toggle {
+        display: none;
     }
 }
+
+/* Submenu styling */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+.submenu a {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    color: #212529;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.submenu a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
 /* Mobile styling */
 @media (max-width: 991.98px) {
-    /* Show toggle button on mobile */
-    .dropdown-toggle-btn {
-        display: block;
+    body {
+        padding-top: 60px;
     }
     
-    /* Container for dropdown items */
-    .dropdown {
-        position: relative;
-        width: 100%;
+    .brand-logo {
+        height: 32px;
     }
     
-    /* Style for parent nav links on mobile */
-    .dropdown > .nav-link {
-        padding-right: 50px !important; /* Space for dropdown toggle */
+    .mobile-dropdown-toggle {
+        position: absolute;
+        right: 15px;
+        top: 16px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: transform 0.3s;
     }
     
-    /* Mobile dropdown menu styling */
-    .dropdown-menu {
+    .custom-dropdown.open .mobile-dropdown-toggle {
+        transform: rotate(180deg);
+    }
+    
+    .custom-dropdown .nav-link {
+        padding-right: 50px !important;
+    }
+    
+    .submenu {
         position: static;
-        float: none;
         width: 100%;
+        box-shadow: none;
         background-color: rgba(0,0,0,0.03);
         border-radius: 0;
-        box-shadow: none;
-        margin-top: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
     }
     
-    /* Style for dropdown items on mobile */
-    .dropdown-item {
-        padding: 0.5rem 2rem;
+    .submenu a {
+        padding: 0.5rem 3rem;
     }
     
-    /* Mobile show class for dropdowns */
-    .dropdown.show .dropdown-menu {
+    .custom-dropdown.open .submenu {
         display: block;
     }
     
-    /* Nav styles for mobile */
-    .navbar-nav .nav-link.appointment-btn {
-        color: white !important;
-    }
-    
-    /* Make the appointment button stand out on mobile */
     .navbar-nav .nav-link.appointment-btn {
         display: inline-block;
         margin: 10px auto;
@@ -209,7 +189,6 @@ body {
         white-space: nowrap;
     }
     
-    /* Center the button in its container */
     .nav-item.d-flex.align-items-center {
         justify-content: center;
         width: 100%;
@@ -219,59 +198,60 @@ body {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle dropdown toggle buttons
-    const toggleButtons = document.querySelectorAll('.dropdown-toggle-btn');
+    // Simple mobile dropdown toggle
+    const mobileToggles = document.querySelectorAll('.mobile-dropdown-toggle');
     
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+    mobileToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // Get parent dropdown
+            const parent = this.closest('.custom-dropdown');
             
-            const parent = this.closest('.dropdown');
-            
-            // Close other dropdowns
-            document.querySelectorAll('.dropdown.show').forEach(dropdown => {
+            // Close all other dropdowns
+            document.querySelectorAll('.custom-dropdown.open').forEach(dropdown => {
                 if (dropdown !== parent) {
-                    dropdown.classList.remove('show');
+                    dropdown.classList.remove('open');
                 }
             });
             
             // Toggle current dropdown
-            parent.classList.toggle('show');
+            parent.classList.toggle('open');
         });
     });
     
-    // Close dropdowns when clicking outside
+    // Prevent mobile toggle from activating when clicking elsewhere
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown.show').forEach(dropdown => {
-                dropdown.classList.remove('show');
+        if (!e.target.closest('.custom-dropdown')) {
+            document.querySelectorAll('.custom-dropdown.open').forEach(dropdown => {
+                dropdown.classList.remove('open');
             });
         }
     });
     
-    // Sticky header functionality
-    const navbar = document.getElementById('mainNav');
+    // Handle clicks on nav links (don't open/close dropdown)
+    const navLinks = document.querySelectorAll('.custom-dropdown > .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // On mobile, just navigate to the page
+            if (window.innerWidth < 992) {
+                // Let default link behavior happen
+            }
+        });
+    });
     
-    function handleScroll() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('is-scrolled');
-        } else {
-            navbar.classList.remove('is-scrolled');
-        }
+    // Adjust body padding based on header height
+    function adjustBodyPadding() {
+        const headerHeight = document.getElementById('mainNav').offsetHeight;
+        document.body.style.paddingTop = headerHeight + 'px';
     }
     
-    // Initial check in case page loads scrolled down
-    handleScroll();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    
-    // Handle window resize
+    // Call initially and on window resize
+    adjustBodyPadding();
     window.addEventListener('resize', function() {
+        adjustBodyPadding();
+        
         // Close all dropdowns when resizing
-        document.querySelectorAll('.dropdown.show').forEach(dropdown => {
-            dropdown.classList.remove('show');
+        document.querySelectorAll('.custom-dropdown.open').forEach(dropdown => {
+            dropdown.classList.remove('open');
         });
     });
 });
