@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Ms Clare Quigley</title>
+    <title>Hazelwood Clinic</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -125,7 +125,7 @@
                 <!-- Biography Section with Photo -->
                 <div class="row mt-4">
                     <div class="col-md-5 mb-4 profile-container">
-                        <img src="assets/img/aboutProfile.jpg" alt="Clare Quigley" class="profile-img">
+                        <img src="assets/img/aboutProfile.jpg" alt="Hazelwood Clinic Team" class="profile-img">
                     </div>
                     <div class="col-md-7 biography-container">
                         <div id="biography-section">
@@ -150,30 +150,30 @@
                     <h3>Credentials & Achievements</h3>
                     
                     <div class="credentials-list">
-                        <h4>Fellowships</h4>
+                        <h4>Qualifications</h4>
                         <ul>
-                            <li>FRCSI (Ophth)</li>
-                            <li>FRCOphth</li>
-                            <li>FEBO</li>
+                            <li>Registered Clinical Psychologist</li>
+                            <li>PhD in Clinical Psychology</li>
+                            <li>Member of the Psychological Society of Ireland</li>
                         </ul>
                     </div>
                     
                     <div class="credentials-list">
-                        <h4>Memberships</h4>
+                        <h4>Specializations</h4>
                         <ul>
-                            <li>Irish College of Ophthalmologists</li>
-                            <li>Royal College of Surgeons in Ireland</li>
-                            <li>European Society of Cataract and Refractive Surgeons</li>
+                            <li>Cognitive Behavioral Therapy (CBT)</li>
+                            <li>Trauma-Focused Therapy</li>
+                            <li>Anxiety and Depression Treatment</li>
+                            <li>Family and Relationship Counseling</li>
                         </ul>
                     </div>
                     
                     <div class="credentials-list">
-                        <h4>Awards</h4>
+                        <h4>Professional Development</h4>
                         <ul>
-                            <li>Royal College of Surgeons in Ireland Surgical Travel Grants 2024</li>
-                            <li>Highest overall European Board of Ophthalmology Diploma score 2021</li>
-                            <li>Eithne Walls Memorial Fellowship 2021</li>
-                            <li>John Henahan Ophthalmology writing prize 2017</li>
+                            <li>Certified in EMDR Therapy</li>
+                            <li>Advanced Training in Mindfulness-Based Interventions</li>
+                            <li>Continuing Professional Development in Evidence-Based Practices</li>
                         </ul>
                     </div>
                 </div>
@@ -187,7 +187,14 @@
     function loadBiography() {
         const CACHE_KEY = 'about_biography_cache';
         const CACHE_DURATION = 3600000; // 1 hour in milliseconds
-        const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv&gid=1"; // Use gid parameter to specify the second sheet
+        
+        // Base URL for the published Google Sheet
+        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
+        
+        // Add the gid parameter to specify the 'About' sheet
+        // If your second sheet has a different gid, you'll need to replace this value
+        const aboutSheetGid = "1147790412";
+        const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
         
         const loadingElement = document.getElementById('loading-biography');
         const contentElement = document.getElementById('biography-content');
@@ -217,6 +224,10 @@
             .then(csvText => {
                 // Parse the CSV properly including handling quoted values
                 const parsedContent = parseCSV(csvText);
+                
+                // Log the parsed content for debugging
+                console.log("Parsed content:", parsedContent);
+                
                 if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
                     const contentValue = parsedContent[1][0]; // Get first column of second row
                     
@@ -228,6 +239,7 @@
                     
                     displayContent(contentValue);
                 } else {
+                    console.warn("No valid content found in the CSV");
                     showFallback();
                 }
             })
