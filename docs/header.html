@@ -14,30 +14,31 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
+                
+                <!-- About Dropdown -->
+                <li class="nav-item custom-dropdown">
                     <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a>
-                    <button class="dropdown-toggle-btn" aria-label="Toggle dropdown">
-                        <i class="dropdown-arrow">▼</i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
-                        <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
-                        <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
-                    </ul>
+                    <div class="dropdown-arrow">▼</div>
+                    <div class="custom-dropdown-menu">
+                        <a href="aboutStephen.html">Stephen Quigley</a>
+                        <a href="aboutTypesOfPsychology.html">Clinical Psychology</a>
+                        <a href="aboutTherapyTypes.html">Types of Therapy</a>
+                    </div>
                 </li>
-                <li class="nav-item dropdown">
+                
+                <!-- Services Dropdown -->
+                <li class="nav-item custom-dropdown">
                     <a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services</a>
-                    <button class="dropdown-toggle-btn" aria-label="Toggle dropdown">
-                        <i class="dropdown-arrow">▼</i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="servicesAssessment.html">Assessment</a></li>
-                        <li><a class="dropdown-item" href="servicesTreatment.html">Treatment</a></li>
-                        <li><a class="dropdown-item" href="servicesConsultation.html">Consultation</a></li>
-                        <li><a class="dropdown-item" href="servicesWorkshops.html">Workshops</a></li>
-                        <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
-                    </ul>
+                    <div class="dropdown-arrow">▼</div>
+                    <div class="custom-dropdown-menu">
+                        <a href="servicesAssessment.html">Assessment</a>
+                        <a href="servicesTreatment.html">Treatment</a>
+                        <a href="servicesConsultation.html">Consultation</a>
+                        <a href="servicesWorkshops.html">Workshops</a>
+                        <a href="aboutTherapyTypes.html">Types of Therapy</a>
+                    </div>
                 </li>
+                
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resources.html">Resources</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="fees.html">Fees</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="faq.html">FAQ</a></li>
@@ -69,10 +70,7 @@
     align-items: center;
     line-height: 1.2;
 }
-.navbar-subtitle {
-    font-size: 0.8rem;
-    color: #6c757d;
-}
+
 /* Enhanced sticky header styles */
 #mainNav {
     position: fixed;
@@ -102,74 +100,63 @@ body {
 .appointment-btn:focus {
     color: white !important;
 }
-/* Dropdown menu styling */
-.dropdown-menu {
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    border: none;
-    padding: 0.5rem 0;
-    margin-top: 0;
-    display: none;
+
+/* CUSTOM DROPDOWN STYLING */
+/* Base styles for custom dropdowns */
+.custom-dropdown {
+    position: relative;
 }
-.dropdown-item {
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-}
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-/* Dropdown toggle button */
-.dropdown-toggle-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    font-size: 12px;
-    cursor: pointer;
-    display: none;
-}
+
+/* Dropdown arrow styling */
 .dropdown-arrow {
-    font-style: normal;
-    display: inline-block;
-    transition: transform 0.2s ease;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #666;
+    pointer-events: none; /* Let clicks pass through to the link */
 }
-.dropdown.show .dropdown-arrow {
-    transform: rotate(180deg);
+
+/* Custom dropdown menu styling */
+.custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
 }
-/* Desktop menu behavior */
+
+/* Desktop: Show dropdown on hover */
 @media (min-width: 992px) {
-    /* Dropdown item positioning */
-    .dropdown {
-        position: relative;
-    }
-    
-    /* Show dropdown on hover for desktop */
-    .dropdown:hover .dropdown-menu {
+    .custom-dropdown:hover .custom-dropdown-menu {
         display: block;
     }
     
-    /* Position dropdown menu */
-    .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 200px;
-        z-index: 1000;
-    }
-    
-    /* Add dropdown indicator to nav links */
-    .dropdown > .nav-link::after {
-        content: '▼';
-        font-size: 0.7em;
-        vertical-align: middle;
-        margin-left: 4px;
-        display: inline-block;
+    /* Add dropdown indicator to nav links for desktop */
+    .custom-dropdown > .nav-link {
+        padding-right: 2rem !important;
     }
 }
+
+/* Dropdown items styling */
+.custom-dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #212529;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.custom-dropdown-menu a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
 /* Mobile styling */
 @media (max-width: 991.98px) {
     /* Update body padding for mobile */
@@ -182,43 +169,41 @@ body {
         height: 32px;
     }
     
-    /* Show toggle button on mobile */
-    .dropdown-toggle-btn {
-        display: block;
-    }
-    
-    /* Container for dropdown items */
-    .dropdown {
+    /* Mobile dropdown styling */
+    .custom-dropdown {
         position: relative;
-        width: 100%;
     }
     
-    /* Style for parent nav links on mobile */
-    .dropdown > .nav-link {
-        padding-right: 50px !important; /* Space for dropdown toggle */
+    /* Mobile dropdown arrow - clickable on mobile */
+    .dropdown-arrow {
+        pointer-events: auto;
+        padding: 15px;
+        right: 0;
+    }
+    
+    /* Style for dropdown when active on mobile */
+    .custom-dropdown.active .dropdown-arrow {
+        transform: translateY(-50%) rotate(180deg);
     }
     
     /* Mobile dropdown menu styling */
-    .dropdown-menu {
+    .custom-dropdown-menu {
         position: static;
-        float: none;
-        width: 100%;
         background-color: rgba(0,0,0,0.03);
-        border-radius: 0;
         box-shadow: none;
-        margin-top: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
     }
     
-    /* Style for dropdown items on mobile */
-    .dropdown-item {
-        padding: 0.5rem 2rem;
-    }
-    
-    /* Mobile show class for dropdowns */
-    .dropdown.show .dropdown-menu {
+    /* Show dropdown menu when active on mobile */
+    .custom-dropdown.active .custom-dropdown-menu {
         display: block;
+    }
+    
+    /* Mobile dropdown items styling */
+    .custom-dropdown-menu a {
+        padding: 10px 30px;
     }
     
     /* Nav styles for mobile */
@@ -247,37 +232,6 @@ body {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle dropdown toggle buttons
-    const toggleButtons = document.querySelectorAll('.dropdown-toggle-btn');
-    
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const parent = this.closest('.dropdown');
-            
-            // Close other dropdowns
-            document.querySelectorAll('.dropdown.show').forEach(dropdown => {
-                if (dropdown !== parent) {
-                    dropdown.classList.remove('show');
-                }
-            });
-            
-            // Toggle current dropdown
-            parent.classList.toggle('show');
-        });
-    });
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown.show').forEach(dropdown => {
-                dropdown.classList.remove('show');
-            });
-        }
-    });
-    
     // Sticky header functionality
     const navbar = document.getElementById('mainNav');
     
@@ -295,29 +249,90 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
     
+    // Mobile dropdown handling
+    if (window.innerWidth < 992) {
+        // Find all dropdown arrows
+        const dropdownArrows = document.querySelectorAll('.dropdown-arrow');
+        
+        // Add click event to each arrow
+        dropdownArrows.forEach(arrow => {
+            arrow.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Get the parent dropdown
+                const parentDropdown = this.closest('.custom-dropdown');
+                
+                // Toggle active class
+                if (parentDropdown.classList.contains('active')) {
+                    parentDropdown.classList.remove('active');
+                } else {
+                    // Remove active class from all dropdowns
+                    document.querySelectorAll('.custom-dropdown.active').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked dropdown
+                    parentDropdown.classList.add('active');
+                }
+            });
+        });
+        
+        // Allow clicking on nav links to navigate (don't toggle dropdown)
+        const dropdownLinks = document.querySelectorAll('.custom-dropdown > .nav-link');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Let the link work as normal, don't prevent default
+            });
+        });
+    }
+    
     // Handle window resize
     window.addEventListener('resize', function() {
-        // Close all dropdowns when resizing
-        document.querySelectorAll('.dropdown.show').forEach(dropdown => {
-            dropdown.classList.remove('show');
+        // Get current window width
+        const windowWidth = window.innerWidth;
+        
+        // Remove active class from all dropdowns
+        document.querySelectorAll('.custom-dropdown.active').forEach(dropdown => {
+            dropdown.classList.remove('active');
         });
         
         // Adjust body padding based on header height
         const headerHeight = navbar.offsetHeight;
         document.body.style.paddingTop = headerHeight + 'px';
+        
+        // Rebind click events for mobile
+        if (windowWidth < 992) {
+            const dropdownArrows = document.querySelectorAll('.dropdown-arrow');
+            
+            dropdownArrows.forEach(arrow => {
+                // First remove existing listeners
+                let newArrow = arrow.cloneNode(true);
+                arrow.parentNode.replaceChild(newArrow, arrow);
+                
+                // Then add new listeners
+                newArrow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const parentDropdown = this.closest('.custom-dropdown');
+                    
+                    if (parentDropdown.classList.contains('active')) {
+                        parentDropdown.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.custom-dropdown.active').forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                        
+                        parentDropdown.classList.add('active');
+                    }
+                });
+            });
+        }
     });
     
     // Set initial body padding based on header height
     const headerHeight = navbar.offsetHeight;
     document.body.style.paddingTop = headerHeight + 'px';
-
-    // Make sure Bootstrap's collapse and dropdown functionality is initialized
-    if (typeof bootstrap !== 'undefined') {
-        // Initialize all dropdowns
-        var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-        dropdownElementList.map(function (dropdownToggleEl) {
-            return new bootstrap.Dropdown(dropdownToggleEl)
-        });
-    }
 });
 </script>
