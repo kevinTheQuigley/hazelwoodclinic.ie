@@ -11,25 +11,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 fs-7">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="about.html" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        About
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <li><a class="dropdown-item" href="about.html">About Overview</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                <li class="nav-item menu-item-has-children dropdown">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a>
+                    <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="aboutStephen.html">Stephen Quigley</a></li>
                         <li><a class="dropdown-item" href="aboutTypesOfPsychology.html">Clinical Psychology</a></li>
                         <li><a class="dropdown-item" href="aboutTherapyTypes.html">Types of Therapy</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="services.html" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li><a class="dropdown-item" href="services.html">Services Overview</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                <li class="nav-item menu-item-has-children dropdown">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services</a>
+                    <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="servicesAssessment.html">Assessment</a></li>
                         <li><a class="dropdown-item" href="servicesTreatment.html">Treatment</a></li>
                         <li><a class="dropdown-item" href="servicesConsultation.html">Consultation</a></li>
@@ -67,6 +59,7 @@
     transition: all 0.3s ease;
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
 }
 #mainNav.is-scrolled {
     padding-top: 0.5rem;
@@ -91,6 +84,7 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     border: none;
     padding: 0.5rem 0;
+    margin-top: 0;
 }
 .dropdown-item {
     padding: 0.5rem 1.5rem;
@@ -100,14 +94,33 @@ body {
 .dropdown-item:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
-/* Show dropdown on hover for desktop */
+/* Desktop menu behavior */
 @media (min-width: 992px) {
-    .dropdown:hover .dropdown-menu {
+    /* Menu item with children (dropdown) */
+    .menu-item-has-children {
+        position: relative;
+    }
+    
+    /* Show dropdown on hover */
+    .menu-item-has-children:hover > .dropdown-menu {
         display: block;
     }
-    /* Make the main nav links still work as links when they have dropdowns */
-    .dropdown > .nav-link {
-        pointer-events: auto;
+    
+    /* Position the dropdown */
+    .menu-item-has-children > .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+    }
+    
+    /* Add dropdown indicator */
+    .menu-item-has-children > a:after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 5px;
+        display: inline-block;
     }
 }
 /* Additional mobile styling fixes */
@@ -134,38 +147,62 @@ body {
     }
     
     /* Mobile dropdown styling */
+    .menu-item-has-children {
+        position: relative;
+    }
+    
+    /* Add dropdown indicator for mobile */
+    .menu-item-has-children > a:after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 5px;
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+    
+    /* Rotate arrow when expanded */
+    .menu-item-has-children.show > a:after {
+        transform: rotate(180deg);
+    }
+    
     .dropdown-menu {
         background-color: transparent;
         border: none;
         box-shadow: none;
         padding-left: 1.5rem;
+        position: static;
+        float: none;
     }
+    
     .dropdown-item {
         color: #212529;
         padding: 0.5rem 1rem;
-    }
-    .dropdown-divider {
-        border-color: rgba(0,0,0,0.1);
-        margin: 0.25rem 1rem;
     }
 }
 </style>
 
 <script>
-// Add this script to help with dropdown navigation and sticky header
+// Add this script to handle mobile dropdown toggles and sticky header
 document.addEventListener('DOMContentLoaded', function() {
-    // For desktop: Allow clicking main nav dropdown links
-    if (window.innerWidth >= 992) {
-        const dropdownToggleLinks = document.querySelectorAll('.dropdown-toggle');
-        dropdownToggleLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    // Only prevent default if clicking the arrow indicator
-                    const clickX = e.clientX;
-                    const linkRect = this.getBoundingClientRect();
-                    const arrowWidth = 20; // Approximate width of dropdown arrow
-                    if (clickX > linkRect.right - arrowWidth) {
-                        e.preventDefault();
+    // Handle mobile dropdown toggles
+    if (window.innerWidth < 992) {
+        const dropdownItems = document.querySelectorAll('.menu-item-has-children > a');
+        
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Only prevent default if we're in mobile view and clicking the parent item
+                const parent = this.parentElement;
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    parent.classList.toggle('show');
+                    const subMenu = parent.querySelector('.dropdown-menu');
+                    if (subMenu) {
+                        if (subMenu.style.display === 'block') {
+                            subMenu.style.display = 'none';
+                        } else {
+                            subMenu.style.display = 'block';
+                        }
                     }
                 }
             });
