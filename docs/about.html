@@ -98,38 +98,6 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
-        /* Debug console for in-page debugging */
-        #debug-console {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            max-height: 200px;
-            overflow-y: auto;
-            font-family: monospace;
-            font-size: 0.85rem;
-            display: none;
-        }
-        
-        .debug-entry {
-            margin-bottom: 8px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-        }
-        
-        .debug-error {
-            color: #dc3545;
-        }
-        
-        .debug-warning {
-            color: #ffc107;
-        }
-        
-        .debug-info {
-            color: #0d6efd;
-        }
     </style>
 </head>
 
@@ -137,7 +105,7 @@
     <div id="header-placeholder"></div>
     
     <!-- Page Header-->
-    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/faust.jpg'); height: 30vh;display: flex; align-items: center;">
+    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg'); height: 30vh;display: flex; align-items: center;">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
@@ -171,20 +139,6 @@
                             <!-- Fallback biography -->
                             <div id="biography-fallback" style="display: none;">
                                 <div class="biography-text">Welcome to Hazelwood Clinic. Our team is dedicated to providing compassionate and professional psychological care to help you navigate life's challenges.</div>
-                            </div>
-                            
-                            <!-- Debug console (hidden by default) -->
-                            <div id="debug-console">
-                                <h5>Debug Log</h5>
-                                <div id="debug-log"></div>
-                                <button id="clear-debug" class="btn btn-sm btn-outline-secondary mt-2">Clear Log</button>
-                            </div>
-                            
-                            <!-- Debug controls -->
-                            <div class="mt-4">
-                                <button id="toggle-debug" class="btn btn-sm btn-outline-secondary">Show Debug Console</button>
-                                <button id="test-connection" class="btn btn-sm btn-outline-primary">Test Connection</button>
-                                <button id="force-reload" class="btn btn-sm btn-outline-success">Force Reload</button>
                             </div>
                         </div>
                     </div>
@@ -227,133 +181,9 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Debug functionality
-        setupDebugTools();
-        
-        // Initialize biography loading
-        loadBiography();
-    });
-    
-    // Debug logging function
-    function debugLog(message, type = 'info') {
-        // Log to console
-        switch(type) {
-            case 'error':
-                console.error(message);
-                break;
-            case 'warning':
-                console.warn(message);
-                break;
-            default:
-                console.log(message);
-                break;
-        }
-        
-        // Also log to debug console in page
-        const debugLog = document.getElementById('debug-log');
-        if (debugLog) {
-            const entry = document.createElement('div');
-            entry.className = `debug-entry debug-${type}`;
-            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
-            debugLog.appendChild(entry);
-            debugLog.scrollTop = debugLog.scrollHeight;
-        }
-    }
-    
-    // Setup debug tools
-    function setupDebugTools() {
-        const toggleDebugBtn = document.getElementById('toggle-debug');
-        const clearDebugBtn = document.getElementById('clear-debug');
-        const testConnectionBtn = document.getElementById('test-connection');
-        const forceReloadBtn = document.getElementById('force-reload');
-        const debugConsole = document.getElementById('debug-console');
-        
-        toggleDebugBtn.addEventListener('click', function() {
-            if (debugConsole.style.display === 'none' || !debugConsole.style.display) {
-                debugConsole.style.display = 'block';
-                toggleDebugBtn.textContent = 'Hide Debug Console';
-            } else {
-                debugConsole.style.display = 'none';
-                toggleDebugBtn.textContent = 'Show Debug Console';
-            }
-        });
-        
-        clearDebugBtn.addEventListener('click', function() {
-            document.getElementById('debug-log').innerHTML = '';
-        });
-        
-        testConnectionBtn.addEventListener('click', function() {
-            debugLog('Testing connection to Google Sheets...');
-            testGoogleSheetsConnection();
-        });
-        
-        forceReloadBtn.addEventListener('click', function() {
-            debugLog('Forcing data reload...');
-            loadBiography(true);
-        });
-    }
-    
-    // Test connection to Google Sheets
-    function testGoogleSheetsConnection() {
-        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
-        // Test first sheet (Home sheet)
-        const homeUrl = `${baseUrl}&gid=0`;
-        debugLog(`Testing connection to Home sheet (gid=0): ${homeUrl}`);
-        
-        fetch(homeUrl)
-            .then(response => {
-                debugLog(`Home sheet response status: ${response.status} ${response.statusText}`);
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                return response.text();
-            })
-            .then(csvText => {
-                debugLog(`Home sheet data received: ${csvText.substring(0, 50)}...`);
-                
-                // Now test the About sheet
-                const aboutSheetGid = "159040093";
-                const aboutUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-                debugLog(`Testing connection to About sheet (gid=${aboutSheetGid}): ${aboutUrl}`);
-                
-                return fetch(aboutUrl);
-            })
-            .then(response => {
-                debugLog(`About sheet response status: ${response.status} ${response.statusText}`);
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                return response.text();
-            })
-            .then(csvText => {
-                debugLog(`About sheet data received: ${csvText.substring(0, 50)}...`);
-                debugLog('Connection test successful! Both sheets are accessible.', 'info');
-                
-                // Try parsing the About sheet data
-                const parsedData = parseCSV(csvText);
-                debugLog(`CSV parsed into ${parsedData.length} rows`);
-                
-                // Log the structure
-                if (parsedData.length > 0) {
-                    debugLog(`First row has ${parsedData[0].length} columns: ${JSON.stringify(parsedData[0])}`);
-                }
-                
-                if (parsedData.length > 1) {
-                    debugLog(`Second row has ${parsedData[1].length} columns: ${JSON.stringify(parsedData[1])}`);
-                    
-                    if (parsedData[1].length > 0) {
-                        debugLog(`Content to display: "${parsedData[1][0].substring(0, 50)}..."`);
-                    } else {
-                        debugLog('Second row has no columns!', 'warning');
-                    }
-                } else {
-                    debugLog('CSV has only header row or is empty!', 'warning');
-                }
-            })
-            .catch(error => {
-                debugLog(`Connection test failed: ${error.message}`, 'error');
-            });
-    }
+    document.addEventListener('DOMContentLoaded', loadBiography);
 
-    function loadBiography(forceReload = false) {
+    function loadBiography() {
         const CACHE_KEY = 'about_biography_cache';
         const CACHE_DURATION = 3600000; // 1 hour in milliseconds
         
@@ -361,68 +191,38 @@
         const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
         
         // Add the gid parameter to specify the 'About' sheet
-        const aboutSheetGid = "159040093"; // Replace with your actual About sheet gid if different
+        const aboutSheetGid = "159040093";
         const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-        
-        debugLog(`Loading biography from: ${csvUrl}`);
         
         const loadingElement = document.getElementById('loading-biography');
         const contentElement = document.getElementById('biography-content');
         const fallbackElement = document.getElementById('biography-fallback');
         
-        // Clear cache if force reload is requested
-        if (forceReload) {
-            debugLog('Forcing reload - clearing cache');
-            localStorage.removeItem(CACHE_KEY);
-        }
-        
         // Check cache first
         const cachedData = localStorage.getItem(CACHE_KEY);
-        if (cachedData && !forceReload) {
-            try {
-                const { content, timestamp } = JSON.parse(cachedData);
-                const age = Date.now() - timestamp;
-                
-                debugLog(`Found cached content from ${new Date(timestamp).toLocaleString()}, age: ${Math.round(age/1000/60)} minutes`);
-                
-                if (age < CACHE_DURATION) {
-                    debugLog('Using cached content');
-                    displayContent(content);
-                    return;
-                } else {
-                    debugLog('Cached content expired, fetching fresh data');
-                }
-            } catch (e) {
-                debugLog(`Error parsing cached data: ${e.message}`, 'error');
+        if (cachedData) {
+            const { content, timestamp } = JSON.parse(cachedData);
+            const age = Date.now() - timestamp;
+            
+            if (age < CACHE_DURATION) {
+                displayContent(content);
+                return;
             }
-        } else {
-            debugLog('No valid cache found, fetching fresh data');
         }
         
         // Fetch content from Google Sheets
         fetch(csvUrl)
             .then(response => {
-                debugLog(`Fetch response status: ${response.status} ${response.statusText}`);
                 if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
                 return response.text();
             })
             .then(csvText => {
-                debugLog(`Received CSV data (${csvText.length} bytes)`);
-                debugLog(`CSV preview: ${csvText.substring(0, 100)}`);
-                
                 // Parse the CSV properly including handling quoted values
                 try {
                     const parsedContent = parseCSV(csvText);
-                    debugLog(`CSV parsed into ${parsedContent.length} rows`);
-                    
-                    // Log rows and columns structure
-                    parsedContent.forEach((row, i) => {
-                        debugLog(`Row ${i}: ${JSON.stringify(row)}`);
-                    });
                     
                     if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
                         const contentValue = parsedContent[1][0]; // Get first column of second row
-                        debugLog(`Content extracted: "${contentValue.substring(0, 50)}..."`);
                         
                         // Cache the content
                         localStorage.setItem(CACHE_KEY, JSON.stringify({
@@ -432,17 +232,15 @@
                         
                         displayContent(contentValue);
                     } else {
-                        debugLog("CSV structure doesn't match expected format", 'warning');
-                        debugLog("Expected: At least 2 rows, with content in row 2, column 1", 'warning');
                         showFallback();
                     }
                 } catch (e) {
-                    debugLog(`Error parsing CSV: ${e.message}`, 'error');
+                    console.error('Error parsing CSV:', e);
                     showFallback();
                 }
             })
             .catch(error => {
-                debugLog(`Error fetching content: ${error.message}`, 'error');
+                console.error('Error fetching content:', error);
                 showFallback();
             });
             
@@ -450,20 +248,16 @@
             contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
             loadingElement.style.display = 'none';
             contentElement.style.display = 'block';
-            debugLog('Biography content displayed successfully');
         }
         
         function showFallback() {
             loadingElement.style.display = 'none';
             fallbackElement.style.display = 'block';
-            debugLog('Showing fallback biography content', 'warning');
         }
     }
     
     // Proper CSV parser that handles quoted cells with line breaks
     function parseCSV(csvText) {
-        debugLog('Parsing CSV data...');
-        
         const result = [];
         let row = [];
         let currentValue = '';
@@ -511,7 +305,6 @@
             result.push(row);
         }
         
-        debugLog(`CSV parsing complete, found ${result.length} rows`);
         return result;
     }
     </script>
