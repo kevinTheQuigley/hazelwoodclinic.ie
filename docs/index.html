@@ -24,7 +24,8 @@
                        transparent),
     url(assets/img/home.jpg);
     display: flex; 
-    align-items: center;">
+    align-items: center;
+    min-height: 600px;">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5">  
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -34,6 +35,19 @@
                     <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Professional Counseling & Therapy</p>
                     <p class="subheading" style="font-size: 1.1rem; margin-bottom: 0.3rem;">Individual, Couple & Family Support</p>
                     <p class="subheading" style="font-size: 1.1rem;">Evidence-based Treatment Approaches</p>
+                    
+                    <div id="about-text" class="about-text-content mt-4">
+                        <div id="loading-about" class="text-center">
+                            <div class="loading-spinner"></div>
+                            <p>Loading content...</p>
+                        </div>
+                        <div id="about-content" style="display: none;"></div>
+                        <div id="about-fallback" style="display: none;">
+                            <p>Welcome to Hazelwood Clinic, a dedicated psychology practice providing strength through support to adults, adolescents, and children. We are a team of qualified and experienced psychological professionals committed to delivering compassionate mental health services in a personal and friendly environment. At Hazelwood Clinic, we pride ourselves on offering fast and easy access to confidential psychological support, whether through face-to-face appointments or online sessions.
+                                
+                                Our approach is centered on meeting you where you are and providing the right support at the right time. Rest assured that all our practitioners maintain the highest standards of care and expertise, with appropriate accreditations and specialized training in their respective fields. Your mental wellbeing is our priority—we're here to support you through life's challenges with understanding and professional guidance.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,27 +61,16 @@
         --kq-greenLight: #4B8860;
     }
     
-    .image-option {
-        border-radius: 50% !important;
-        width: 556px;
-        height: 556px;
-        object-fit: cover !important;
+    .masthead {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
     }
     
-    @media(max-width:768px) {
-        .image-option {
-            border-radius: 50% !important;
-            width: 350px;
-            height: 350px;
-            object-fit: cover;
-        }
-    }
-    
-    @media(max-width:768px) {
-        .centervideo {
-            display: flex;
-            justify-content: center;
-        }
+    .about-text-content {
+        min-height: 80px;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        max-width: 90%;
     }
     
     .section__about-us {
@@ -87,8 +90,8 @@
         display: inline-block;
         width: 1rem;
         height: 1rem;
-        border: 0.2rem solid rgba(20, 88, 43, 0.2);
-        border-top-color: #14582B;
+        border: 0.2rem solid rgba(255, 255, 255, 0.2);
+        border-top-color: #ffffff;
         border-radius: 50%;
         animation: spin 1s linear infinite;
     }
@@ -97,35 +100,26 @@
         to { transform: rotate(360deg); }
     }
     
-    .about-text-content {
-        min-height: 80px;
+    /* Make text more readable on the masthead */
+    #about-content p, #about-fallback p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-top: 1rem;
+    }
+    
+    /* Responsive adjustments */
+    @media(max-width:768px) {
+        .masthead {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            min-height: 500px;
+        }
+        
+        .about-text-content {
+            max-width: 100%;
+        }
     }
 </style>
-
-
-<section id="profile-section" class="section section__action alt">
-    <div class="action">
-        <div class="container">
-            <div class="row justify-content-start">
-                <div class="col-12 col-lg-6 align-self-center order-1 centervideo">
-                    <img class="img image-option" src="assets/img/homeProfile.jpg" alt="Hazelwood Clinic - Psychology & Mental Health Services">
-                </div>
-                <div class="col-12 col-lg-5 align-self-center order-2">
-                    <div id="about-text" class="about-text-content">
-                        <div id="loading-about" class="text-center">
-                            <div class="loading-spinner"></div>
-                            <p>Loading content...</p>
-                        </div>
-                        <div id="about-content" style="display: none;"></div>
-                        <div id="about-fallback" style="display: none;">
-                            <p>Hazelwood Clinic is a specialized psychology practice offering comprehensive mental health services in Dublin. Our team of experienced clinicians provides evidence-based therapy for individuals, couples, and families. We are committed to delivering high-quality, patient-centered care in a supportive and compassionate environment.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Include footer -->
 <div id="footer-placeholder"></div>
