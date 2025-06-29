@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Professional consultation services for practitioners, organizations, and educational institutions from Hazelwood Clinic" />
+        <meta name="description" content="Professional workshops and training services from Dr. Stephen Quigley, delivered to organizations, universities, schools, and community groups" />
         <meta name="author" content="Hazelwood Clinic" />
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-        <title>Consultation Services - Hazelwood Clinic</title>
+        <title>Workshops & Training - Hazelwood Clinic</title>
         <link rel="stylesheet" href="css/styles.css">
         <style>
             :root {
@@ -111,32 +111,47 @@
                 color: var(--text-color);
             }
             
-            .consultation-item {
+            .workshop-item {
                 background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
                 border-radius: 6px;
                 margin-bottom: 1.5rem;
             }
             
-            .consultation-item h3 {
+            .workshop-item h3 {
                 color: var(--kq-greenLight);
                 margin-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
             
-            .consultation-benefits {
+            .experience-section {
                 margin-top: 2rem;
                 background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
                 border-radius: 6px;
             }
             
-            .consultation-benefits h3 {
+            .experience-section h3 {
                 color: var(--kq-greenLight);
                 margin-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 600;
+            }
+            
+            .organization-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .organization-tag {
+                background-color: rgba(255,255,255,0.2);
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 500;
             }
             
             .cta-section {
@@ -179,6 +194,10 @@
                 .services-header {
                     font-size: 2rem;
                 }
+                
+                .organization-list {
+                    flex-direction: column;
+                }
             }
         </style>
     </head>
@@ -190,7 +209,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading text-center text-white">
-                            <h2 class="services-header">Consultation Services</h2>
+                            <h2 class="services-header">Workshops & Training</h2>
                         </div>
                     </div>
                 </div>
@@ -204,12 +223,12 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="services.html">Services</a></li>
-                                <li class="breadcrumb-item active">Consultation Services</li>
+                                <li class="breadcrumb-item active">Workshops & Training</li>
                             </ol>
                         </nav>
                         
                         <div class="service-intro">
-                            <p class="lead">Hazelwood Clinic offers professional consultation services for fellow practitioners, organizations, and educational institutions, providing specialized expertise and guidance.</p>
+                            <p class="lead">Stephen offers comprehensive workshops and training programmes for organisations, educational institutions, and community groups, sharing expertise in psychology and evidence-based practices.</p>
                         </div>
                     </div>
                 </div>
@@ -217,87 +236,91 @@
             
             <div class="service-section">
                 <div class="service-card">
-                    <h2>Consultation Services</h2>
-                    <p>Dr. Quigley welcomes collaboration with other mental health professionals and is available to provide expert consultation, second opinions, or adjunctive support alongside existing treatment. Our consultation services include:</p>
+                    <h2>Professional Training & Development</h2>
+                    <p>Stephen brings extensive experience in delivering high-quality workshops and training sessions tailored to the specific needs of different audiences. His approach combines academic rigor with practical application, ensuring participants gain both theoretical understanding and actionable skills.</p>
                     
-                    <div class="consultation-item">
-                        <h3>Clinical Case Consultation</h3>
-                        <p>Expert guidance for complex or treatment-resistant cases:</p>
+                    <div class="workshop-item">
+                        <h3>Mental Health & Wellbeing Workshops</h3>
+                        <p>Comprehensive training on psychological principles and mental health awareness:</p>
                         <ul>
-                            <li>Diagnostic clarification and treatment planning</li>
-                            <li>Case conceptualization from multiple theoretical perspectives</li>
-                            <li>Guidance on addressing therapeutic impasses</li>
-                            <li>Recommendations for additional assessment or intervention approaches</li>
-                            <li>Support for cases involving trauma, neurodiversity, or complex presentations</li>
+                            <li>Understanding trauma and its impact across the lifespan</li>
+                            <li>Recognising and responding to mental health challenges</li>
+                            <li>Building resilience and coping strategies</li>
+                            <li>Creating psychologically safe environments</li>
+                            <li>Supporting individuals with neurodevelopmental differences</li>
                         </ul>
                     </div>
                     
-                    <div class="consultation-item">
-                        <h3>Supervision for Mental Health Professionals</h3>
-                        <p>Supportive supervision for early-career psychologists and therapists:</p>
+                    <div class="workshop-item">
+                        <h3>Educational Institution Training</h3>
+                        <p>Specialised workshops for schools, colleges, and universities:</p>
                         <ul>
-                            <li>Clinical skills development and enhancement</li>
-                            <li>Ethical decision-making guidance</li>
-                            <li>Support for personal and professional development</li>
-                            <li>Case-based learning and reflective practice</li>
-                            <li>Preparation for professional registration and accreditation</li>
+                            <li>Supporting students with anxiety and emotional difficulties</li>
+                            <li>Understanding ADHD and autism in educational settings</li>
+                            <li>Implementing trauma-informed practices in schools</li>
+                            <li>Staff wellbeing and burnout prevention</li>
+                            <li>Creating inclusive learning environments</li>
                         </ul>
                     </div>
                     
-                    <div class="consultation-item">
-                        <h3>Collaborative Care Coordination</h3>
-                        <p>Coordination with other healthcare providers for integrated care:</p>
+                    <div class="workshop-item">
+                        <h3>Parenting & Family Support</h3>
+                        <p>Evidence-based guidance for parents and caregivers:</p>
                         <ul>
-                            <li>Multidisciplinary team consultation</li>
-                            <li>Liaison with physicians, psychiatrists, and other specialists</li>
-                            <li>Input for comprehensive treatment planning</li>
-                            <li>Supporting transitions between different levels of care</li>
-                            <li>Coordinated approach for complex or high-risk cases</li>
+                            <li>Understanding child development and behaviour</li>
+                            <li>Supporting children's emotional regulation</li>
+                            <li>Navigating challenging behaviours with compassion</li>
+                            <li>Building strong parent-child relationships</li>
+                            <li>Supporting neurodivergent children and families</li>
                         </ul>
                     </div>
                     
-                    <div class="consultation-item">
-                        <h3>Therapeutic Approach Integration</h3>
-                        <p>Guidance on integrating evidence-based therapeutic approaches:</p>
+                    <div class="workshop-item">
+                        <h3>Healthcare & Social Services Training</h3>
+                        <p>Professional development for healthcare and social service providers:</p>
                         <ul>
-                            <li>Training in specific therapeutic modalities (CBT, EMDR, IFS, etc.)</li>
-                            <li>Support for integrating multiple approaches</li>
-                            <li>Adapting therapeutic techniques for specific populations</li>
-                            <li>Implementing evidence-based protocols</li>
-                            <li>Enhancing therapeutic effectiveness through tailored approaches</li>
+                            <li>Trauma-informed care principles and implementation</li>
+                            <li>Working with vulnerable populations</li>
+                            <li>Secondary trauma prevention and staff support</li>
+                            <li>Evidence-based therapeutic approaches</li>
+                            <li>Ethical considerations in complex cases</li>
                         </ul>
                     </div>
                     
-                    <div class="consultation-item">
-                        <h3>Neurodiversity-Affirming Practices</h3>
-                        <p>Specialized consultation on working with neurodivergent individuals:</p>
+                    <div class="workshop-item">
+                        <h3>Community & Client Group Education</h3>
+                        <p>Accessible workshops designed for community members and client groups:</p>
                         <ul>
-                            <li>Understanding neurodiversity from a strengths-based perspective</li>
-                            <li>Adapting clinical practices for neurodivergent clients</li>
-                            <li>Creating neurodiversity-affirming environments</li>
-                            <li>Addressing sensory and executive functioning needs</li>
-                            <li>Supporting neurodivergent individuals across different contexts</li>
+                            <li>Understanding mental health and reducing stigma</li>
+                            <li>Building emotional resilience and coping skills</li>
+                            <li>Stress management and self-care strategies</li>
+                            <li>Mindfulness and wellbeing practices</li>
+                            <li>Peer support and community connection</li>
                         </ul>
                     </div>
                     
-                    <div class="consultation-benefits">
-                        <h3>Benefits of Professional Consultation</h3>
-                        <ul>
-                            <li>Enhanced clinical effectiveness and client outcomes</li>
-                            <li>Fresh perspectives on challenging cases</li>
-                            <li>Reduced professional isolation and burnout</li>
-                            <li>Opportunities for professional development</li>
-                            <li>Support for ethical decision-making</li>
-                            <li>Access to specialized knowledge and expertise</li>
-                            <li>Increased confidence in clinical approach</li>
-                        </ul>
+                    <div class="experience-section">
+                        <h3>Experience & Credentials</h3>
+                        <p>Stephen has delivered workshops and training for a range of organisations including the HSE, Tusla, and several Irish universities. He has guest lectured on doctoral psychology programmes at the University of Limerick, University of Galway, and Mary Immaculate College, and has provided training for secondary schools, parenting groups, and client communities.</p>
+                        
+                        <div class="organization-list">
+                            <span class="organization-tag">HSE</span>
+                            <span class="organization-tag">Tusla</span>
+                            <span class="organization-tag">University of Limerick</span>
+                            <span class="organization-tag">University of Galway</span>
+                            <span class="organization-tag">Mary Immaculate College</span>
+                            <span class="organization-tag">Secondary Schools</span>
+                            <span class="organization-tag">Community Groups</span>
+                        </div>
+                        
+                        <p>All workshops can be tailored to meet the specific needs of your organisation or group, delivered either in-person or via secure online platforms. Sessions range from half-day workshops to multi-day training programmes, depending on the depth and scope required.</p>
                     </div>
                 </div>
                 
                 <div class="cta-section">
-                    <h3>Interested in Consultation Services?</h3>
-                    <p>Contact Hazelwood Clinic to discuss your consultation needs and schedule an appointment. Consultation services can be arranged in person or via secure video conferencing.</p>
-                    <a href="contact.html" class="cta-button">Request Consultation</a>
+                    <h3>Interested in Workshop or Training Services?</h3>
+                    <p>Contact Hazelwood Clinic to discuss your training needs and develop a customised workshop programme for your organisation or group.</p>
+                    <a href="contact.html" class="cta-button">Request Training Information</a>
                 </div>
             </div>
         </main>
