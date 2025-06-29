@@ -399,9 +399,14 @@
             
         function displayContent(content) {
             try {
-                // Add a Book an Appointment button to the fetched content
+                // Split content by line breaks and create separate paragraphs
+                const paragraphs = content.split(/\n\s*\n|\n/).filter(para => para.trim().length > 0);
+                
+                // Create HTML for each paragraph
+                const paragraphsHTML = paragraphs.map(para => `<p>${para.trim()}</p>`).join('');
+                
                 contentElement.innerHTML = `
-                    <p>${content}</p>
+                    ${paragraphsHTML}
                     <a href="contact.html" class="cta-button">Book an Appointment</a>
                 `;
                 loadingElement.style.display = 'none';
