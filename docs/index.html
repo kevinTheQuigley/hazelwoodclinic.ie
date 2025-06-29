@@ -151,6 +151,24 @@
             margin-bottom: 2rem;
         }
         
+        /* New two-column layout styles */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
         /* Responsive adjustments */
         @media(max-width:768px) {
             .masthead {
@@ -171,6 +189,19 @@
                 width: 200px;
                 height: 200px;
             }
+            
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .hero-text {
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
         }
     </style>
 </head>
@@ -182,26 +213,31 @@
     <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/home.jpg');">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5">  
-                <div class="col-md-10 col-lg-8">
-                    <div class="site-heading text-start"> 
-                        <h1 style="font-size: 2.6rem; color: white; margin-bottom: 1.5rem;">Dr. Stephen Quigley</h1>
-                        
-                        <!-- Profile photo -->
-                        <div class="profile-container">
-                            <img src="assets/img/aboutProfile.jpg" alt="Dr. Stephen Quigley" class="profile-img">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <!-- Text content on the left -->
+                        <div class="hero-text">
+                            <div class="site-heading text-start"> 
+                                <h1 style="font-size: 2.6rem; color: white; margin-bottom: 1.5rem;">Dr. Stephen Quigley</h1>
+                                
+                                <div id="about-text" class="about-text-content mt-4">
+                                    <div id="loading-about" class="text-center">
+                                        <div class="loading-spinner"></div>
+                                        <p class="mt-2">Loading content...</p>
+                                    </div>
+                                    <div id="about-content" style="display: none;"></div>
+                                    <div id="about-fallback" style="display: none;">
+                                        <p>My name is Stephen, and I've worked for over a decade as a clinical psychologist with adults and children in both public and private settings. Like many people who find their way into this field, my path hasn't been a straight line. It's been shaped by my own experiences of struggle, healing, and searching for meaning, not just in therapy rooms, but in forests, in relationships, in stillness, in mess, and in movement.</p>
+                                        <p>While talk therapy can be powerful, I don't believe it's the only, or always the best, path forward. Humans need connection—connection to loved ones, family, nature, community, and ourselves. This is helped by embodied practices, play, and conscious rest.</p>
+                                        <a href="contact.html" class="cta-button">Book an Appointment</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div id="about-text" class="about-text-content mt-4">
-                            <div id="loading-about" class="text-center">
-                                <div class="loading-spinner"></div>
-                                <p class="mt-2">Loading content...</p>
-                            </div>
-                            <div id="about-content" style="display: none;"></div>
-                            <div id="about-fallback" style="display: none;">
-                                <p>My name is Stephen, and I've worked for over a decade as a clinical psychologist with adults and children in both public and private settings. Like many people who find their way into this field, my path hasn't been a straight line. It's been shaped by my own experiences of struggle, healing, and searching for meaning, not just in therapy rooms, but in forests, in relationships, in stillness, in mess, and in movement.</p>
-                                <p>While talk therapy can be powerful, I don't believe it's the only, or always the best, path forward. Humans need connection—connection to loved ones, family, nature, community, and ourselves. This is helped by embodied practices, play, and conscious rest.</p>
-                                <a href="contact.html" class="cta-button">Book an Appointment</a>
-                            </div>
+                        <!-- Profile photo on the right -->
+                        <div class="hero-image">
+                            <img src="assets/img/aboutProfile.jpg" alt="Dr. Stephen Quigley" class="profile-img">
                         </div>
                     </div>
                 </div>

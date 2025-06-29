@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"> 
     <div class="container px-4 px-lg-5">
-        <div class="navbar-brand-container">
+        <div class="navbar-brand-container d-flex align-items-center">
+            <img src="assets/img/stephenLogo.jpg" alt="Dr Stephen Quigley Logo" class="navbar-logo">
             <a class="navbar-brand" href="index.html">Dr Stephen Quigley</a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,17 +44,28 @@
 <style>
 .navbar-brand-container {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     line-height: 1.2;
 }
+
+.navbar-logo {
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+    margin-right: 12px;
+    border-radius: 50%;
+}
+
 .navbar-brand {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
 .navbar-subtitle {
     font-size: 0.8rem;
     color: #6c757d;
 }
+
 /* Dropdown icon styling */
 .dropdown-icon {
     font-size: 0.7em;
@@ -65,6 +77,7 @@
 .menu-item-has-children.show .dropdown-icon {
     transform: rotate(180deg);
 }
+
 /* Sticky header styles */
 #mainNav {
     transition: all 0.3s ease;
@@ -72,23 +85,33 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 9999;
 }
+
 #mainNav.is-scrolled {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
+#mainNav.is-scrolled .navbar-logo {
+    height: 35px;
+    width: 35px;
+}
+
 /* Add padding to body to prevent content from hiding behind fixed navbar */
 body {
     padding-top: 70px; /* Adjust this value based on your navbar height */
 }
+
 /* Fix for appointment button text color */
 .appointment-btn {
     color: white !important; /* Force white text at all screen sizes */
 }
+
 /* Override any nav-link:hover styles for the appointment button */
 .appointment-btn:hover, 
 .appointment-btn:focus {
     color: white !important;
 }
+
 /* Dropdown menu styling */
 .dropdown-menu {
     border-radius: 0.25rem;
@@ -97,14 +120,17 @@ body {
     padding: 0.5rem 0;
     margin-top: 0;
 }
+
 .dropdown-item {
     padding: 0.5rem 1.5rem;
     font-weight: 500;
     transition: background-color 0.2s ease;
 }
+
 .dropdown-item:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
 /* Desktop menu behavior */
 @media (min-width: 992px) {
     /* Menu item with children (dropdown) */
@@ -125,8 +151,15 @@ body {
         min-width: 200px;
     }
 }
+
 /* Additional mobile styling fixes */
 @media (max-width: 991.98px) {
+    .navbar-logo {
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+    }
+    
     .navbar-nav .nav-link.appointment-btn {
         color: white !important; /* Ensure text stays white on mobile */
     }
