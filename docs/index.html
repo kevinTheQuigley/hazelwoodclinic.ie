@@ -154,19 +154,23 @@
         /* New two-column layout styles */
         .hero-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            justify-content: space-between;
             gap: 3rem;
+            min-height: 400px;
         }
         
         .hero-text {
             flex: 1;
+            max-width: 60%;
         }
         
         .hero-image {
             flex-shrink: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end;
+            align-items: flex-start;
+            margin-top: 1rem;
         }
         
         /* Responsive adjustments */
