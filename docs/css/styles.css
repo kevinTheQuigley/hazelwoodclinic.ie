@@ -11,11 +11,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #0d6efd;
+  --bs-blue: #4E7055;
   --kq-blue: #152885;
-  --kq-green: #14582B;
-  --kq-greenLight: #4B8860;
-  --kq-greenLight2: #1f8b45;
+  --kq-green: #4E7055;
+  --kq-greenLight: #729e7b;
+  --kq-greenLight2: #9fdbab;
   --kq-blueLight: #506097;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
