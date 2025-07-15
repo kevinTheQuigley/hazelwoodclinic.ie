@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Dr. Stephen Quigley - Clinical Psychologist offering compassionate, evidence-based psychological services for adults and children." />
-    <meta name="author" content="Dr. Stephen Quigley" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dr. Stephen Quigley - Clinical Psychologist offering compassionate, evidence-based psychological services for adults and children.">
+    <meta name="author" content="Dr. Stephen Quigley">
     <title>Dr. Stephen Quigley - Clinical Psychologist</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
         /* Enhanced styles that preserve your existing colors */
@@ -173,6 +173,69 @@
             margin-top: 1rem;
         }
         
+        /* Masthead background */
+        .masthead {
+            background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/home.jpg');
+        }
+        
+        /* Hero title */
+        .hero-title {
+            font-size: 2.6rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Services section background */
+        .section__services {
+            background-color: #f8f9fa;
+        }
+        
+        /* Service card styles */
+        .service-card {
+            background-color: var(--kq-green);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            margin-bottom: 1rem;
+        }
+        
+        .service-card .learn-more {
+            color: var(--kq-greenLight);
+            font-weight: 600;
+        }
+        
+        .service-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* CTA section background */
+        .cta-section {
+            background-color: #f0f5f0;
+        }
+        
+        .cta-title {
+            color: var(--kq-green);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
         /* Responsive adjustments */
         @media(max-width:768px) {
             .masthead {
@@ -212,18 +275,18 @@
 <body>
     <!-- Include header -->
     <div id="header-placeholder"></div>
-    
+
     <!-- Masthead/Hero Section -->
-    <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/home.jpg');">
+    <header class="masthead">
         <div class="container position-relative px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5">  
+            <div class="row gx-4 gx-lg-5">
                 <div class="col-12">
                     <div class="hero-content">
                         <!-- Text content on the left -->
                         <div class="hero-text">
-                            <div class="site-heading text-start"> 
-                                <h1 style="font-size: 2.6rem; color: white; margin-bottom: 1.5rem;">Dr. Stephen Quigley</h1>
-                                
+                            <div class="site-heading text-start">
+                                <h1 class="hero-title">Dr. Stephen Quigley</h1>
+
                                 <div id="about-text" class="about-text-content mt-4">
                                     <div id="loading-about" class="text-center">
                                         <div class="loading-spinner"></div>
@@ -238,7 +301,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Profile photo on the right -->
                         <div class="hero-image">
                             <img src="assets/img/aboutProfile.jpg" alt="Dr. Stephen Quigley" class="profile-img">
@@ -248,13 +311,13 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Features Section -->
     <section class="features-section py-5">
         <div class="container px-4 px-lg-5">
             <h2 class="section-title">Why Choose Dr. Stephen Quigley</h2>
             <p class="section-subtitle">My commitment to personalized care and evidence-based approaches, guided by genuine presence and connection.</p>
-            
+
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="feature-card">
@@ -265,7 +328,7 @@
                         <p class="feature-content">I believe in addressing the whole person through connection to self, others, nature, and community—not just symptoms.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -275,7 +338,7 @@
                         <p class="feature-content">I meet you as a person, not a problem to be fixed, with over a decade of experience across diverse settings.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -285,7 +348,7 @@
                         <p class="feature-content">My work draws from proven approaches like IFS, Compassion Focused Therapy, and ACT, guided by presence above all.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -298,57 +361,57 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Services Section -->
-    <section class="section__services py-5" style="background-color: #f8f9fa;">
+    <section class="section__services py-5">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10">
                     <h2 class="section-title">Services</h2>
                     <p class="section-subtitle">I offer a comprehensive range of psychological services tailored to your unique needs and journey.</p>
-                    
+
                     <div class="row mt-4">
                         <div class="col-md-6 mb-4">
-                            <a href="servicesAssessment.html" style="text-decoration: none; color: inherit;">
-                                <div class="service-card" style="background-color: var(--kq-green); color: white; padding: 1.5rem; border-radius: 8px; transition: transform 0.3s ease; height: 100%;">
-                                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 1rem;">Assessment Services</h3>
-                                    <p style="margin-bottom: 1rem;">Comprehensive evaluations to understand your unique situation and develop personalized approaches.</p>
-                                    <span style="color: var(--kq-greenLight); font-weight: 600;">Learn More →</span>
+                            <a href="servicesAssessment.html" class="service-link">
+                                <div class="service-card">
+                                    <h3>Assessment Services</h3>
+                                    <p>Comprehensive evaluations to understand your unique situation and develop personalized approaches.</p>
+                                    <span class="learn-more">Learn More →</span>
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
-                            <a href="servicesTreatment.html" style="text-decoration: none; color: inherit;">
-                                <div class="service-card" style="background-color: var(--kq-green); color: white; padding: 1.5rem; border-radius: 8px; transition: transform 0.3s ease; height: 100%;">
-                                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 1rem;">Therapeutic Support</h3>
-                                    <p style="margin-bottom: 1rem;">Evidence-based therapeutic services guided by presence and genuine human connection.</p>
-                                    <span style="color: var(--kq-greenLight); font-weight: 600;">Learn More →</span>
+                            <a href="servicesTreatment.html" class="service-link">
+                                <div class="service-card">
+                                    <h3>Therapeutic Support</h3>
+                                    <p>Evidence-based therapeutic services guided by presence and genuine human connection.</p>
+                                    <span class="learn-more">Learn More →</span>
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
-                            <a href="servicesConsultation.html" style="text-decoration: none; color: inherit;">
-                                <div class="service-card" style="background-color: var(--kq-green); color: white; padding: 1.5rem; border-radius: 8px; transition: transform 0.3s ease; height: 100%;">
-                                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 1rem;">Professional Consultation</h3>
-                                    <p style="margin-bottom: 1rem;">Expert consultations for practitioners, organizations, and educational institutions.</p>
-                                    <span style="color: var(--kq-greenLight); font-weight: 600;">Learn More →</span>
+                            <a href="servicesConsultation.html" class="service-link">
+                                <div class="service-card">
+                                    <h3>Professional Consultation</h3>
+                                    <p>Expert consultations for practitioners, organizations, and educational institutions.</p>
+                                    <span class="learn-more">Learn More →</span>
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
-                            <a href="servicesWorkshops.html" style="text-decoration: none; color: inherit;">
-                                <div class="service-card" style="background-color: var(--kq-green); color: white; padding: 1.5rem; border-radius: 8px; transition: transform 0.3s ease; height: 100%;">
-                                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 1rem;">Workshops & Training</h3>
-                                    <p style="margin-bottom: 1rem;">Educational opportunities grounded in connection, presence, and evidence-based practice.</p>
-                                    <span style="color: var(--kq-greenLight); font-weight: 600;">Learn More →</span>
+                            <a href="servicesWorkshops.html" class="service-link">
+                                <div class="service-card">
+                                    <h3>Workshops &amp; Training</h3>
+                                    <p>Educational opportunities grounded in connection, presence, and evidence-based practice.</p>
+                                    <span class="learn-more">Learn More →</span>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="text-center mt-4">
                         <a href="services.html" class="cta-button">View All Services</a>
                     </div>
@@ -356,20 +419,20 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CTA Section -->
-    <section class="py-5" style="background-color: #f0f5f0;">
+    <section class="cta-section py-5">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h2 style="color: var(--kq-green); font-size: 2rem; margin-bottom: 1.5rem;">Ready to Begin Your Journey?</h2>
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">I'm here to meet you where you are and support you through life's complexities with understanding, presence, and professional guidance.</p>
+                    <h2 class="cta-title">Ready to Begin Your Journey?</h2>
+                    <p class="cta-description">I'm here to meet you where you are and support you through life's complexities with understanding, presence, and professional guidance.</p>
                     <a href="contact.html" class="cta-button">Book an Appointment</a>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Include footer -->
     <div id="footer-placeholder"></div>
 
