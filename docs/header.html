@@ -64,9 +64,16 @@
     color: var(--kq-green);
 }
 
+.navbar-nav {
+    align-items: center;
+}
+
 .nav-link {
     font-size: 0.95rem !important;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .navbar-subtitle {
@@ -77,10 +84,10 @@
 /* Dropdown icon styling */
 .dropdown-icon {
     font-size: 0.7em;
-    vertical-align: middle;
     margin-left: 4px;
     display: inline-block;
     transition: transform 0.3s ease;
+    line-height: 1;
 }
 .menu-item-has-children.show .dropdown-icon {
     transform: rotate(180deg);
