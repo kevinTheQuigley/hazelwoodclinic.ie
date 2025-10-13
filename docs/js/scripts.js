@@ -63,8 +63,8 @@ function loadComponent(targetId, sourcePath) {
             .then(data => {
                 element.innerHTML = data;
             })
-            .catch(error => {
-                console.error(`Error loading ${sourcePath}:`, error);
+            .catch(() => {
+                // Component loading failed - fail silently
             });
     }
 }

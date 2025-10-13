@@ -14,11 +14,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <style>
         /* Enhanced styles that preserve your existing colors */
-        .masthead {
-            padding-top: 8rem;
-            padding-bottom: 8rem;
-            min-height: 600px;
-        }
         
         .about-text-content {
             color: #fff;
@@ -173,15 +168,42 @@
             margin-top: 1rem;
         }
         
-        /* Masthead background */
-        .masthead {
-            background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/home.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        /* Masthead background - use header.masthead for specificity */
+        header.masthead {
+            position: relative;
             padding-top: 8rem;
             padding-bottom: 8rem;
             min-height: 600px;
+            overflow: hidden;
+            background: none !important; /* Override global styles */
+        }
+        
+        header.masthead .masthead-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+        
+        header.masthead::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(15, 40, 20, 0.6), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        header.masthead .container {
+            position: relative;
+            z-index: 2;
         }
         
         /* Hero title */
@@ -244,7 +266,7 @@
         
         /* Responsive adjustments */
         @media(max-width:768px) {
-            .masthead {
+            header.masthead {
                 padding-top: 6rem;
                 padding-bottom: 6rem;
                 min-height: 500px;
@@ -284,6 +306,7 @@
 
     <!-- Masthead/Hero Section -->
     <header class="masthead">
+        <img src="assets/img/home.jpg" alt="" class="masthead-bg">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5">
                 <div class="col-12">
@@ -453,8 +476,8 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
         })
-        .catch(error => {
-            console.error('Error loading header:', error);
+        .catch(() => {
+            // Header loading failed - fail silently
         });
     
     fetch('footer.html')
@@ -462,8 +485,8 @@
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
         })
-        .catch(error => {
-            console.error('Error loading footer:', error);
+        .catch(() => {
+            // Footer loading failed - fail silently
         });
 
     // Google Sheets content loading script
@@ -489,9 +512,8 @@
                     displayContent(content);
                     return;
                 }
-            } catch (error) {
-                console.error('Error parsing cache:', error);
-                // Continue to fetch if cache parsing fails
+            } catch {
+                // Cache parsing failed - continue to fetch
             }
         }
         
@@ -514,22 +536,21 @@
                                 content: contentValue,
                                 timestamp: Date.now()
                             }));
-                        } catch (error) {
-                            console.error('Error caching content:', error);
-                            // Continue even if caching fails
+                        } catch {
+                            // Caching failed - continue anyway
                         }
                         
                         displayContent(contentValue);
                     } else {
                         showFallback();
                     }
-                } catch (error) {
-                    console.error('Error parsing CSV:', error);
+                } catch {
+                    // CSV parsing failed - show fallback
                     showFallback();
                 }
             })
-            .catch(error => {
-                console.error('Error fetching content:', error);
+            .catch(() => {
+                // Content fetching failed - show fallback
                 showFallback();
             });
             
@@ -547,8 +568,8 @@
                 `;
                 loadingElement.style.display = 'none';
                 contentElement.style.display = 'block';
-            } catch (error) {
-                console.error('Error displaying content:', error);
+            } catch {
+                // Content display failed - show fallback
                 showFallback();
             }
         }
@@ -557,8 +578,8 @@
             try {
                 loadingElement.style.display = 'none';
                 fallbackElement.style.display = 'block';
-            } catch (error) {
-                console.error('Error showing fallback:', error);
+            } catch {
+                // Fallback display failed - no further action
             }
         }
         
