@@ -13,90 +13,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .about-header {
-            font-size: 2.6rem;
-        }
+        /* ABOUT STEPHEN PAGE SPECIFIC STYLES */
+
         .biography-text {
             white-space: pre-line;
             line-height: 1.6;
             font-size: 0.95rem;
         }
+
+        /* About Stephen: rectangular profile image */
         .profile-img {
             width: 100%;
             height: auto;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             border-radius: 8px;
         }
-        
+
         .profile-container {
-            display: flex;
-            justify-content: center;
             padding-right: 20px;
         }
-        
+
         .biography-container {
             padding-left: 10px;
         }
-        
-        @media (max-width: 768px) {
-            .profile-container {
-                padding-right: 0;
-                margin-bottom: 30px;
-            }
-            
-            .biography-container {
-                padding-left: 0;
-            }
-        }
-        
+
         .credentials-section {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid #e9ecef;
             clear: both;
         }
+
         .credentials-section h3 {
             margin-bottom: 1.5rem;
             color: var(--kq-green);
             font-size: 1.5rem;
         }
+
         .credentials-list {
             margin-bottom: 2rem;
         }
+
         .credentials-list h4 {
             color: var(--kq-green);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
+
         .credentials-list ul {
             padding-left: 1.2rem;
         }
+
         .credentials-list li {
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
         }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border: 0.25rem solid rgba(20, 88, 43, 0.2);
-            border-top-color: var(--kq-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
+
         /* About page header background */
         .about-masthead {
             background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg');
             height: 30vh;
             display: flex;
             align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .biography-container {
+                padding-left: 0;
+            }
         }
     </style>
 </head>
@@ -186,30 +174,30 @@
     function loadBiography() {
         const CACHE_KEY = 'about_biography_cache';
         const CACHE_DURATION = 3600000; // 1 hour in milliseconds
-        
+
         // Base URL for the published Google Sheet
         const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
+
         // Add the gid parameter to specify the 'About' sheet
         const aboutSheetGid = "159040093";
         const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-        
+
         const loadingElement = document.getElementById('loading-biography');
         const contentElement = document.getElementById('biography-content');
         const fallbackElement = document.getElementById('biography-fallback');
-        
+
         // Check cache first
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
             const { content, timestamp } = JSON.parse(cachedData);
             const age = Date.now() - timestamp;
-            
+
             if (age < CACHE_DURATION) {
                 displayContent(content);
                 return;
             }
         }
-        
+
         // Fetch content from Google Sheets
         fetch(csvUrl)
             .then(response => {
@@ -220,16 +208,16 @@
                 // Parse the CSV properly including handling quoted values
                 try {
                     const parsedContent = parseCSV(csvText);
-                    
+
                     if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
                         const contentValue = parsedContent[1][0]; // Get first column of second row
-                        
+
                         // Cache the content
                         localStorage.setItem(CACHE_KEY, JSON.stringify({
                             content: contentValue,
                             timestamp: Date.now()
                         }));
-                        
+
                         displayContent(contentValue);
                     } else {
                         showFallback();
@@ -243,30 +231,30 @@
                 // Content fetching failed - show fallback
                 showFallback();
             });
-            
+
         function displayContent(content) {
             contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
             loadingElement.style.display = 'none';
             contentElement.style.display = 'block';
         }
-        
+
         function showFallback() {
             loadingElement.style.display = 'none';
             fallbackElement.style.display = 'block';
         }
     }
-    
+
     // Proper CSV parser that handles quoted cells with line breaks
     function parseCSV(csvText) {
         const result = [];
         let row = [];
         let currentValue = '';
         let insideQuotes = false;
-        
+
         for (let i = 0; i < csvText.length; i++) {
             const char = csvText[i];
             const nextChar = csvText[i + 1];
-            
+
             if (char === '"') {
                 if (insideQuotes && nextChar === '"') {
                     // Escaped quote inside quotes
@@ -288,7 +276,7 @@
                     row = [];
                     currentValue = '';
                 }
-                
+
                 // Skip the next character if it's a line feed after a carriage return
                 if (char === '\r' && nextChar === '\n') {
                     i++;
@@ -298,13 +286,13 @@
                 currentValue += char;
             }
         }
-        
+
         // Don't forget the last row
         if (currentValue !== '' || row.length > 0) {
             row.push(currentValue);
             result.push(row);
         }
-        
+
         return result;
     }
     </script>

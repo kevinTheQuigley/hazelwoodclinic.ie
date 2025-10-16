@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Frequently asked questions about the psychological services offered by Dr. Stephen Quigley" />
-    <meta name="author" content="Dr. Stephen Quigley" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Frequently asked questions about the psychological services offered by Dr. Stephen Quigley">
+    <meta name="author" content="Dr. Stephen Quigley">
     <title>Frequently Asked Questions - Dr. Stephen Quigley</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .faq-header {
-            font-size: 2.6rem;
-            color: white;
-        }
-        
+        /* FAQ PAGE SPECIFIC STYLES */
+
         .faq-container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
-        
+
         .faq-section {
             margin-bottom: 3rem;
         }
-        
+
         .faq-section-title {
             color: var(--kq-green);
             font-size: 1.6rem;
@@ -35,13 +32,13 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--kq-green);
         }
-        
+
         .accordion-item {
             border: none;
             border-bottom: 1px solid #e9ecef;
             margin-bottom: 1rem;
         }
-        
+
         .accordion-button {
             font-weight: 600;
             color: var(--kq-green);
@@ -49,59 +46,28 @@
             box-shadow: none;
             padding: 1rem 0;
         }
-        
+
         .accordion-button:not(.collapsed) {
             color: var(--kq-green);
             background-color: transparent;
             box-shadow: none;
         }
-        
+
         .accordion-button:focus {
             box-shadow: none;
             border-color: transparent;
         }
-        
+
         .accordion-button::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e7d32'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
-        
+
         .accordion-button:not(.collapsed)::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e7d32'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
-        
+
         .accordion-body {
             padding: 1rem 0 1.5rem 0;
-        }
-        
-        .contact-cta {
-            background-color: var(--kq-greenLight);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-top: 3rem;
-            text-align: center;
-        }
-        
-        .contact-cta h3 {
-            color: var(--kq-green);
-            margin-bottom: 1rem;
-        }
-        
-        .contact-button {
-            display: inline-block;
-            background-color: var(--kq-green);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        
-        .contact-button:hover {
-            background-color: #1b5e20;
-            color: white;
-            text-decoration: none;
         }
 
         .masthead {
@@ -116,7 +82,7 @@
 
 <body>
     <div id="header-placeholder"></div>
-    
+
     <!-- Page Header-->
     <header class="masthead">
         <div class="container position-relative px-4 px-lg-5">
@@ -135,11 +101,11 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <p class="lead text-center mb-5">Find answers to commonly asked questions about my services. If you have additional questions, please don't hesitate to contact me.</p>
-                
+
                 <!-- Practical Questions Section - Moved to Top -->
                 <div class="faq-section">
                     <h3 class="faq-section-title">Practical Questions</h3>
-                    
+
                     <div class="accordion" id="accordionPractical">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingSchedule">
@@ -153,7 +119,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFirstAppointment">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFirstAppointment" aria-expanded="false" aria-controls="collapseFirstAppointment">
@@ -166,7 +132,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingInsurance">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInsurance" aria-expanded="false" aria-controls="collapseInsurance">
@@ -181,11 +147,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- About Our Services Section -->
                 <div class="faq-section">
                     <h3 class="faq-section-title">About Our Services</h3>
-                    
+
                     <div class="accordion" id="accordionServices">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
@@ -199,7 +165,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -212,7 +178,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -227,11 +193,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Assessment Section -->
                 <div class="faq-section">
                     <h3 class="faq-section-title">Assessment Services</h3>
-                    
+
                     <div class="accordion" id="accordionAssessment">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
@@ -245,7 +211,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFive">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -258,7 +224,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingSix">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -273,11 +239,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Treatment Section -->
                 <div class="faq-section">
-                    <h3 class="faq-section-title">Treatment & Therapy</h3>
-                    
+                    <h3 class="faq-section-title">Treatment &amp; Therapy</h3>
+
                     <div class="accordion" id="accordionTreatment">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingSeven">
@@ -291,7 +257,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingEight">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
@@ -304,7 +270,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingNine">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
@@ -319,11 +285,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Workshops & Consultation Section -->
                 <div class="faq-section">
-                    <h3 class="faq-section-title">Workshops & Consultation</h3>
-                    
+                    <h3 class="faq-section-title">Workshops &amp; Consultation</h3>
+
                     <div class="accordion" id="accordionWorkshops">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThirteen">
@@ -337,7 +303,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFourteen">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
@@ -350,7 +316,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFifteen">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
@@ -365,7 +331,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contact CTA -->
                 <div class="contact-cta">
                     <h3>Still have questions?</h3>
@@ -378,7 +344,7 @@
 
     <!-- Footer-->
     <div id="footer-placeholder"></div>
-    
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

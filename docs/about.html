@@ -13,74 +13,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .about-header {
-            font-size: 2.6rem;
-            color: white;
-        }
-        
+        /* ABOUT PAGE SPECIFIC STYLES */
+
         .about-content {
             line-height: 1.7;
             font-size: 1rem;
         }
-        
-        .section-title {
-            color: var(--kq-green);
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem 0;
-            font-family: 'Lora', serif;
-        }
-        
+
+        /* About page: larger profile image */
         .profile-img {
-            border-radius: 50%;
             width: 300px;
             height: 300px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin: 0 auto;
             display: block;
-            border: 4px solid var(--kq-green);
+            border-color: var(--kq-green);
         }
-        
+
         .profile-container {
-            display: flex;
-            justify-content: center;
             padding-right: 30px;
-            margin-bottom: 2rem;
         }
-        
+
         .about-section {
             margin-bottom: 3rem;
         }
-        
-        .approach-card {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .approach-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .approach-card h4 {
-            color: var(--kq-green);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
+
         .team-section {
             margin-top: 3rem;
         }
-        
+
         .team-member {
             text-align: center;
             margin-bottom: 2rem;
         }
-        
+
         .team-photo {
             width: 150px;
             height: 150px;
@@ -89,41 +54,20 @@
             margin-bottom: 1rem;
             border: 3px solid var(--kq-green);
         }
-        
+
         .team-name {
             font-weight: 600;
             color: var(--kq-green);
             margin-bottom: 0.25rem;
             font-size: 1.1rem;
         }
-        
+
         .team-title {
             font-size: 0.9rem;
             color: #6c757d;
             margin-bottom: 0.5rem;
         }
-        
-        .bullet-list {
-            padding-left: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .bullet-list li {
-            margin-bottom: 0.75rem;
-        }
-        
-        @media (max-width: 768px) {
-            .profile-img {
-                width: 250px;
-                height: 250px;
-                margin-bottom: 30px;
-            }
-            
-            .profile-container {
-                padding-right: 0;
-            }
-        }
-        
+
         /* About page header background */
         .about-masthead {
             background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg');
@@ -133,6 +77,18 @@
             height: 30vh;
             display: flex;
             align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .profile-img {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 30px;
+            }
+
+            .profile-container {
+                padding-right: 0;
+            }
         }
     </style>
 </head>

@@ -23,7 +23,6 @@
                 <li class="nav-item menu-item-has-children dropdown">
                     <a class="nav-link px-lg-3 py-3 py-lg-4" href="services.html">Services <span class="dropdown-icon">▼</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="servicesAssessment.html">Assessment</a></li>
                         <li><a class="dropdown-item" href="servicesTreatment.html">Treatment</a></li>
                         <li><a class="dropdown-item" href="servicesConsultation.html">Consultation</a></li>
                         <li><a class="dropdown-item" href="servicesWorkshops.html">Workshops</a></li>
@@ -41,195 +40,6 @@
         </div>
     </div>
 </nav>
-<style>
-.navbar-brand-container {
-    display: flex;
-    align-items: center;
-    line-height: 1.2;
-}
-
-.navbar-logo {
-    height: 45px;
-    width: 45px;
-    object-fit: contain;
-    margin-right: 12px;
-    border-radius: 50%;
-}
-
-.navbar-brand {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--kq-green);
-}
-
-.navbar-nav {
-    align-items: center;
-}
-
-.nav-link {
-    font-size: 0.95rem !important;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.navbar-subtitle {
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-/* Dropdown icon styling */
-.dropdown-icon {
-    font-size: 0.7em;
-    margin-left: 4px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-    line-height: 1;
-}
-.menu-item-has-children.show .dropdown-icon {
-    transform: rotate(180deg);
-}
-
-/* Sticky header styles */
-#mainNav {
-    transition: all 0.3s ease;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-}
-
-#mainNav.is-scrolled {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-#mainNav.is-scrolled .navbar-logo {
-    height: 35px;
-    width: 35px;
-}
-
-#mainNav.is-scrolled .navbar-brand {
-    font-size: 1.5rem;
-}
-
-/* Add padding to body to prevent content from hiding behind fixed navbar */
-body {
-    padding-top: 70px; /* Adjust this value based on your navbar height */
-}
-
-/* Fix for appointment button text color */
-.appointment-btn {
-    color: white !important; /* Force white text at all screen sizes */
-}
-
-/* Override any nav-link:hover styles for the appointment button */
-.appointment-btn:hover, 
-.appointment-btn:focus {
-    color: white !important;
-}
-
-/* Dropdown menu styling */
-.dropdown-menu {
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    border: none;
-    padding: 0.5rem 0;
-    margin-top: 0;
-}
-
-.dropdown-item {
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-    font-size: 0.9rem;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Desktop menu behavior */
-@media (min-width: 992px) {
-    /* Menu item with children (dropdown) */
-    .menu-item-has-children {
-        position: relative;
-    }
-    
-    /* Show dropdown on hover */
-    .menu-item-has-children:hover > .dropdown-menu {
-        display: block;
-    }
-    
-    /* Position the dropdown */
-    .menu-item-has-children > .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 200px;
-    }
-}
-
-/* Additional mobile styling fixes */
-@media (max-width: 991.98px) {
-    .navbar-logo {
-        height: 40px;
-        width: 40px;
-        margin-right: 10px;
-    }
-    
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
-    
-    .navbar-nav .nav-link.appointment-btn {
-        color: white !important; /* Ensure text stays white on mobile */
-    }
-    
-    /* Make the appointment button stand out on mobile */
-    .navbar-nav .nav-link.appointment-btn {
-        display: inline-block;
-        margin: 10px auto;
-        font-size: 0.9rem;
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
-        max-width: fit-content;
-        white-space: nowrap;
-    }
-    
-    /* Center the button in its container */
-    .nav-item.d-flex.align-items-center {
-        justify-content: center;
-        width: 100%;
-    }
-    
-    /* Mobile dropdown styling */
-    .menu-item-has-children {
-        position: relative;
-    }
-    
-    /* Rotate arrow when expanded */
-    .menu-item-has-children.show .dropdown-icon {
-        transform: rotate(180deg);
-    }
-    
-    .dropdown-menu {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        padding-left: 1.5rem;
-        position: static;
-        float: none;
-    }
-    
-    .dropdown-item {
-        color: #212529;
-        padding: 0.5rem 1rem;
-    }
-}
-</style>
 
 <script>
 // Add this script to handle mobile dropdown toggles and sticky header
@@ -237,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle mobile dropdown toggles
     if (window.innerWidth < 992) {
         const dropdownItems = document.querySelectorAll('.menu-item-has-children > a');
-        
+
         dropdownItems.forEach(item => {
             item.addEventListener('click', function(e) {
                 // Only prevent default if we're in mobile view and clicking the parent item
@@ -257,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
+
     // Sticky header functionality
     const navbar = document.getElementById('mainNav');
-    
+
     function handleScroll() {
         if (window.scrollY > 50) {
             navbar.classList.add('is-scrolled');
@@ -268,10 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('is-scrolled');
         }
     }
-    
+
     // Initial check in case page loads scrolled down
     handleScroll();
-    
+
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
 });

@@ -1,151 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Professional workshops and training services from Dr. Stephen Quigley, delivered to organizations, universities, schools, and community groups" />
-        <meta name="author" content="Dr. Stephen Quigley" />
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Professional workshops and training services from Dr. Stephen Quigley, delivered to organizations, universities, schools, and community groups">
+        <meta name="author" content="Dr. Stephen Quigley">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-        <title>Workshops & Training - Dr. Stephen Quigley</title>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <title>Workshops &amp; Training - Dr. Stephen Quigley</title>
         <link rel="stylesheet" href="css/styles.css">
         <style>
-            :root {
-                --text-color: #333333;
-                --light-text: #ffffff;
-            }
-            
-            body {
-                font-family: 'Open Sans', sans-serif;
-                line-height: 1.6;
-                color: var(--text-color);
-            }
-            
-            .services-header {
-                font-size: 2.6rem;
-                font-family: 'Lora', serif;
-            }
-            
-            .service-section {
-                margin: 2rem auto;
-                max-width: 900px;
-                padding: 0 1rem;
-            }
-            
-            .service-card {
-                background-color: var(--kq-green);
-                color: white;
-                padding: 2rem;
-                border-radius: 8px;
-                margin-bottom: 2rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            
-            .service-card h2 {
-                color: white;
-                margin-bottom: 1.5rem;
-                font-weight: 600;
-                font-size: 1.6rem;
-                font-family: 'Lora', serif;
-                border-bottom: 2px solid rgba(255,255,255,0.3);
-                padding-bottom: 0.5rem;
-            }
-            
-            .service-card p {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 1rem;
-            }
-            
-            .service-card ul {
-                list-style-type: none;
-                padding-left: 0;
-                margin-bottom: 1rem;
-            }
-            
-            .service-card li {
-                margin-bottom: 0.75rem;
-                padding-left: 1.5rem;
-                position: relative;
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            
-            .service-card li::before {
-                content: "•";
-                position: absolute;
-                left: 0;
-                color: var(--kq-greenLight);
-                font-weight: bold;
-            }
-            
-            .service-intro {
-                margin-bottom: 3rem;
-                text-align: center;
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 0 1rem;
-            }
-            
-            .service-intro .lead {
-                font-size: 1.1rem;
-                color: var(--text-color);
-            }
-            
-            .breadcrumb {
-                background-color: transparent;
-                padding: 0.5rem 0;
-                margin-bottom: 1rem;
-            }
-            
-            .breadcrumb-item a {
-                color: var(--kq-green);
-                text-decoration: none;
-            }
-            
-            .breadcrumb-item.active {
-                color: var(--text-color);
-            }
-            
+            /* WORKSHOPS PAGE SPECIFIC STYLES */
+
             .workshop-item {
                 background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
                 border-radius: 6px;
                 margin-bottom: 1.5rem;
             }
-            
+
             .workshop-item h3 {
                 color: var(--kq-greenLight);
                 margin-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
-            
+
             .experience-section {
                 margin-top: 2rem;
                 background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
                 border-radius: 6px;
             }
-            
+
             .experience-section h3 {
                 color: var(--kq-greenLight);
                 margin-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
-            
+
             .organization-list {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
                 margin: 1rem 0;
             }
-            
+
             .organization-tag {
                 background-color: rgba(255,255,255,0.2);
                 padding: 0.5rem 1rem;
@@ -153,48 +57,8 @@
                 font-size: 0.9rem;
                 font-weight: 500;
             }
-            
-            .cta-section {
-                background-color: var(--kq-greenLight);
-                padding: 2rem;
-                border-radius: 8px;
-                margin-top: 3rem;
-                text-align: center;
-            }
-            
-            .cta-section h3 {
-                color: var(--kq-green);
-                margin-bottom: 1rem;
-                font-family: 'Lora', serif;
-            }
-            
-            .cta-button {
-                display: inline-block;
-                background-color: var(--kq-green);
-                color: white;
-                padding: 0.75rem 1.5rem;
-                border-radius: 4px;
-                font-weight: 600;
-                text-decoration: none;
-                margin-top: 1rem;
-                transition: background-color 0.3s ease;
-            }
-            
-            .cta-button:hover {
-                background-color: var(--kq-greenDark);
-                color: white;
-                text-decoration: none;
-            }
-            
+
             @media (max-width: 768px) {
-                .service-card {
-                    padding: 1.5rem;
-                }
-                
-                .services-header {
-                    font-size: 2rem;
-                }
-                
                 .organization-list {
                     flex-direction: column;
                 }
@@ -203,19 +67,19 @@
     </head>
     <body>
         <div id="header-placeholder"></div>
-        
-        <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/services.jpg'); height: 30vh; display: flex; align-items: center;">
+
+        <header class="masthead services-masthead">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading text-center text-white">
-                            <h2 class="services-header">Workshops & Training</h2>
+                            <h2 class="services-header">Workshops &amp; Training</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        
+
         <main class="mb-4">
             <div class="container">
                 <div class="row justify-content-center">
@@ -223,24 +87,24 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="services.html">Services</a></li>
-                                <li class="breadcrumb-item active">Workshops & Training</li>
+                                <li class="breadcrumb-item active">Workshops &amp; Training</li>
                             </ol>
                         </nav>
-                        
+
                         <div class="service-intro">
                             <p class="lead">Stephen offers comprehensive workshops and training programmes for organisations, educational institutions, and community groups, sharing expertise in psychology and evidence-based practices.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="service-section">
                 <div class="service-card">
-                    <h2>Professional Training & Development</h2>
+                    <h2>Professional Training &amp; Development</h2>
                     <p>Stephen brings extensive experience in delivering high-quality workshops and training sessions tailored to the specific needs of different audiences. His approach combines academic rigor with practical application, ensuring participants gain both theoretical understanding and actionable skills.</p>
-                    
+
                     <div class="workshop-item">
-                        <h3>Mental Health & Wellbeing Workshops</h3>
+                        <h3>Mental Health &amp; Wellbeing Workshops</h3>
                         <p>Comprehensive training on psychological principles and mental health awareness:</p>
                         <ul>
                             <li>Understanding trauma and its impact across the lifespan</li>
@@ -250,7 +114,7 @@
                             <li>Supporting individuals with neurodevelopmental differences</li>
                         </ul>
                     </div>
-                    
+
                     <div class="workshop-item">
                         <h3>Educational Institution Training</h3>
                         <p>Specialised workshops for schools, colleges, and universities:</p>
@@ -262,9 +126,9 @@
                             <li>Creating inclusive learning environments</li>
                         </ul>
                     </div>
-                    
+
                     <div class="workshop-item">
-                        <h3>Parenting & Family Support</h3>
+                        <h3>Parenting &amp; Family Support</h3>
                         <p>Evidence-based guidance for parents and caregivers:</p>
                         <ul>
                             <li>Understanding child development and behaviour</li>
@@ -274,9 +138,9 @@
                             <li>Supporting neurodivergent children and families</li>
                         </ul>
                     </div>
-                    
+
                     <div class="workshop-item">
-                        <h3>Healthcare & Social Services Training</h3>
+                        <h3>Healthcare &amp; Social Services Training</h3>
                         <p>Professional development for healthcare and social service providers:</p>
                         <ul>
                             <li>Trauma-informed care principles and implementation</li>
@@ -286,9 +150,9 @@
                             <li>Ethical considerations in complex cases</li>
                         </ul>
                     </div>
-                    
+
                     <div class="workshop-item">
-                        <h3>Community & Client Group Education</h3>
+                        <h3>Community &amp; Client Group Education</h3>
                         <p>Accessible workshops designed for community members and client groups:</p>
                         <ul>
                             <li>Understanding mental health and reducing stigma</li>
@@ -298,11 +162,11 @@
                             <li>Peer support and community connection</li>
                         </ul>
                     </div>
-                    
+
                     <div class="experience-section">
-                        <h3>Experience & Credentials</h3>
+                        <h3>Experience &amp; Credentials</h3>
                         <p>Stephen has delivered workshops and training for a range of organisations including the HSE, Tusla, and several Irish universities. He has guest lectured on doctoral psychology programmes at the University of Limerick, University of Galway, and Mary Immaculate College, and has provided training for secondary schools, parenting groups, and client communities.</p>
-                        
+
                         <div class="organization-list">
                             <span class="organization-tag">HSE</span>
                             <span class="organization-tag">Tusla</span>
@@ -312,11 +176,11 @@
                             <span class="organization-tag">Secondary Schools</span>
                             <span class="organization-tag">Community Groups</span>
                         </div>
-                        
+
                         <p>All workshops can be tailored to meet the specific needs of your organisation or group, delivered either in-person or via secure online platforms. Sessions range from half-day workshops to multi-day training programmes, depending on the depth and scope required.</p>
                     </div>
                 </div>
-                
+
                 <div class="cta-section">
                     <h3>Interested in Workshop or Training Services?</h3>
                     <p>Contact Hazelwood Clinic to discuss your training needs and develop a customised workshop programme for your organisation or group.</p>
@@ -324,9 +188,9 @@
                 </div>
             </div>
         </main>
-        
+
         <div id="footer-placeholder"></div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

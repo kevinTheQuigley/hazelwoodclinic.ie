@@ -1,191 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Professional consultation services for practitioners, organizations, and educational institutions from Dr. Stephen Quigley" />
-        <meta name="author" content="Dr. Stephen Quigley" />
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Professional consultation services for practitioners, organizations, and educational institutions from Dr. Stephen Quigley">
+        <meta name="author" content="Dr. Stephen Quigley">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <title>Consultation Services - Dr. Stephen Quigley</title>
         <link rel="stylesheet" href="css/styles.css">
         <style>
-            :root {
-                --text-color: #333333;
-                --light-text: #ffffff;
-            }
-            
-            body {
-                font-family: 'Open Sans', sans-serif;
-                line-height: 1.6;
-                color: var(--text-color);
-            }
-            
-            .services-header {
-                font-size: 2.6rem;
-                font-family: 'Lora', serif;
-            }
-            
-            .service-section {
-                margin: 2rem auto;
-                max-width: 900px;
-                padding: 0 1rem;
-            }
-            
-            .service-card {
-                background-color: var(--kq-green);
-                color: white;
-                padding: 2rem;
-                border-radius: 8px;
-                margin-bottom: 2rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            
-            .service-card h2 {
-                color: white;
-                margin-bottom: 1.5rem;
-                font-weight: 600;
-                font-size: 1.6rem;
-                font-family: 'Lora', serif;
-                border-bottom: 2px solid rgba(255,255,255,0.3);
-                padding-bottom: 0.5rem;
-            }
-            
-            .service-card p {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 1rem;
-            }
-            
-            .service-card ul {
-                list-style-type: none;
-                padding-left: 0;
-                margin-bottom: 1rem;
-            }
-            
-            .service-card li {
-                margin-bottom: 0.75rem;
-                padding-left: 1.5rem;
-                position: relative;
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            
-            .service-card li::before {
-                content: "•";
-                position: absolute;
-                left: 0;
-                color: var(--kq-greenLight);
-                font-weight: bold;
-            }
-            
-            .service-intro {
-                margin-bottom: 3rem;
-                text-align: center;
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 0 1rem;
-            }
-            
-            .service-intro .lead {
-                font-size: 1.1rem;
-                color: var(--text-color);
-            }
-            
-            .breadcrumb {
-                background-color: transparent;
-                padding: 0.5rem 0;
-                margin-bottom: 1rem;
-            }
-            
-            .breadcrumb-item a {
-                color: var(--kq-green);
-                text-decoration: none;
-            }
-            
-            .breadcrumb-item.active {
-                color: var(--text-color);
-            }
-            
+            /* CONSULTATION PAGE SPECIFIC STYLES */
+
             .consultation-item {
                 background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
                 border-radius: 6px;
                 margin-bottom: 1.5rem;
             }
-            
+
             .consultation-item h3 {
                 color: var(--kq-greenLight);
                 margin-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
-            
+
             .consultation-benefits {
                 margin-top: 2rem;
                 background-color: rgba(255,255,255,0.1);
                 padding: 1.5rem;
                 border-radius: 6px;
             }
-            
+
             .consultation-benefits h3 {
                 color: var(--kq-greenLight);
                 margin-bottom: 1rem;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
-            
-            .cta-section {
-                background-color: var(--kq-greenLight);
-                padding: 2rem;
-                border-radius: 8px;
-                margin-top: 3rem;
-                text-align: center;
-            }
-            
-            .cta-section h3 {
-                color: var(--kq-green);
-                margin-bottom: 1rem;
-                font-family: 'Lora', serif;
-            }
-            
-            .cta-button {
-                display: inline-block;
-                background-color: var(--kq-green);
-                color: white;
-                padding: 0.75rem 1.5rem;
-                border-radius: 4px;
-                font-weight: 600;
-                text-decoration: none;
-                margin-top: 1rem;
-                transition: background-color 0.3s ease;
-            }
-            
-            .cta-button:hover {
-                background-color: var(--kq-greenDark);
-                color: white;
-                text-decoration: none;
-            }
-            
-            @media (max-width: 768px) {
-                .service-card {
-                    padding: 1.5rem;
-                }
-                
-                .services-header {
-                    font-size: 2rem;
-                }
-            }
         </style>
     </head>
     <body>
         <div id="header-placeholder"></div>
-        
-        <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/services.jpg'); height: 30vh; display: flex; align-items: center;">
+
+        <header class="masthead services-masthead">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -196,7 +58,7 @@
                 </div>
             </div>
         </header>
-        
+
         <main class="mb-4">
             <div class="container">
                 <div class="row justify-content-center">
@@ -207,19 +69,19 @@
                                 <li class="breadcrumb-item active">Consultation Services</li>
                             </ol>
                         </nav>
-                        
+
                         <div class="service-intro">
                             <p class="lead">Hazelwood Clinic offers professional consultation services for fellow practitioners, organizations, and educational institutions, providing specialized expertise and guidance.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="service-section">
                 <div class="service-card">
                     <h2>Consultation Services</h2>
                     <p>Dr. Quigley welcomes collaboration with other mental health professionals and is available to provide expert consultation, second opinions, or adjunctive support alongside existing treatment. Our consultation services include:</p>
-                    
+
                     <div class="consultation-item">
                         <h3>Clinical Case Consultation</h3>
                         <p>Expert guidance for complex or treatment-resistant cases:</p>
@@ -231,7 +93,7 @@
                             <li>Support for cases involving trauma, neurodiversity, or complex presentations</li>
                         </ul>
                     </div>
-                    
+
                     <div class="consultation-item">
                         <h3>Supervision for Mental Health Professionals</h3>
                         <p>Supportive supervision for early-career psychologists and therapists:</p>
@@ -243,7 +105,7 @@
                             <li>Preparation for professional registration and accreditation</li>
                         </ul>
                     </div>
-                    
+
                     <div class="consultation-item">
                         <h3>Collaborative Care Coordination</h3>
                         <p>Coordination with other healthcare providers for integrated care:</p>
@@ -255,7 +117,7 @@
                             <li>Coordinated approach for complex or high-risk cases</li>
                         </ul>
                     </div>
-                    
+
                     <div class="consultation-item">
                         <h3>Therapeutic Approach Integration</h3>
                         <p>Guidance on integrating evidence-based therapeutic approaches:</p>
@@ -267,7 +129,7 @@
                             <li>Enhancing therapeutic effectiveness through tailored approaches</li>
                         </ul>
                     </div>
-                    
+
                     <div class="consultation-item">
                         <h3>Neurodiversity-Affirming Practices</h3>
                         <p>Specialized consultation on working with neurodivergent individuals:</p>
@@ -279,7 +141,7 @@
                             <li>Supporting neurodivergent individuals across different contexts</li>
                         </ul>
                     </div>
-                    
+
                     <div class="consultation-benefits">
                         <h3>Benefits of Professional Consultation</h3>
                         <ul>
@@ -293,7 +155,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="cta-section">
                     <h3>Interested in Consultation Services?</h3>
                     <p>Contact Hazelwood Clinic to discuss your consultation needs and schedule an appointment. Consultation services can be arranged in person or via secure video conferencing.</p>
@@ -301,9 +163,9 @@
                 </div>
             </div>
         </main>
-        
+
         <div id="footer-placeholder"></div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

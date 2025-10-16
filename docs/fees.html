@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Information about fees and insurance coverage for psychological services with Dr. Stephen Quigley" />
-    <meta name="author" content="Dr. Stephen Quigley" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Information about fees and insurance coverage for psychological services with Dr. Stephen Quigley">
+    <meta name="author" content="Dr. Stephen Quigley">
     <title>Fees - Dr. Stephen Quigley</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .fees-header {
-            font-size: 2.6rem;
-            color: white;
-        }
-        
+        /* FEES PAGE SPECIFIC STYLES */
+
         .fees-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 3rem auto;
             padding: 0 1rem;
         }
-        
+
         .fees-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-        
+
         .fee-card {
             background-color: #f8f9fa;
             border-radius: 8px;
@@ -40,11 +37,11 @@
             transition: transform 0.3s ease;
             height: 100%;
         }
-        
+
         .fee-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .fee-title {
             color: var(--kq-green);
             font-size: 1.5rem;
@@ -53,12 +50,12 @@
             border-bottom: 2px solid var(--kq-greenLight);
             padding-bottom: 0.5rem;
         }
-        
+
         .fee-description {
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-        
+
         .fee-amount {
             font-size: 1.25rem;
             font-weight: 700;
@@ -69,84 +66,76 @@
             border-radius: 30px;
             margin-bottom: 1rem;
         }
-        
+
         .fee-detail {
             display: flex;
             justify-content: space-between;
             padding: 0.75rem 0;
             border-bottom: 1px solid #e9ecef;
         }
-        
+
         .fee-detail:last-child {
             border-bottom: none;
         }
-        
+
         .fee-detail-label {
             font-weight: 600;
         }
-        
-        .section-title {
-            color: var(--kq-green);
-            font-size: 1.8rem;
-            margin: 3rem 0 1.5rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--kq-green);
-        }
-        
+
         .insurance-card {
             background-color: var(--kq-greenLight);
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         .insurance-title {
             color: var(--kq-green);
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
-        
+
         .insurance-logo {
             max-width: 150px;
             height: auto;
             margin-bottom: 1rem;
         }
-        
+
         .insurance-company {
             margin-bottom: 1.5rem;
         }
-        
+
         .insurance-coverage {
             background-color: white;
             border-radius: 8px;
             padding: 1rem;
             margin-bottom: 1rem;
         }
-        
+
         .coverage-detail {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
             border-bottom: 1px solid #e9ecef;
         }
-        
+
         .coverage-detail:last-child {
             border-bottom: none;
         }
-        
+
         .payment-options {
             margin-top: 3rem;
             margin-bottom: 4rem;
         }
-        
+
         .payment-methods {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
             margin-top: 1.5rem;
         }
-        
+
         .payment-method {
             background-color: #f8f9fa;
             border-radius: 8px;
@@ -155,74 +144,11 @@
             align-items: center;
             min-width: 200px;
         }
-        
+
         .payment-icon {
             font-size: 2rem;
             color: var(--kq-green);
             margin-right: 1rem;
-        }
-        
-        .note-box {
-            background-color: #fdf7e2;
-            border-left: 5px solid #f5c518;
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin: 2rem 0;
-        }
-        
-        .note-title {
-            color: #856404;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .note-title i {
-            margin-right: 0.5rem;
-        }
-        
-        .note-content {
-            color: #856404;
-        }
-        
-        .contact-cta {
-            background-color: var(--kq-greenLight);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            margin: 4rem 0 2rem 0;
-        }
-        
-        .contact-cta h3 {
-            color: var(--kq-green);
-            margin-bottom: 1rem;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--kq-green);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background-color: #1b5e20;
-            color: white;
-            text-decoration: none;
-        }
-
-        .masthead {
-            background: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent);
-            height: 30vh;
-            display: flex;
-            align-items: center;
-            position: relative;
         }
 
         .fee-list {
@@ -247,12 +173,20 @@
             margin: 0;
             font-style: italic;
         }
-        
+
+        .masthead {
+            background: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent);
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
         @media (max-width: 768px) {
             .fee-detail {
                 flex-direction: column;
             }
-            
+
             .fee-detail-value {
                 margin-top: 0.25rem;
             }
@@ -262,14 +196,14 @@
 
 <body>
     <div id="header-placeholder"></div>
-    
+
     <!-- Page Header-->
     <header class="masthead">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="page-heading">
-                        <h2 class="fees-header">Fees & Insurance</h2>
+                        <h2 class="fees-header">Fees &amp; Insurance</h2>
                     </div>
                 </div>
             </div>
@@ -283,11 +217,11 @@
                 <div class="fees-intro">
                     <p class="lead">I am committed to providing high-quality psychological care at transparent and competitive rates. Many of my services may be partially covered by health insurance.</p>
                 </div>
-                
+
                 <div class="fees-container">
                     <!-- Service Fees Section -->
                     <h3 class="section-title">Service Fees</h3>
-                    
+
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="fee-card">
@@ -305,7 +239,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
                             <div class="fee-card">
                                 <h4 class="fee-title">ADHD Assessment</h4>
@@ -317,12 +251,12 @@
                                     </div>
                                     <div class="fee-detail">
                                         <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Comprehensive report & feedback</span>
+                                        <span class="fee-detail-value">Comprehensive report &amp; feedback</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
                             <div class="fee-card">
                                 <h4 class="fee-title">Cognitive/IQ Testing</h4>
@@ -334,12 +268,12 @@
                                     </div>
                                     <div class="fee-detail">
                                         <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Written report & recommendations</span>
+                                        <span class="fee-detail-value">Written report &amp; recommendations</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
                             <div class="fee-card">
                                 <h4 class="fee-title">Child and Adolescent Psychoeducational Assessment</h4>
@@ -358,12 +292,12 @@
                                     </div>
                                     <div class="fee-detail">
                                         <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Comprehensive report & recommendations</span>
+                                        <span class="fee-detail-value">Comprehensive report &amp; recommendations</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
                             <div class="fee-card">
                                 <h4 class="fee-title">Court-Mandated Assessment</h4>
@@ -380,7 +314,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6 mb-4">
                             <div class="fee-card">
                                 <h4 class="fee-title">Professional Consultation</h4>
@@ -398,16 +332,16 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="note-box">
                         <h4 class="note-title"><i class="fas fa-info-circle"></i> Fee Information</h4>
                         <p class="note-content">Please contact me directly for current fee information. Fees vary depending on the type and complexity of service required. I'm happy to discuss pricing during an initial consultation.</p>
                     </div>
-                    
+
                     <!-- Insurance Section -->
                     <h3 class="section-title">Insurance Coverage</h3>
                     <p>Many Irish health insurance providers cover sessions with a Chartered Clinical Psychologist. The amount covered varies depending on your specific plan. I am happy to assist you in navigating your insurance options.</p>
-                    
+
                     <div class="row">
                         <div class="col-md-4 mb-4">
                             <div class="insurance-company">
@@ -424,7 +358,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4 mb-4">
                             <div class="insurance-company">
                                 <h4>Laya Healthcare</h4>
@@ -440,7 +374,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4 mb-4">
                             <div class="insurance-company">
                                 <h4>HSF Health Plan</h4>
@@ -457,16 +391,16 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="note-box">
                         <h4 class="note-title"><i class="fas fa-info-circle"></i> Insurance Verification</h4>
                         <p class="note-content">We recommend contacting your insurance provider directly before your first appointment to verify your specific coverage for psychological services. Upon request, we can provide you with the necessary documentation for insurance reimbursement.</p>
                     </div>
-                    
+
                     <!-- Payment Options Section -->
                     <h3 class="section-title">Payment Options</h3>
                     <p>We offer several convenient payment methods to make your experience as smooth as possible:</p>
-                    
+
                     <div class="payment-methods">
                         <div class="payment-method">
                             <div class="payment-icon">
@@ -474,7 +408,7 @@
                             </div>
                             <div>Bank Transfer</div>
                         </div>
-                        
+
                         <div class="payment-method">
                             <div class="payment-icon">
                                 <i class="fas fa-money-bill-wave"></i>
@@ -482,7 +416,7 @@
                             <div>Cash</div>
                         </div>
                     </div>
-                    
+
                     <div class="note-box">
                         <h4 class="note-title"><i class="fas fa-exclamation-circle"></i> Cancellation Policy</h4>
                         <p class="note-content">I understand that circumstances can change. If you need to cancel or reschedule your appointment, please provide at least 48 hours' notice to avoid a cancellation fee. Late cancellations or missed appointments without notice will incur the full session cost.</p>
@@ -492,7 +426,7 @@
                     <div class="fees-updated-note">
                         <p>Please contact me directly for current fee information</p>
                     </div>
-                    
+
                     <!-- Contact CTA -->
                     <div class="contact-cta">
                         <h3>Have Questions About Fees or Insurance?</h3>
@@ -506,7 +440,7 @@
 
     <!-- Footer-->
     <div id="footer-placeholder"></div>
-    
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

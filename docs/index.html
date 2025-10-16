@@ -13,20 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Enhanced styles that preserve your existing colors */
-        
+        /* INDEX PAGE SPECIFIC STYLES */
+
         .about-text-content {
             color: #fff;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             max-width: 90%;
         }
-        
+
         #about-text p {
             font-size: 1.15rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
         }
-        
+
         .welcome-badge {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -37,39 +37,13 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--kq-green);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--kq-greenDark);
-            color: white;
-            text-decoration: none;
-        }
-        
+
         /* Features Section */
         .features-section {
             padding: 5rem 0;
             background-color: #f8f9fa;
         }
-        
-        .section-title {
-            text-align: center;
-            color: var(--kq-green);
-            font-family: 'Lora', serif;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-        
+
         .section-subtitle {
             text-align: center;
             color: #555;
@@ -78,74 +52,24 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
-        
-        .feature-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            height: 100%;
-            transition: transform 0.3s ease;
+
+        /* Index page: center section titles */
+        .section-title {
+            text-align: center;
         }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-        }
-        
+
         .feature-icon {
             font-size: 2rem;
             color: var(--kq-green);
             margin-bottom: 1rem;
         }
-        
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 0.8rem;
-            font-family: 'Lora', serif;
-        }
-        
+
         .feature-content {
             color: #555;
             font-size: 1rem;
             line-height: 1.6;
         }
-        
-        /* Loading spinner */
-        .loading-spinner {
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border: 0.25rem solid rgba(46, 125, 50, 0.2);
-            border-top-color: var(--kq-green);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Profile image styles */
-        .profile-img {
-            border-radius: 50%;
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border: 4px solid white;
-            margin-bottom: 2rem;
-        }
-        
-        .profile-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-        
+
         /* New two-column layout styles */
         .hero-content {
             display: flex;
@@ -154,12 +78,12 @@
             gap: 3rem;
             min-height: 400px;
         }
-        
+
         .hero-text {
             flex: 1;
             max-width: 60%;
         }
-        
+
         .hero-image {
             flex-shrink: 0;
             display: flex;
@@ -167,7 +91,7 @@
             align-items: flex-start;
             margin-top: 1rem;
         }
-        
+
         /* Masthead background - use header.masthead for specificity */
         header.masthead {
             position: relative;
@@ -177,7 +101,7 @@
             overflow: hidden;
             background: none !important; /* Override global styles */
         }
-        
+
         header.masthead .masthead-bg {
             position: absolute;
             top: 0;
@@ -188,7 +112,7 @@
             object-position: center;
             z-index: 0;
         }
-        
+
         header.masthead::before {
             content: '';
             position: absolute;
@@ -196,104 +120,80 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(15, 40, 20, 0.6), transparent);
+            background: linear-gradient(to right, rgba(62, 101, 70, 0.6), transparent);
             z-index: 1;
             pointer-events: none;
         }
-        
+
         header.masthead .container {
             position: relative;
             z-index: 2;
         }
-        
+
         /* Hero title */
         .hero-title {
             font-size: 2.6rem;
             color: white;
             margin-bottom: 1.5rem;
         }
-        
+
         /* Services section background */
         .section__services {
             background-color: #f8f9fa;
         }
-        
-        /* Service card styles */
-        .service-card {
-            background-color: var(--kq-green);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
-        
+
+        /* Index-specific service card overrides */
         .service-card h3 {
-            color: white;
             font-size: 1.4rem;
-            margin-bottom: 1rem;
         }
-        
-        .service-card p {
-            margin-bottom: 1rem;
-        }
-        
+
         .service-card .learn-more {
             color: var(--kq-greenLight);
             font-weight: 600;
         }
-        
+
         .service-link {
             text-decoration: none;
             color: inherit;
         }
-        
-        /* CTA section background */
+
+        /* Index CTA section customization */
         .cta-section {
             background-color: #f0f5f0;
         }
-        
+
         .cta-title {
             color: var(--kq-green);
             font-size: 2rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .cta-description {
             margin-bottom: 2rem;
             font-size: 1.1rem;
         }
-        
-        /* Responsive adjustments */
+
+        /* Index-specific responsive adjustments */
         @media(max-width:768px) {
             header.masthead {
                 padding-top: 6rem;
                 padding-bottom: 6rem;
                 min-height: 500px;
             }
-            
+
             .about-text-content {
                 max-width: 100%;
             }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
-            
+
             .hero-content {
                 flex-direction: column;
                 gap: 2rem;
             }
-            
+
             .hero-text {
                 order: 2;
             }
-            
+
             .hero-image {
                 order: 1;
             }
@@ -479,7 +379,7 @@
         .catch(() => {
             // Header loading failed - fail silently
         });
-    
+
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {
@@ -496,18 +396,18 @@
         const CACHE_KEY = 'about_content_cache';
         const CACHE_DURATION = 3600000; // 1 hour in milliseconds
         const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
-        
+
         const loadingElement = document.getElementById('loading-about');
         const contentElement = document.getElementById('about-content');
         const fallbackElement = document.getElementById('about-fallback');
-        
+
         // Check cache first
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
             try {
                 const { content, timestamp } = JSON.parse(cachedData);
                 const age = Date.now() - timestamp;
-                
+
                 if (age < CACHE_DURATION) {
                     displayContent(content);
                     return;
@@ -516,7 +416,7 @@
                 // Cache parsing failed - continue to fetch
             }
         }
-        
+
         // Fetch content from Google Sheets
         fetch(csvUrl)
             .then(response => {
@@ -529,7 +429,7 @@
                     const parsedContent = parseCSV(csvText);
                     if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
                         const contentValue = parsedContent[1][0]; // Get first column of second row
-                        
+
                         // Cache the content
                         try {
                             localStorage.setItem(CACHE_KEY, JSON.stringify({
@@ -539,7 +439,7 @@
                         } catch {
                             // Caching failed - continue anyway
                         }
-                        
+
                         displayContent(contentValue);
                     } else {
                         showFallback();
@@ -553,15 +453,15 @@
                 // Content fetching failed - show fallback
                 showFallback();
             });
-            
+
         function displayContent(content) {
             try {
                 // Split content by line breaks and create separate paragraphs
                 const paragraphs = content.split(/\n\s*\n|\n/).filter(para => para.trim().length > 0);
-                
+
                 // Create HTML for each paragraph
                 const paragraphsHTML = paragraphs.map(para => `<p>${para.trim()}</p>`).join('');
-                
+
                 contentElement.innerHTML = `
                     ${paragraphsHTML}
                     <a href="contact.html" class="cta-button">Book an Appointment</a>
@@ -573,7 +473,7 @@
                 showFallback();
             }
         }
-        
+
         function showFallback() {
             try {
                 loadingElement.style.display = 'none';
@@ -582,18 +482,18 @@
                 // Fallback display failed - no further action
             }
         }
-        
+
         // Proper CSV parser that handles quoted cells with line breaks
         function parseCSV(csvText) {
             const result = [];
             let row = [];
             let currentValue = '';
             let insideQuotes = false;
-            
+
             for (let i = 0; i < csvText.length; i++) {
                 const char = csvText[i];
                 const nextChar = csvText[i + 1];
-                
+
                 if (char === '"') {
                     if (insideQuotes && nextChar === '"') {
                         // Escaped quote inside quotes
@@ -615,7 +515,7 @@
                         row = [];
                         currentValue = '';
                     }
-                    
+
                     // Skip the next character if it's a line feed after a carriage return
                     if (char === '\r' && nextChar === '\n') {
                         i++;
@@ -625,27 +525,27 @@
                     currentValue += char;
                 }
             }
-            
+
             // Don't forget the last row
             if (currentValue !== '' || row.length > 0) {
                 row.push(currentValue);
                 result.push(row);
             }
-            
+
             return result;
         }
     }
-    
+
     // Add simple hover effect for service cards
     document.addEventListener('DOMContentLoaded', function() {
         const serviceCards = document.querySelectorAll('.service-card');
-        
+
         serviceCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-5px)';
                 this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.15)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';

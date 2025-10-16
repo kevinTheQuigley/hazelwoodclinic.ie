@@ -1,116 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Evidence-based therapeutic services from Dr. Stephen Quigley for anxiety, depression, trauma recovery, and neurodiversity-related challenges" />
-        <meta name="author" content="Dr. Stephen Quigley" />
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Evidence-based therapeutic services from Dr. Stephen Quigley for anxiety, depression, trauma recovery, and neurodiversity-related challenges">
+        <meta name="author" content="Dr. Stephen Quigley">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <title>Treatment Options - Dr. Stephen Quigley</title>
         <link rel="stylesheet" href="css/styles.css">
         <style>
-            :root {
-                --text-color: #333333;
-                --light-text: #ffffff;
-            }
-            
-            body {
-                font-family: 'Open Sans', sans-serif;
-                line-height: 1.6;
-                color: var(--text-color);
-            }
-            
-            .services-header {
-                font-size: 2.6rem;
-                font-family: 'Lora', serif;
-            }
-            
-            .service-section {
-                margin: 2rem auto;
-                max-width: 900px;
-                padding: 0 1rem;
-            }
-            
-            .service-card {
-                background-color: var(--kq-green);
-                color: white;
-                padding: 2rem;
-                border-radius: 8px;
-                margin-bottom: 2rem;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-            
-            .service-card h2 {
-                color: white;
-                margin-bottom: 1.5rem;
-                font-weight: 600;
-                font-size: 1.6rem;
-                font-family: 'Lora', serif;
-                border-bottom: 2px solid rgba(255,255,255,0.3);
-                padding-bottom: 0.5rem;
-            }
-            
-            .service-card p {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 1rem;
-            }
-            
-            .service-card ul {
-                list-style-type: none;
-                padding-left: 0;
-                margin-bottom: 1rem;
-            }
-            
-            .service-card li {
-                margin-bottom: 0.75rem;
-                padding-left: 1.5rem;
-                position: relative;
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            
-            .service-card li::before {
-                content: "•";
-                position: absolute;
-                left: 0;
-                color: var(--kq-greenLight);
-                font-weight: bold;
-            }
-            
-            .service-intro {
-                margin-bottom: 3rem;
-                text-align: center;
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 0 1rem;
-            }
-            
-            .service-intro .lead {
-                font-size: 1.1rem;
-                color: var(--text-color);
-            }
-            
-            .breadcrumb {
-                background-color: transparent;
-                padding: 0.5rem 0;
-                margin-bottom: 1rem;
-            }
-            
-            .breadcrumb-item a {
-                color: var(--kq-green);
-                text-decoration: none;
-            }
-            
-            .breadcrumb-item.active {
-                color: var(--text-color);
-            }
-            
+            /* TREATMENT PAGE SPECIFIC STYLES */
+
             .therapy-subheading {
                 color: var(--kq-greenLight);
                 font-weight: 600;
@@ -118,73 +22,33 @@
                 margin-bottom: 0.5rem;
                 font-size: 1.2rem;
             }
-            
+
             .therapy-methods {
                 margin-top: 2rem;
                 padding-top: 1rem;
                 border-top: 1px solid rgba(255,255,255,0.2);
             }
-            
+
             .therapy-methods-intro {
                 margin-bottom: 1.5rem;
             }
-            
+
             .condition-list {
                 margin: 1.5rem 0;
                 columns: 2;
             }
-            
+
             .condition-list li {
                 break-inside: avoid;
             }
-            
+
             .who-i-work-with {
                 margin-top: 2rem;
                 padding-top: 1rem;
                 border-top: 1px solid rgba(255,255,255,0.2);
             }
-            
-            .cta-section {
-                background-color: var(--kq-greenLight);
-                padding: 2rem;
-                border-radius: 8px;
-                margin-top: 3rem;
-                text-align: center;
-            }
-            
-            .cta-section h3 {
-                color: var(--kq-green);
-                margin-bottom: 1rem;
-                font-family: 'Lora', serif;
-            }
-            
-            .cta-button {
-                display: inline-block;
-                background-color: var(--kq-green);
-                color: white;
-                padding: 0.75rem 1.5rem;
-                border-radius: 4px;
-                font-weight: 600;
-                text-decoration: none;
-                margin-top: 1rem;
-                transition: background-color 0.3s ease;
-            }
-            
-            .cta-button:hover {
-                background-color: var(--kq-greenDark);
-                color: white;
-                text-decoration: none;
-            }
-            
+
             @media (max-width: 768px) {
-                .service-card {
-                    padding: 1.5rem;
-                }
-                
-                .services-header {
-                    font-size: 2rem;
-                }
-                
                 .condition-list {
                     columns: 1;
                 }
@@ -193,8 +57,8 @@
     </head>
     <body>
         <div id="header-placeholder"></div>
-        
-        <header class="masthead" style="background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/services.jpg'); height: 30vh; display: flex; align-items: center;">
+
+        <header class="masthead services-masthead">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -205,7 +69,7 @@
                 </div>
             </div>
         </header>
-        
+
         <main class="mb-4">
             <div class="container">
                 <div class="row justify-content-center">
@@ -216,19 +80,19 @@
                                 <li class="breadcrumb-item active">Treatment Options</li>
                             </ol>
                         </nav>
-                        
+
                         <div class="service-intro">
                             <p class="lead">Stephen offers evidence-based therapeutic services addressing a wide range of psychological concerns, delivered with compassion, curiosity, and clinical expertise.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="service-section">
                 <div class="service-card">
                     <h2>Who I Work With</h2>
                     <p>Stephen offers psychological support to individuals across the lifespan and welcomes people from all walks of life. His approach is grounded in compassion, curiosity, and deep respect for diversity—including alternative relationship structures, gender and sexual identities, and non-traditional lifestyles.</p>
-                    
+
                     <div class="therapy-subheading">He specialises in working with:</div>
                     <ul>
                         <li>Adults navigating life transitions, relationship challenges, trauma, or emotional distress</li>
@@ -236,36 +100,36 @@
                         <li>Children and adolescents experiencing anxiety, low mood, self-harm, or behavioural difficulties</li>
                         <li>Families seeking support around autism, ADHD, or other neurodevelopmental needs</li>
                     </ul>
-                    
+
                     <p>Over the course of his career, Stephen has worked with a wide range of individuals and groups. Whether you're seeking support for yourself, your child, or your family, you can expect a collaborative, non-judgmental space that honours your values, strengths, and goals.</p>
-                    
+
                     <div class="therapy-methods">
                         <div class="therapy-methods-intro">
                             <p>Stephen integrates multiple evidence-based approaches to meet each client's unique needs. His therapeutic methods include:</p>
                         </div>
-                        
+
                         <div class="therapy-subheading">Cognitive Behavioural Therapy (CBT)</div>
                         <p>A widely researched therapy proven effective for anxiety disorders, depression, PTSD, and OCD. CBT helps identify unhelpful thought patterns, challenge them, and replace them with healthier ways of thinking and behaving. Particularly effective for treating OCD.</p>
-                        
+
                         <div class="therapy-subheading">Eye Movement Desensitization and Reprocessing (EMDR)</div>
                         <p>A structured therapy specifically designed to help process and resolve traumatic memories through bilateral stimulation techniques. EMDR reduces trauma symptoms while enhancing self-esteem and resilience. Especially effective for single-incident traumas, with a blended approach used for complex trauma.</p>
-                        
+
                         <div class="therapy-subheading">Internal Family Systems (IFS)</div>
                         <p>An innovative approach that views the mind as composed of distinct "parts," each with unique feelings and roles. Effective for trauma, emotional regulation, and self-esteem issues, IFS fosters greater self-compassion by addressing wounded parts and nurturing the "Self."</p>
-                        
+
                         <div class="therapy-subheading">Acceptance and Commitment Therapy (ACT)</div>
                         <p>Promotes acceptance and psychological flexibility to manage difficult thoughts and emotions. Based in mindfulness and behavioral change principles, ACT helps clients focus on their values and take aligned actions. Particularly helpful for anxiety, depression, chronic stress, and life transitions.</p>
-                        
+
                         <div class="therapy-subheading">Compassion-Focused Therapy (CFT)</div>
                         <p>Designed for individuals struggling with self-criticism, shame, and emotional pain. CFT cultivates self-compassion and emotional resilience by integrating mindfulness, neuroscience, and evolutionary psychology to foster safety and self-kindness.</p>
-                        
+
                         <div class="therapy-subheading">Psychodynamic Psychotherapy</div>
                         <p>Explores unconscious influences of past relationships and experiences on current behaviors and emotions. Helpful for understanding relational patterns, identity struggles, and unresolved emotional pain, building more meaningful connections with self and others.</p>
                     </div>
-                    
+
                     <p>Treatment plans are tailored to each individual's specific needs, often integrating multiple approaches for the most effective outcomes. Stephen works collaboratively with clients to determine the most appropriate therapeutic methods for their unique circumstances.</p>
                 </div>
-                
+
                 <div class="cta-section">
                     <h3>Ready to Begin Your Healing Journey?</h3>
                     <p>Contact Hazelwood Clinic today to schedule an initial consultation. We'll discuss your concerns, answer your questions, and work together to develop a personalized treatment plan.</p>
@@ -273,9 +137,9 @@
                 </div>
             </div>
         </main>
-        
+
         <div id="footer-placeholder"></div>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
