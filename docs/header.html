@@ -42,35 +42,72 @@
 </nav>
 
 <script>
-// Add this script to handle mobile dropdown toggles and sticky header
+// Enhanced mobile dropdown and sticky header functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle mobile dropdown toggles
-    if (window.innerWidth < 992) {
-        const dropdownItems = document.querySelectorAll('.menu-item-has-children > a');
+    const navbar = document.getElementById('mainNav');
+    const dropdownToggles = document.querySelectorAll('.menu-item-has-children > a');
 
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                // Only prevent default if we're in mobile view and clicking the parent item
-                const parent = this.parentElement;
-                if (window.innerWidth < 992) {
-                    e.preventDefault();
-                    parent.classList.toggle('show');
-                    const subMenu = parent.querySelector('.dropdown-menu');
-                    if (subMenu) {
-                        if (subMenu.style.display === 'block') {
-                            subMenu.style.display = 'none';
-                        } else {
-                            subMenu.style.display = 'block';
-                        }
-                    }
+    // Mobile dropdown toggle functionality
+    function handleDropdownClick(e) {
+        // Only handle on mobile
+        if (window.innerWidth < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const parent = this.parentElement;
+            const subMenu = parent.querySelector('.dropdown-menu');
+            const dropdownIcon = this.querySelector('.dropdown-icon');
+            
+            // Close other open dropdowns
+            document.querySelectorAll('.menu-item-has-children.show').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('show');
+                    const otherMenu = item.querySelector('.dropdown-menu');
+                    const otherIcon = item.querySelector('.dropdown-icon');
+                    if (otherMenu) otherMenu.style.display = 'none';
+                    if (otherIcon) otherIcon.style.transform = '';
                 }
             });
-        });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('show');
+            
+            if (subMenu) {
+                if (subMenu.style.display === 'block') {
+                    subMenu.style.display = 'none';
+                    this.setAttribute('aria-expanded', 'false');
+                } else {
+                    subMenu.style.display = 'block';
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            }
+        }
     }
 
-    // Sticky header functionality
-    const navbar = document.getElementById('mainNav');
+    // Add click handlers to dropdown toggles
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', handleDropdownClick);
+        toggle.setAttribute('role', 'button');
+        toggle.setAttribute('aria-expanded', 'false');
+    });
 
+    // Handle window resize to reset dropdowns
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth >= 992) {
+                // Reset mobile dropdown states on desktop
+                document.querySelectorAll('.menu-item-has-children').forEach(item => {
+                    item.classList.remove('show');
+                    const subMenu = item.querySelector('.dropdown-menu');
+                    if (subMenu) subMenu.style.display = '';
+                });
+            }
+        }, 250);
+    });
+
+    // Sticky header scroll functionality
     function handleScroll() {
         if (window.scrollY > 50) {
             navbar.classList.add('is-scrolled');
@@ -82,7 +119,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check in case page loads scrolled down
     handleScroll();
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    // Add scroll event listener with throttling for performance
+    let scrollTimer;
+    window.addEventListener('scroll', function() {
+        if (!scrollTimer) {
+            scrollTimer = setTimeout(function() {
+                handleScroll();
+                scrollTimer = null;
+            }, 10);
+        }
+    });
+
+    // Close mobile dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth < 992) {
+            if (!e.target.closest('.menu-item-has-children')) {
+                document.querySelectorAll('.menu-item-has-children.show').forEach(item => {
+                    item.classList.remove('show');
+                    const subMenu = item.querySelector('.dropdown-menu');
+                    if (subMenu) subMenu.style.display = 'none';
+                });
+            }
+        }
+    });
 });
 </script>

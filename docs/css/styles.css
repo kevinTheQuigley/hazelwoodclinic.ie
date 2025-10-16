@@ -10,6 +10,10 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* Import Google Font - Roboto for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 :root {
   --bs-blue: #4E7055;
   --kq-blue: #152885;
@@ -62,9 +66,9 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Lora, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --bs-body-font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
+  --bs-body-font-weight: 300;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
@@ -107,6 +111,23 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* Add padding for fixed navigation */
+  padding-top: 73px;
+}
+
+/* Modern typography with Roboto */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+h1 {
+  font-weight: 500 !important;
+}
+
+nav, .navbar, .navigation-bar {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
 }
 
 hr {
@@ -11280,7 +11301,7 @@ header.masthead .post-heading .meta a {
     transform: rotate(180deg) !important;
 }
 
-/* Desktop menu behavior */
+/* Desktop menu behavior with improved hover handling */
 @media (min-width: 992px) {
     #mainNav .navbar-nav {
         flex-direction: row !important;
@@ -11290,8 +11311,12 @@ header.masthead .post-heading .meta a {
         position: relative !important;
     }
     
-    #mainNav .menu-item-has-children:hover > .dropdown-menu {
+    /* Fix dropdown hover issue - apply hover to both parent and dropdown */
+    #mainNav .menu-item-has-children:hover > .dropdown-menu,
+    #mainNav .menu-item-has-children > .dropdown-menu:hover {
         display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     #mainNav .menu-item-has-children > .dropdown-menu {
@@ -11299,6 +11324,24 @@ header.masthead .post-heading .meta a {
         top: 100% !important;
         left: 0 !important;
         min-width: 200px !important;
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.2s ease, visibility 0.2s ease !important;
+        /* Remove any gap between parent and dropdown */
+        margin-top: 0 !important;
+        padding-top: 0.5rem !important;
+    }
+    
+    /* Add invisible bridge between parent and dropdown to prevent gap issues */
+    #mainNav .menu-item-has-children::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 0.5rem !important;
+        background: transparent !important;
     }
 }
 
@@ -11395,4 +11438,1384 @@ header.masthead .post-heading .meta a {
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 600;
+}
+
+/* ========================================
+   PAGE-SPECIFIC STYLES
+   Consolidated from inline <style> blocks
+   ======================================== */
+
+/* ========================================
+   SHARED COMPONENTS
+   Used across multiple pages
+   ======================================== */
+
+/* Service Section - Used on multiple service pages */
+.service-section {
+    max-width: 1200px;
+}
+
+.service-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: 0 1rem;
+}
+
+.service-intro .lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Service Cards - Shared styling */
+.service-card {
+    background-color: var(--kq-green);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.service-card h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    font-family: 'Lora', serif;
+}
+
+.service-card h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.service-card ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.service-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Services Grid - Used on service pages */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.service-preview {
+    background-color: var(--kq-green);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-preview:hover {
+    transform: translateY(-5px);
+}
+
+.service-preview h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-family: 'Lora', serif;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 0.5rem;
+}
+
+.service-preview p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.service-link {
+    display: inline-block;
+    background-color: var(--kq-greenLight);
+    color: var(--kq-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.service-link:hover {
+    background-color: white;
+    text-decoration: none;
+    color: var(--kq-green);
+}
+
+/* Insurance Note - Shared */
+.insurance-note {
+    background-color: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    color: white;
+}
+
+.insurance-note h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* CTA Section - Shared */
+.cta-section {
+    background-color: rgba(255,255,255,0.1);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 2rem;
+    color: white;
+}
+
+.cta-section h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.cta-section p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--kq-greenLight);
+    color: var(--kq-green);
+    padding: 0.875rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: var(--kq-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+
+/* About Section - Shared */
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.about-content {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+/* Section Titles - Shared */
+.section-title {
+    color: var(--kq-green);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+}
+
+/* Feature Cards - Shared */
+.feature-card {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--kq-green);
+    font-weight: 600;
+}
+
+/* Info Cards - Shared */
+.info-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-card-title {
+    color: var(--kq-green);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Approach Cards - Shared */
+.approach-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.approach-card h4 {
+    color: var(--kq-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.approach-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bullet Lists - Shared */
+.bullet-list {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bullet-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Breadcrumb - Shared */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--kq-green);
+}
+
+.breadcrumb-item a {
+    color: var(--kq-green);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Loading Spinner - Shared */
+.loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   INDEX PAGE (index.html)
+   ======================================== */
+
+.about-text-content {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+}
+
+#about-text p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--kq-greenLight);
+    color: var(--kq-green);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.features-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Index page: center section titles */
+.features-section .section-title {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--kq-green);
+    margin-bottom: 1rem;
+}
+
+.feature-content {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Index page hero layout */
+.hero-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    min-height: 400px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 60%;
+}
+
+.hero-image {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+/* Index masthead */
+header.masthead {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    min-height: 600px;
+    overflow: hidden;
+    background: none !important;
+}
+
+header.masthead .masthead-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+header.masthead::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(62, 101, 70, 0.6), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+header.masthead .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* Index page services section */
+.section__services {
+    background-color: #f8f9fa;
+}
+
+/* Index page service cards */
+.section__services .service-card h3 {
+    font-size: 1.4rem;
+}
+
+.section__services .service-card .learn-more {
+    color: var(--kq-greenLight);
+    font-weight: 600;
+}
+
+.section__services .service-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Index CTA section */
+.features-section + section.cta-section {
+    background-color: #f0f5f0;
+}
+
+.cta-title {
+    color: var(--kq-green);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   ABOUT PAGE (about.html)
+   ======================================== */
+
+/* About page profile image */
+.about-content .profile-img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+    border-color: var(--kq-green);
+}
+
+.profile-container {
+    padding-right: 30px;
+}
+
+.team-section {
+    margin-top: 3rem;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--kq-green);
+}
+
+.team-name {
+    font-weight: 600;
+    color: var(--kq-green);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.team-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.about-masthead {
+    background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-header {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   ABOUT STEPHEN PAGE (aboutStephen.html)
+   ======================================== */
+
+.biography-text {
+    white-space: pre-line;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* About Stephen: rectangular profile image */
+.biography-container .profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.biography-container {
+    padding-left: 10px;
+}
+
+.credentials-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+    clear: both;
+}
+
+.credentials-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--kq-green);
+    font-size: 1.5rem;
+}
+
+.credentials-list {
+    margin-bottom: 2rem;
+}
+
+.credentials-list h4 {
+    color: var(--kq-green);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.credentials-list ul {
+    padding-left: 1.2rem;
+}
+
+.credentials-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   SERVICES PAGE (services.html)
+   ======================================== */
+
+.services-header {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   CONTACT PAGE (contact.html)
+   ======================================== */
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.contact-container {
+    flex: 1;
+    background-color: var(--kq-green);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.contact-container h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.contact-container p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-container strong {
+    font-size: 1.1rem;
+}
+
+.contact-header {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   FAQ PAGE (faq.html)
+   ======================================== */
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.faq-section {
+    margin-bottom: 3rem;
+}
+
+.faq-section-title {
+    color: var(--kq-green);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--kq-green);
+}
+
+.accordion-item {
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 1rem;
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: var(--kq-green);
+    background-color: transparent;
+    box-shadow: none;
+    padding: 1rem 0;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--kq-green);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e7d32'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e7d32'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 1rem 0 1.5rem 0;
+}
+
+.faq-header {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.contact-cta {
+    background-color: var(--kq-greenLight);
+    border-radius: 8px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.contact-cta h3 {
+    color: var(--kq-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--kq-green);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #3e6546;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: white;
+}
+
+/* ========================================
+   FEES PAGE (fees.html)
+   ======================================== */
+
+.fees-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+}
+
+.fees-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.fee-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.fee-card:hover {
+    transform: translateY(-5px);
+}
+
+.fee-title {
+    color: var(--kq-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--kq-greenLight);
+    padding-bottom: 0.5rem;
+}
+
+.fee-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.fee-amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--kq-green);
+    background-color: var(--kq-greenLight);
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+}
+
+.fee-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.fee-detail:last-child {
+    border-bottom: none;
+}
+
+.fee-detail-label {
+    font-weight: 600;
+}
+
+.insurance-card {
+    background-color: var(--kq-greenLight);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.insurance-title {
+    color: var(--kq-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.insurance-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   RESOURCES PAGE (resources.html)
+   ======================================== */
+
+.resources-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+}
+
+.resource-section {
+    margin-bottom: 4rem;
+}
+
+.resource-title {
+    color: var(--kq-green);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.resource-description {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.resource-link {
+    display: inline-block;
+    color: var(--kq-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+    color: #1b5e20;
+    text-decoration: underline;
+}
+
+.resource-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.resource-tag {
+    background-color: var(--kq-greenLight);
+    color: var(--kq-green);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.download-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-item:hover {
+    background-color: var(--kq-greenLight);
+}
+
+.download-icon {
+    color: var(--kq-green);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.download-content {
+    flex: 1;
+}
+
+.download-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--kq-green);
+}
+
+/* ========================================
+   TREATMENT PAGE (servicesTreatment.html)
+   ======================================== */
+
+.therapy-subheading {
+    color: var(--kq-greenLight);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.therapy-methods {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.therapy-methods-intro {
+    margin-bottom: 1.5rem;
+}
+
+.condition-list {
+    margin: 1.5rem 0;
+    columns: 2;
+}
+
+.condition-list li {
+    break-inside: avoid;
+}
+
+.who-i-work-with {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ========================================
+   CONSULTATION PAGE (servicesConsultation.html)
+   ======================================== */
+
+.consultation-item {
+    background-color: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.consultation-item h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.consultation-benefits {
+    margin-top: 2rem;
+    background-color: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.consultation-benefits h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   WORKSHOPS PAGE (servicesWorkshops.html)
+   ======================================== */
+
+.workshop-item {
+    background-color: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.workshop-item h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.experience-section {
+    margin-top: 2rem;
+    background-color: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.experience-section h3 {
+    color: var(--kq-greenLight);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.organization-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.organization-tag {
+    background-color: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   THERAPY TYPES PAGE (aboutTherapyTypes.html)
+   ======================================== */
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+}
+
+.intro-text .lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.therapy-section {
+    margin-bottom: 2.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.therapy-section:hover {
+    transform: translateY(-5px);
+}
+
+.therapy-header {
+    background-color: var(--kq-green);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    font-family: 'Lora', serif;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.therapy-content {
+    padding: 1.5rem;
+}
+
+.therapy-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.therapy-icon {
+    font-size: 2.5rem;
+    color: var(--kq-green);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.conditions-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.condition-tag {
+    background-color: var(--kq-greenLight);
+    color: var(--kq-green);
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.tailored-approach {
+    background-color: var(--kq-greenLight);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.tailored-approach h3 {
+    color: var(--kq-green);
+    margin-bottom: 1rem;
+    font-family: 'Lora', serif;
+}
+
+/* ========================================
+   TYPES OF PSYCHOLOGY PAGE (aboutTypesOfPsychology.html)
+   ======================================== */
+
+.psychology-masthead {
+    background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/about.jpg');
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.psychology-header {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.psychology-content {
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quote-box {
+    background-color: var(--kq-greenLight);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.quote-box::before {
+    content: "";
+    font-family: 'Lora', serif;
+    font-size: 6rem;
+    color: var(--kq-green);
+    opacity: 0.2;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+}
+
+.quote-text {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-attribution {
+    font-weight: 600;
+    text-align: right;
+    margin-top: 1rem;
+    color: var(--kq-green);
+}
+
+.info-card-title i {
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.myth-fact-container {
+    margin: 2.5rem 0;
+}
+
+.myth-fact-item {
+    margin-bottom: 2rem;
+}
+
+.myth {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem 1.5rem;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.myth i {
+    margin-right: 0.75rem;
+}
+
+.myth .myth-label {
+    margin-right: 1rem;
+}
+
+.fact {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.fact i {
+    margin-right: 0.75rem;
+}
+
+.fact .fact-label {
+    margin-right: 1rem;
+}
+
+.explanation {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+
+.journey-steps {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.journey-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.25rem;
+    width: 2px;
+    background-color: var(--kq-green);
+    transform: translateX(-50%);
+}
+
+.journey-step {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--kq-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--kq-green);
+    margin-bottom: 0.75rem;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   Mobile optimizations for all pages
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Index page responsive */
+    header.masthead {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        min-height: 500px;
+    }
+
+    .about-text-content {
+        max-width: 100%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    /* About page responsive */
+    .about-content .profile-img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+
+    .profile-container {
+        padding-right: 0;
+    }
+
+    /* About Stephen responsive */
+    .biography-container {
+        padding-left: 0;
+    }
+
+    /* Service pages responsive */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-preview {
+        padding: 1.5rem;
+    }
+
+    /* Contact page responsive */
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    /* Treatment page responsive */
+    .condition-list {
+        columns: 1;
+    }
+
+    /* Workshops page responsive */
+    .organization-list {
+        flex-direction: column;
+    }
+
+    /* Therapy types page responsive */
+    .therapy-header {
+        padding: 1rem 1.25rem;
+        font-size: 1.2rem;
+    }
+
+    .therapy-content {
+        padding: 1.25rem;
+    }
+
+    /* Types of psychology responsive */
+    .journey-line {
+        left: 1rem;
+    }
+
+    .journey-step {
+        padding-left: 2.5rem;
+    }
+
+    .step-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
 }
