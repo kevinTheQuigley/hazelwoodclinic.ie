@@ -2832,7 +2832,7 @@ textarea.form-control-lg {
   --bs-btn-bg: var(--kq-greenLight2);
   --bs-btn-border-color: var(--kq-greenLight2);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #3e7350; /* Darker shade for hover */
+  --bs-btn-hover-bg: black; /* Black for hover */
   --bs-btn-hover-border-color: #386a49; /* Even darker for border */
   --bs-btn-focus-shadow-rgb: 75, 136, 96; /* RGB values of --kq-greenLight2 */
   --bs-btn-active-color: #fff;
@@ -6534,11 +6534,11 @@ textarea.form-control-lg {
 }
 
 .fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  z-index: 1030 !important;
 }
 
 .fixed-bottom {
@@ -10615,11 +10615,11 @@ blockquote {
 }
 
 #mainNav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1030 !important;
   border-bottom: 1px solid #dee2e6;
   color: var(--kq-green);
   font-family: "Roboto", sans-serif;
@@ -10715,7 +10715,7 @@ header.masthead {
   background-attachment: scroll;
   
   /* Dynamic height settings */
-  min-height: 30vh;
+  min-height: 15vh;
   padding: 3rem 0;
   display: flex;
   align-items: center;
@@ -10781,7 +10781,7 @@ header.masthead .post-heading .meta a {
 @media (min-width: 992px) {
   header.masthead {
     margin-top: 57px; /* Keep the margin-top consistent */
-    min-height: 30vh;
+    min-height: 15vh;
     padding: 4rem 0; /* Single padding definition */
   }
   
@@ -10915,7 +10915,7 @@ header.masthead .post-heading .meta a {
     font-family: 'Lora', serif;
 }
 
-.about-header, .services-header, .contact-header, .faq-header, .fees-header, .resources-header, .psychology-header {
+.about-header, .services-header, .contact-header, .faq-header, .resources-header, .psychology-header {
     font-size: 2.6rem;
     color: white;
     font-family: 'Lora', serif;
@@ -11146,7 +11146,7 @@ header.masthead .post-heading .meta a {
 
 /* Responsive Adjustments for Common Components */
 @media (max-width: 768px) {
-    .page-header-text, .about-header, .services-header, .contact-header, .faq-header, .fees-header, .resources-header, .psychology-header {
+    .page-header-text, .about-header, .services-header, .contact-header, .faq-header, .resources-header, .psychology-header {
         font-size: 2rem;
     }
     
@@ -11243,7 +11243,7 @@ header.masthead .post-heading .meta a {
 
 /* Enhanced Appointment Button */
 #mainNav .appointment-btn {
-    color: white !important;
+    color: black !important;
     background: linear-gradient(135deg, var(--kq-green), var(--kq-greenLight)) !important;
     border: none !important;
     padding: 0.625rem 1.75rem !important;
@@ -11256,7 +11256,7 @@ header.masthead .post-heading .meta a {
 
 #mainNav .appointment-btn:hover, 
 #mainNav .appointment-btn:focus {
-    color: white !important;
+    color: black !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(78, 112, 85, 0.35) !important;
 }
@@ -11372,6 +11372,22 @@ header.masthead .post-heading .meta a {
         width: 100% !important;
     }
     
+    /* Make mobile navbar scrollable */
+    #mainNav .navbar-collapse.show {
+        max-height: calc(100vh - 70px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    #mainNav .navbar-collapse {
+        max-height: calc(100vh - 70px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Override Bootstrap dropdown behavior for mobile */
     #mainNav .dropdown-menu {
         background-color: #f8f9fa !important;
         border: none !important;
@@ -11381,17 +11397,90 @@ header.masthead .post-heading .meta a {
         float: none !important;
         border-radius: 8px !important;
         margin-top: 0.5rem !important;
+        display: none !important; /* Hide by default on mobile */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s ease !important;
+        min-width: auto !important;
+        width: 100% !important;
+        z-index: auto !important;
+    }
+    
+    /* Show dropdown when parent has 'show' class */
+    #mainNav .menu-item-has-children.show .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Auto-expand all dropdowns when mobile menu is open */
+    .navbar-collapse.show .menu-item-has-children .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    /* Rotate all dropdown icons when mobile menu is open */
+    .navbar-collapse.show .menu-item-has-children .dropdown-icon {
+        transform: rotate(180deg) !important;
+    }
+    
+    /* Alternative selector for auto-expand - more specific */
+    #mainNav .navbar-collapse.show .menu-item-has-children .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    /* Alternative selector for icon rotation - more specific */
+    #mainNav .navbar-collapse.show .menu-item-has-children .dropdown-icon {
+        transform: rotate(180deg) !important;
     }
     
     #mainNav .dropdown-item {
         color: #333 !important;
         padding: 0.625rem 1rem !important;
         font-size: 0.95rem !important;
+        display: block !important;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     #mainNav .dropdown-item:hover {
         background-color: rgba(78, 112, 85, 0.08) !important;
         color: var(--kq-green) !important;
+    }
+    
+    #mainNav .dropdown-item:active,
+    #mainNav .dropdown-item:focus {
+        background-color: rgba(78, 112, 85, 0.15) !important;
+        color: var(--kq-green) !important;
+        outline: none !important;
+    }
+    
+    /* Mobile dropdown icon rotation */
+    #mainNav .dropdown-icon {
+        transition: transform 0.3s ease !important;
+    }
+    
+    #mainNav .menu-item-has-children.show .dropdown-icon {
+        transform: rotate(180deg) !important;
+    }
+    
+    /* Disable Bootstrap dropdown toggle behavior on mobile */
+    #mainNav .dropdown-toggle {
+        pointer-events: auto !important;
     }
 }
 
@@ -11405,24 +11494,38 @@ header.masthead .post-heading .meta a {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Footer Contact Me button styling */
+.footer-custom .btn {
+    padding: 0.75rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
 /* MASTHEAD VARIATIONS */
 .services-masthead {
-    background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/services.jpg');
-    height: 30vh;
+    background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('../assets/img/services.jpg');
+    height: 15vh;
     display: flex;
     align-items: center;
 }
 
 .contact-masthead {
-    background-image: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent), url('assets/img/contact.jpg');
-    height: 30vh;
+    background-image: linear-gradient(to right, var(--kq-green), rgba(36, 64, 205, 0.2) 50%, transparent), url('../assets/img/contact.jpg');
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+.faq-masthead {
+    background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('../assets/img/faq.jpg');
+    height: 15vh;
     display: flex;
     align-items: center;
 }
 
 .therapy-types-masthead {
-    background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg');
-    height: 30vh;
+    background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('../assets/img/about.jpg');
+    height: 15vh;
     display: flex;
     align-items: center;
 }
@@ -11560,7 +11663,7 @@ header.masthead .post-heading .meta a {
 }
 
 .service-link:hover {
-    background-color: white;
+    background-color: var(--kq-greenLight);
     text-decoration: none;
     color: var(--kq-green);
 }
@@ -11607,7 +11710,7 @@ header.masthead .post-heading .meta a {
 .cta-button {
     display: inline-block;
     background-color: var(--kq-greenLight);
-    color: var(--kq-green);
+    color: black;
     padding: 0.875rem 2rem;
     border-radius: 30px;
     font-weight: 600;
@@ -11617,8 +11720,8 @@ header.masthead .post-heading .meta a {
 }
 
 .cta-button:hover {
-    background-color: white;
-    color: var(--kq-green);
+    background-color: var(--kq-greenLight);
+    color: black;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     text-decoration: none;
@@ -11867,7 +11970,7 @@ header.masthead::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(62, 101, 70, 0.6), transparent);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     z-index: 1;
     pointer-events: none;
 }
@@ -11968,11 +12071,11 @@ header.masthead .container {
 }
 
 .about-masthead {
-    background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('assets/img/about.jpg');
+    background-image: linear-gradient(to right, var(--kq-green), rgba(20, 88, 43, 0.2) 50%, transparent), url('../assets/img/about.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 30vh;
+    height: 15vh;
     display: flex;
     align-items: center;
 }
@@ -12570,8 +12673,8 @@ header.masthead .container {
    ======================================== */
 
 .psychology-masthead {
-    background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('assets/img/about.jpg');
-    height: 30vh;
+    background-image: linear-gradient(to right, var(--kq-green), rgba(46, 125, 50, 0.2) 50%, transparent), url('../assets/img/about.jpg');
+    height: 15vh;
     display: flex;
     align-items: center;
 }
