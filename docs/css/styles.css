@@ -11710,7 +11710,7 @@ header.masthead .post-heading .meta a {
 .cta-button {
     display: inline-block;
     background-color: var(--kq-greenLight);
-    color: black;
+    color: white;
     padding: 0.875rem 2rem;
     border-radius: 30px;
     font-weight: 600;
@@ -11721,7 +11721,7 @@ header.masthead .post-heading .meta a {
 
 .cta-button:hover {
     background-color: var(--kq-greenLight);
-    color: black;
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     text-decoration: none;
@@ -11942,6 +11942,118 @@ header.masthead .post-heading .meta a {
     margin-top: 1rem;
 }
 
+/* New hero layout - title card and photo on left, text card on right */
+.hero-content-new {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-content-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 100%;
+}
+
+.hero-left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.hero-title-card {
+    background-color: #5d4037;
+    padding: 1.5rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 100%;
+}
+
+.hero-title-card .hero-title {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.hero-image-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.hero-image-left .profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text-card {
+    flex: 1;
+    background-color: var(--kq-greenLight);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text-card .about-text-content {
+    color: #333;
+    text-shadow: none;
+    max-width: 100%;
+}
+
+.hero-text-card .about-text-content p {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.hero-text-card .cta-button {
+    color: white;
+    background-color: var(--kq-green);
+    margin-top: 1rem;
+}
+
+.hero-text-card .cta-button:hover {
+    color: white;
+    background-color: #1b5e20;
+}
+
+/* Responsive styles for new hero layout */
+@media (max-width: 768px) {
+    .hero-content-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .hero-image-left {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-image-left .profile-img {
+        max-width: 250px;
+    }
+    
+    .hero-text-card {
+        width: 100%;
+    }
+}
+
 /* Index masthead */
 header.masthead {
     position: relative;
@@ -11963,17 +12075,6 @@ header.masthead .masthead-bg {
     z-index: 0;
 }
 
-header.masthead::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
-    z-index: 1;
-    pointer-events: none;
-}
 
 header.masthead .container {
     position: relative;

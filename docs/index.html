@@ -23,30 +23,35 @@
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5">
                 <div class="col-12">
-                    <div class="hero-content">
-                        <!-- Text content on the left -->
-                        <div class="hero-text">
-                            <div class="site-heading text-start">
-                                <h1 class="hero-title">Dr. Stephen Quigley</h1>
+                    <div class="hero-content-new">
+                        <!-- Content row: Title card and photo on left, Text card on right -->
+                        <div class="hero-content-row">
+                            <!-- Left side: Title card and photo -->
+                            <div class="hero-left-column">
+                                <div class="hero-title-card">
+                                    <h1 class="hero-title">Dr. Stephen Quigley</h1>
+                                    <p class="hero-subtitle">Ennis, County Clare</p>
+                                </div>
+                                <div class="hero-image-left">
+                                    <img src="assets/img/aboutProfile.jpg" alt="Dr. Stephen Quigley" class="profile-img">
+                                </div>
+                            </div>
 
-                                <div id="about-text" class="about-text-content mt-4">
+                            <!-- Right side: Text content in green card -->
+                            <div class="hero-text-card">
+                                <div id="about-text" class="about-text-content">
                                     <div id="loading-about" class="text-center">
                                         <div class="loading-spinner"></div>
                                         <p class="mt-2">Loading content...</p>
                                     </div>
                                     <div id="about-content" style="display: none;"></div>
                                     <div id="about-fallback" style="display: none;">
-                                        <p>My name is Stephen, and I've worked for over a decade as a clinical psychologist with adults and children in both public and private settings. Like many people who find their way into this field, my path hasn't been a straight line. It's been shaped by my own experiences of struggle, healing, and searching for meaning, not just in therapy rooms, but in forests, in relationships, in stillness, in mess, and in movement.</p>
-                                        <p>While talk therapy can be powerful, I don't believe it's the only, or always the best, path forward. Humans need connection—connection to loved ones, family, nature, community, and ourselves. This is helped by embodied practices, play, and conscious rest.</p>
-                                        <a href="contact.html" class="cta-button">Book an Appointment</a>
+                                        <p>Welcome to my practice at Hazelwood Clinic. I'm Dr. Stephen Quigley, a Clinical Psychologist based in Ennis, dedicated to providing compassionate, evidence-based support tailored to each client's unique journey. With 13 years of experience across diverse settings and specialized training in CBT, EMDR, Internal Family Systems, and Psychodynamic Psychotherapy, I believe in meeting you where you are and creating a safe, collaborative space where you feel truly heard and understood.</p>
+                                        <p>My approach draws from modern attachment theory and positive psychology, ensuring that every session is grounded in both scientific rigor and genuine care. Whether you're navigating mood disorders, anxiety, trauma, neurodiversity-related challenges, or exploring identity and relationships, I'm here to support you with warmth and expertise. As a Chartered Clinical Psychologist committed to continuous learning, I offer both face-to-face and online sessions, making professional psychological support accessible when you need it most.</p>
+                                        <a href="contact.html" class="cta-button">Find out more</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Profile photo on the right -->
-                        <div class="hero-image">
-                            <img src="assets/img/aboutProfile.jpg" alt="Dr. Stephen Quigley" class="profile-img">
                         </div>
                     </div>
                 </div>
@@ -277,7 +282,7 @@
 
                 contentElement.innerHTML = `
                     ${paragraphsHTML}
-                    <a href="contact.html" class="cta-button">Book an Appointment</a>
+                    <a href="contact.html" class="cta-button hero-card-button">Find out more</a>
                 `;
                 loadingElement.style.display = 'none';
                 contentElement.style.display = 'block';
