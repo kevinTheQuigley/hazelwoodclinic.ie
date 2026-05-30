@@ -30,22 +30,20 @@
         </header>
 
         <main class="mb-4">
-        <div class="contact-wrapper">
-            <div class="contact-container">
-                <p><strong>Email</strong><br>
-                doctorstephenquigley@gmail.com</p>
+        <div id="contact-content">
+            <!-- Dynamically loaded from content/contact.json -->
+            <div class="contact-wrapper">
+                <div class="contact-container">
+                    <p><strong>Email</strong><br>
+                    doctorstephenquigley@gmail.com</p>
+                </div>
             </div>
-        </div>
-
-        <div class="contact-wrapper">
-            <div class="contact-container">
-                <h1>Postal Address</h1>
-                <p><strong>Dr Stephen Quigley</strong><br>
-                Number 3,<br>
-                Carmody Street Business Park,<br>
-                Ennis,<br>
-                Co. Clare.<br>
-                V95 RKN2</p>
+            <div class="contact-wrapper">
+                <div class="contact-container">
+                    <h1>Postal Address</h1>
+                    <p><strong>Dr Stephen Quigley</strong><br>
+                    Number 3,<br>Carmody Street Business Park,<br>Ennis,<br>Co. Clare.<br>V95 RKN2</p>
+                </div>
             </div>
         </div>
         </main>
@@ -55,5 +53,25 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('content/contact.json')
+                .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+                .then(function (data) {
+                    const container = document.getElementById('contact-content');
+                    if (!container) return;
+                    const addressLines = (data.address_lines || []).join('<br>');
+                    container.innerHTML =
+                        '<div class="contact-wrapper"><div class="contact-container">' +
+                        '<p><strong>Email</strong><br><a href="mailto:' + data.email + '">' + data.email + '</a></p>' +
+                        '</div></div>' +
+                        '<div class="contact-wrapper"><div class="contact-container">' +
+                        '<h1>Postal Address</h1>' +
+                        '<p><strong>' + data.postal_name + '</strong><br>' + addressLines + '</p>' +
+                        '</div></div>';
+                })
+                .catch(() => {});
+        });
+        </script>
     </body>
 </html>

@@ -1,0 +1,89 @@
+{
+  "sections": [
+    {
+      "title": "Practical Questions",
+      "items": [
+        {
+          "question": "How do I schedule an appointment?",
+          "answer": "To schedule an appointment, you can contact me through my website's contact form or email me directly. During your initial contact, I'll gather some basic information about your needs. New clients typically begin with an initial consultation to discuss concerns, goals, and treatment options. I offer both in-person and telehealth appointments to accommodate different preferences and needs."
+        },
+        {
+          "question": "What can I expect during my first appointment?",
+          "answer": "Your first appointment, often called an initial consultation, typically lasts about 50–60 minutes. During this session, we will discuss confidentiality, gather information about your current concerns, relevant history, and goals for therapy. This is also an opportunity for you to ask questions about the therapeutic process and approach. Based on this discussion, we will work together to develop a preliminary treatment plan and discuss next steps. The initial session is also a chance to ensure you feel comfortable with me and my approach."
+        },
+        {
+          "question": "Is my health insurance accepted?",
+          "answer": "Many Irish health insurance providers cover some or all of the costs of sessions with a Chartered Clinical Psychologist. For example, Irish Life covers up to 50% of costs depending on the policy, Laya Healthcare covers 50% of costs for up to 8 sessions annually under certain policies, and HSF Health Plan offers varying levels of reimbursement for clinical psychologist fees. I am happy to assist you in navigating your insurance options to ensure you can access support. I recommend contacting your insurance provider directly to verify your specific coverage."
+        }
+      ]
+    },
+    {
+      "title": "About My Service",
+      "items": [
+        {
+          "question": "What types of services do you offer?",
+          "answer": "I offer a comprehensive range of psychological services including psychological assessments, evidence-based treatments, consultation services, and educational workshops. My services are available for adults, children, and adolescents, delivered in a warm, supportive environment with over a decade of clinical experience."
+        },
+        {
+          "question": "What conditions or issues do you treat?",
+          "answer": "I have experience treating a wide range of psychological concerns including anxiety disorders, depression, trauma and PTSD, neurodiversity-related challenges (ADHD, Autism), identity exploration and development, relationship difficulties, and treatment-resistant mental health disorders. I also offer specialised support for LGBTQI+ and polyamorous communities. I specialise in working with clients who have not found success with previous therapeutic approaches."
+        },
+        {
+          "question": "What therapeutic approaches do you use?",
+          "answer": "I integrate multiple evidence-based approaches tailored to each client's unique needs. My therapeutic modalities include Cognitive Behavioural Therapy (CBT), Eye Movement Desensitization and Reprocessing (EMDR), Internal Family Systems (IFS), Acceptance and Commitment Therapy (ACT), Compassion-Focused Therapy (CFT), and Psychodynamic Psychotherapy. Each approach is selected based on its effectiveness for your specific concerns and preferences."
+        }
+      ]
+    },
+    {
+      "title": "Assessment Services",
+      "items": [
+        {
+          "question": "What types of assessments do you provide?",
+          "answer": "I provide comprehensive psychological assessments including ADHD assessments for both children and adults, court-mandated assessments for legal proceedings, Voice of the Child reports for family law cases, general psychological assessments for learning difficulties, mood disorders, anxiety, and neurodiversity assessments related to autism spectrum and other developmental conditions. Each assessment includes thorough documentation and practical recommendations."
+        },
+        {
+          "question": "What does an ADHD assessment involve?",
+          "answer": "My ADHD assessments involve comprehensive evaluations using clinical interviews, standardised measures, and behavioral analysis. The process typically includes gathering developmental history, current symptoms, and functional impacts across different settings (home, work, or school). Following the assessment, I provide detailed recommendations for managing ADHD and enhancing functioning in daily life. While I provide thorough diagnostic assessments, please note that I do not prescribe medication but can work collaboratively with medical professionals who do."
+        },
+        {
+          "question": "How long does an assessment take?",
+          "answer": "The duration of assessments varies depending on the type and complexity. General psychological assessments typically take 1–2 sessions, while comprehensive assessments like ADHD or autism evaluations may require 2–4 sessions to complete. Each session is typically 1–2 hours. Following the assessment sessions, I need additional time to score measures, analyse results, and prepare comprehensive reports with recommendations. I aim to deliver reports within 2–3 weeks after completing all assessment sessions."
+        }
+      ]
+    },
+    {
+      "title": "Treatment & Therapy",
+      "items": [
+        {
+          "question": "How long does therapy typically last?",
+          "answer": "The duration of therapy varies based on individual needs, goals, and the nature of the concerns being addressed. Some clients benefit from brief interventions of 6–8 sessions, while others with more complex issues may engage in therapy for several months. During your initial consultation, I'll discuss treatment recommendations and provide an estimate of the therapeutic timeline. I regularly review progress throughout treatment and adjust my approach as needed."
+        },
+        {
+          "question": "What is CBT and how does it work?",
+          "answer": "Cognitive Behavioral Therapy (CBT) is one of the most widely researched and effective therapeutic approaches. It works by helping clients identify unhelpful thought patterns, challenge them, and replace them with healthier ways of thinking and behaving. CBT is structured and goal-oriented, focusing on the connections between thoughts, feelings, and behaviors. This approach has proven particularly effective for conditions such as anxiety disorders, depression, PTSD, and OCD. I often find CBT particularly effective in treating OCD and related conditions."
+        },
+        {
+          "question": "What is EMDR therapy and who is it for?",
+          "answer": "Eye Movement Desensitization and Reprocessing (EMDR) is a structured therapy specifically designed to help individuals process and resolve traumatic memories. It uses bilateral stimulation techniques, such as eye movements, to help clients reprocess distressing experiences in a safe and controlled way. EMDR is particularly effective for trauma-related conditions, including PTSD, phobias, and anxiety disorders. I find it especially effective for single-incident traumas, while using a blend of EMDR and other modalities for complex trauma. The therapy not only reduces trauma symptoms but often enhances self-esteem and resilience."
+        }
+      ]
+    },
+    {
+      "title": "Workshops & Consultation",
+      "items": [
+        {
+          "question": "What types of workshops do you offer?",
+          "answer": "I offer a variety of workshops for professionals, organisations, and community groups. These include professional development workshops on evidence-based therapeutic techniques, educational sessions on neurodiversity and inclusive practices, skill-building workshops for managing anxiety, stress, and trauma responses, and community workshops on mental wellness and psychological resilience. All workshops can be tailored to specific audiences and needs. Contact me to discuss developing a customised workshop for your organisation or group."
+        },
+        {
+          "question": "Do you provide consultation services for other professionals?",
+          "answer": "Yes, I offer professional consultation services for fellow practitioners, organisations, and educational institutions. These include clinical case consultation for complex or treatment-resistant cases, supervision for early-career psychologists and therapists, collaborative care coordination with other healthcare providers, guidance on integrating evidence-based therapeutic approaches, and specialised consultation on neurodiversity-affirming practices. I welcome collaboration with other mental health professionals and am available to provide second opinions or adjunctive support alongside existing treatment."
+        },
+        {
+          "question": "How can organisations arrange a workshop or training?",
+          "answer": "Organisations interested in arranging a workshop or training can contact me through my website or email. I'll arrange an initial consultation to discuss your specific needs, audience, objectives, and preferred format (in-person or virtual). I will then develop a customised proposal including content outline, duration, and pricing. I pride myself on creating engaging, evidence-based training experiences that provide practical skills and knowledge that participants can immediately apply. Workshops can range from 2-hour sessions to full-day training programmes."
+        }
+      ]
+    }
+  ]
+}

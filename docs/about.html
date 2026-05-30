@@ -35,96 +35,8 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-10 col-xl-9">
-                <!-- Services Available Section -->
-                <div class="about-section">
-                    <h3 class="section-title">Services Available</h3>
-                    <div class="about-content">
-                        <p>I offer a comprehensive range of psychological services related to the neurodiversity-affirming identification and support of various forms of neurodivergence. I also assess and treat forms of learning, emotional, behavioral, mental health, and other psychological difficulties.</p>
-
-                        <p>In addition to offering individual therapy, consultation and assessment services, I also provide specialized support for:</p>
-
-                        <ul class="bullet-list">
-                            <li>Anxiety and mood disorders</li>
-                            <li>Trauma and PTSD</li>
-                            <li>Neurodiversity-related issues (ADHD, Autism)</li>
-                            <li>LGBTQI+ and polyamorous community support</li>
-                            <li>Identity and relational challenges</li>
-                            <li>Treatment-resistant mental health disorders</li>
-                        </ul>
-
-                        <p>I work with clients of all ages to develop developmentally appropriate evidence-based plans to help individuals work to their potentials in all settings, while addressing any barriers that might be standing in the way of navigating life's challenges.</p>
-
-                        <p>I also liaise with external professionals and refer clients — where necessary — for other specialist services (e.g., Speech and Language Therapy, Occupational Therapy, Psychiatry, etc.).</p>
-                    </div>
-                </div>
-
-                <!-- Brief About Section -->
-                <div class="about-section">
-                    <h3 class="section-title">About Stephen</h3>
-                    <div class="about-content">
-                        <p>I am a registered clinical psychologist with over a decade of experience working with adults and children in both public and private settings. My professional background includes extensive work across diverse settings including Community-Based Teams, Disability Services, and both Child and Adolescent and Adult Mental Health Services.</p>
-
-                        <p>My therapeutic approach is influenced by evidence-based modalities including Internal Family Systems (IFS), Compassion Focused Therapy, and Acceptance and Commitment Therapy (ACT). I believe in creating a safe, supportive environment where clients feel respected and understood, establishing trust through empathetic listening and genuine concern for your wellbeing.</p>
-
-                        <p>I am committed to providing person-centered care that acknowledges and respects the unique experiences, needs, and goals of each client, working collaboratively to develop effective therapeutic strategies.</p>
-                    </div>
-                </div>
-
-                <!-- My Approach Section -->
-                <div class="about-section">
-                    <h3 class="section-title">My Therapeutic Approach</h3>
-                    <div class="about-content">
-                        <p>I integrate multiple evidence-based therapeutic modalities tailored to each client's unique needs:</p>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="approach-card">
-                                    <h4>Compassionate Care</h4>
-                                    <p>I create a safe, supportive space where clients feel respected and understood, establishing trust through empathetic listening and genuine concern for your wellbeing.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="approach-card">
-                                    <h4>Evidence-Based Practice</h4>
-                                    <p>My interventions are grounded in scientific research and validated therapeutic methods, ensuring you receive the most effective care for your specific concerns.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="approach-card">
-                                    <h4>Holistic Perspective</h4>
-                                    <p>I consider all aspects of your life—mind, body, relationships, and environment—recognizing that wellbeing encompasses more than symptom reduction.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="approach-card">
-                                    <h4>Collaborative Partnership</h4>
-                                    <p>We work together as active participants in the therapeutic process, establishing goals together and adapting my approach based on your feedback and progress.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Credentials Section -->
-                <div class="about-section">
-                    <h3 class="section-title">Professional Standards</h3>
-                    <div class="about-content">
-                        <p>I maintain the highest professional standards and credentials:</p>
-
-                        <ul class="bullet-list">
-                            <li>Registered with the Psychological Society of Ireland (PSI)</li>
-                            <li>Doctoral-level qualification in clinical psychology</li>
-                            <li>Regular continuing professional development training</li>
-                            <li>Specialized training in evidence-based therapeutic approaches including CBT, EMDR, IFS, ACT, CFT, and Psychodynamic Psychotherapy</li>
-                            <li>Extensive experience in both public and private healthcare settings</li>
-                            <li>Commitment to ethical practice and confidentiality</li>
-                        </ul>
-
-                        <p>I am dedicated to providing high-quality care and continually enhancing my knowledge and skills to better serve my clients.</p>
-                    </div>
+                <div id="about-page-content">
+                    <!-- Dynamically loaded from content/about.json -->
                 </div>
             </div>
         </div>
@@ -136,6 +48,74 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('content/about.json')
+            .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+            .then(renderAbout)
+            .catch(() => {});
+    });
+
+    function renderAbout(data) {
+        const container = document.getElementById('about-page-content');
+        if (!container) return;
+        let html = '';
+
+        // Services Available section
+        const sa = data.services_available || {};
+        const specialities = (sa.specialities || []).map(s => '<li>' + escHtml(s) + '</li>').join('');
+        const introParas = (sa.intro || '').split('\n\n').filter(Boolean)
+            .map(p => '<p>' + escHtml(p.trim()) + '</p>').join('');
+        html += '<div class="about-section"><h3 class="section-title">Services Available</h3>' +
+            '<div class="about-content">' + introParas +
+            '<ul class="bullet-list">' + specialities + '</ul>' +
+            (sa.closing ? '<p>' + escHtml(sa.closing) + '</p>' : '') +
+            (sa.liaison_note ? '<p>' + escHtml(sa.liaison_note) + '</p>' : '') +
+            '</div></div>';
+
+        // About Stephen section
+        if (data.about_stephen) {
+            html += '<div class="about-section"><h3 class="section-title">About Stephen</h3>' +
+                '<div class="about-content">' + marked.parse(data.about_stephen) + '</div></div>';
+        }
+
+        // Therapeutic Approach section
+        if (data.approach_cards && data.approach_cards.length) {
+            const cards = data.approach_cards.map(card =>
+                '<div class="col-md-6"><div class="approach-card">' +
+                '<h4>' + escHtml(card.title) + '</h4>' +
+                '<p>' + escHtml(card.text) + '</p>' +
+                '</div></div>'
+            ).join('');
+            html += '<div class="about-section"><h3 class="section-title">My Therapeutic Approach</h3>' +
+                '<div class="about-content"><p>I integrate multiple evidence-based therapeutic modalities tailored to each client\'s unique needs:</p>' +
+                '<div class="row">' + cards + '</div></div></div>';
+        }
+
+        // Professional Standards section
+        const ps = data.professional_standards || {};
+        if (ps.credentials && ps.credentials.length) {
+            const creds = ps.credentials.map(c => '<li>' + escHtml(c) + '</li>').join('');
+            html += '<div class="about-section"><h3 class="section-title">Professional Standards</h3>' +
+                '<div class="about-content">' +
+                (ps.intro ? '<p>' + escHtml(ps.intro) + '</p>' : '') +
+                '<ul class="bullet-list">' + creds + '</ul>' +
+                (ps.closing ? '<p>' + escHtml(ps.closing) + '</p>' : '') +
+                '</div></div>';
+        }
+
+        container.innerHTML = html;
+    }
+
+    function escHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+    </script>
 </body>
 </html>

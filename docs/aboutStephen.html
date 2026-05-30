@@ -61,10 +61,9 @@
                 <!-- Credentials and Awards Section -->
                 <div class="credentials-section">
                     <h3>Credentials &amp; Achievements</h3>
-
-                    <ul>
-                        <li>PhD and clinical psychology</li>
-                        <li>Chartered member of the psychological Society of Ireland</li>
+                    <ul id="credentials-list">
+                        <li>PhD in Clinical Psychology</li>
+                        <li>Chartered member of the Psychological Society of Ireland</li>
                         <li>Member of the Clinical Psychology Special Interest Group</li>
                     </ul>
                 </div>
@@ -72,132 +71,33 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', loadBiography);
 
     function loadBiography() {
-        const CACHE_KEY = 'about_biography_cache';
-        const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+        const loadingEl = document.getElementById('loading-biography');
+        const contentEl = document.getElementById('biography-content');
+        const fallbackEl = document.getElementById('biography-fallback');
+        const credentialsList = document.getElementById('credentials-list');
 
-        // Base URL for the published Google Sheet
-        const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ0XqHi0qZQPJxRhu0mLjx7jhTT6AVLH_NZ6fHlHX41SxzILZmHp7LtWD-r0UTfUMGAkcPwp8FTuCa/pub?output=csv";
+        fetch('content/biography.json')
+            .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+            .then(data => {
+                contentEl.innerHTML = '<div class="biography-text">' + marked.parse(data.biography) + '</div>';
+                loadingEl.style.display = 'none';
+                contentEl.style.display = 'block';
 
-        // Add the gid parameter to specify the 'About' sheet
-        const aboutSheetGid = "159040093";
-        const csvUrl = `${baseUrl}&gid=${aboutSheetGid}`;
-
-        const loadingElement = document.getElementById('loading-biography');
-        const contentElement = document.getElementById('biography-content');
-        const fallbackElement = document.getElementById('biography-fallback');
-
-        // Check cache first
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        if (cachedData) {
-            const { content, timestamp } = JSON.parse(cachedData);
-            const age = Date.now() - timestamp;
-
-            if (age < CACHE_DURATION) {
-                displayContent(content);
-                return;
-            }
-        }
-
-        // Fetch content from Google Sheets
-        fetch(csvUrl)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-                return response.text();
-            })
-            .then(csvText => {
-                // Parse the CSV properly including handling quoted values
-                try {
-                    const parsedContent = parseCSV(csvText);
-
-                    if (parsedContent && parsedContent.length >= 2 && parsedContent[1].length > 0) {
-                        const contentValue = parsedContent[1][0]; // Get first column of second row
-
-                        // Cache the content
-                        localStorage.setItem(CACHE_KEY, JSON.stringify({
-                            content: contentValue,
-                            timestamp: Date.now()
-                        }));
-
-                        displayContent(contentValue);
-                    } else {
-                        showFallback();
-                    }
-                } catch {
-                    // CSV parsing failed - show fallback
-                    showFallback();
+                if (data.credentials && credentialsList) {
+                    credentialsList.innerHTML = data.credentials
+                        .map(c => '<li>' + c + '</li>')
+                        .join('');
                 }
             })
             .catch(() => {
-                // Content fetching failed - show fallback
-                showFallback();
+                loadingEl.style.display = 'none';
+                fallbackEl.style.display = 'block';
             });
-
-        function displayContent(content) {
-            contentElement.innerHTML = `<div class="biography-text">${content}</div>`;
-            loadingElement.style.display = 'none';
-            contentElement.style.display = 'block';
-        }
-
-        function showFallback() {
-            loadingElement.style.display = 'none';
-            fallbackElement.style.display = 'block';
-        }
-    }
-
-    // Proper CSV parser that handles quoted cells with line breaks
-    function parseCSV(csvText) {
-        const result = [];
-        let row = [];
-        let currentValue = '';
-        let insideQuotes = false;
-
-        for (let i = 0; i < csvText.length; i++) {
-            const char = csvText[i];
-            const nextChar = csvText[i + 1];
-
-            if (char === '"') {
-                if (insideQuotes && nextChar === '"') {
-                    // Escaped quote inside quotes
-                    currentValue += '"';
-                    i++; // Skip the next quote
-                } else {
-                    // Toggle quote state
-                    insideQuotes = !insideQuotes;
-                }
-            } else if (char === ',' && !insideQuotes) {
-                // End of field
-                row.push(currentValue);
-                currentValue = '';
-            } else if ((char === '\r' || char === '\n') && !insideQuotes) {
-                // End of line
-                if (currentValue !== '' || row.length > 0) {
-                    row.push(currentValue);
-                    result.push(row);
-                    row = [];
-                    currentValue = '';
-                }
-
-                // Skip the next character if it's a line feed after a carriage return
-                if (char === '\r' && nextChar === '\n') {
-                    i++;
-                }
-            } else {
-                // Regular character
-                currentValue += char;
-            }
-        }
-
-        // Don't forget the last row
-        if (currentValue !== '' || row.length > 0) {
-            row.push(currentValue);
-            result.push(row);
-        }
-
-        return result;
     }
     </script>
 

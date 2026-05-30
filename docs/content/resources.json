@@ -1,0 +1,182 @@
+{
+  "intro": "Stephen has compiled a collection of trusted resources to support your mental health journey. These tools complement the therapeutic work we do together, but are not substitutes for professional help if you're experiencing distress.",
+  "books": [
+    {
+      "title": "The Compassionate Mind",
+      "author": "By Paul Gilbert",
+      "description": "Based on Compassion-Focused Therapy, this book offers techniques to develop self-compassion and overcome self-criticism."
+    },
+    {
+      "title": "The Body Keeps the Score",
+      "author": "By Bessel van der Kolk",
+      "description": "Explores the effects of trauma on the body and mind, and offers pathways to recovery and healing."
+    },
+    {
+      "title": "Unwinding Anxiety",
+      "author": "By Judson Brewer",
+      "description": "Science-based approach to breaking the cycle of worry and fear to heal the anxious mind."
+    },
+    {
+      "title": "No Self, No Problem",
+      "author": "By Chris Niebauer",
+      "description": "How neuropsychology is helping us understand mindfulness and the benefits of present-moment awareness."
+    }
+  ],
+  "apps": [
+    {
+      "name": "Headspace",
+      "description": "Guided meditation and mindfulness practices for stress reduction and improved focus.",
+      "url": ""
+    },
+    {
+      "name": "Calm",
+      "description": "Sleep stories, meditation, and relaxation techniques to improve sleep and reduce anxiety.",
+      "url": ""
+    },
+    {
+      "name": "MoodKit",
+      "description": "CBT-based activities and mood tracking to help manage depression and anxiety.",
+      "url": ""
+    },
+    {
+      "name": "Woebot",
+      "description": "AI chatbot that uses CBT principles to help you track and manage your mood.",
+      "url": ""
+    },
+    {
+      "name": "Calm Harm",
+      "description": "Provides strategies and alternatives for those at risk of deliberate self-harm, offering immediate support when needed.",
+      "url": "https://calmharm.stem4.org.uk/"
+    }
+  ],
+  "websites": [
+    {
+      "name": "HSE Mental Health",
+      "description": "Information about HSE mental health services, including how to access support and resources for mental wellbeing.",
+      "url": "https://www2.hse.ie/mental-health/",
+      "tags": ["HSE Services", "Public Resources"]
+    },
+    {
+      "name": "ADHD Ireland",
+      "description": "Support and information for people with ADHD and their families, with resources for children and adults.",
+      "url": "https://adhdireland.ie/",
+      "tags": ["ADHD", "Neurodiversity"]
+    },
+    {
+      "name": "AsIAm",
+      "description": "Ireland's national autism charity, providing support, advocacy, and information for the autism community.",
+      "url": "https://asiam.ie/",
+      "tags": ["Autism", "Neurodiversity"]
+    },
+    {
+      "name": "Psychological Society of Ireland",
+      "description": "Professional body for psychology in Ireland with resources for finding psychologists and information about psychological issues.",
+      "url": "https://www.psychologicalsociety.ie/",
+      "tags": ["Psychology Resources", "Professional Information"]
+    },
+    {
+      "name": "Jigsaw",
+      "description": "Ireland's national centre for youth mental health, providing support for young people aged 12–25.",
+      "url": "https://jigsaw.ie/",
+      "tags": ["Youth", "Adolescents"]
+    },
+    {
+      "name": "Mental Health Ireland",
+      "description": "National organisation promoting positive mental health and wellbeing to all individuals and communities in Ireland.",
+      "url": "https://www.mentalhealthireland.ie/",
+      "tags": ["General Mental Health", "Support Services"]
+    }
+  ],
+  "downloadable_resources": [
+    {
+      "category": "Adult Resources",
+      "items": [
+        {
+          "title": "Anxiety Management Toolkit",
+          "description": "Practical exercises and techniques for managing anxiety symptoms in daily life.",
+          "file_url": ""
+        },
+        {
+          "title": "Thought Record Worksheet",
+          "description": "A CBT-based worksheet for identifying and challenging unhelpful thought patterns.",
+          "file_url": ""
+        },
+        {
+          "title": "Mindfulness Practice Guide",
+          "description": "Introduction to mindfulness with simple exercises to incorporate into your routine.",
+          "file_url": ""
+        },
+        {
+          "title": "Sleep Hygiene Checklist",
+          "description": "Tips and strategies for improving sleep quality and establishing healthy sleep habits.",
+          "file_url": ""
+        },
+        {
+          "title": "Emotional Regulation Skills",
+          "description": "DBT-inspired techniques for managing intense emotions effectively.",
+          "file_url": ""
+        },
+        {
+          "title": "Self-Compassion Exercises",
+          "description": "Activities to develop a kinder relationship with yourself and reduce self-criticism.",
+          "file_url": ""
+        }
+      ]
+    },
+    {
+      "category": "Teen Resources",
+      "items": [
+        {
+          "title": "Teen Stress Management Guide",
+          "description": "Age-appropriate strategies for managing school, social, and family stress.",
+          "file_url": ""
+        },
+        {
+          "title": "Social Anxiety Toolkit for Teens",
+          "description": "Practical exercises to build confidence in social situations.",
+          "file_url": ""
+        },
+        {
+          "title": "Mood Tracking for Teens",
+          "description": "Simple tools to help teenagers understand and monitor their emotional patterns.",
+          "file_url": ""
+        },
+        {
+          "title": "Building Healthy Friendships",
+          "description": "Guidance on developing and maintaining positive peer relationships.",
+          "file_url": ""
+        },
+        {
+          "title": "Exam Anxiety Management",
+          "description": "Strategies to cope with academic pressure and test anxiety.",
+          "file_url": ""
+        }
+      ]
+    },
+    {
+      "category": "Parent Resources",
+      "items": [
+        {
+          "title": "Supporting Your Anxious Child",
+          "description": "Evidence-based strategies to help children manage anxiety and build resilience.",
+          "file_url": ""
+        },
+        {
+          "title": "Positive Parenting Strategies",
+          "description": "Practical approaches to discipline and behaviour management that strengthen relationships.",
+          "file_url": ""
+        },
+        {
+          "title": "Understanding Neurodivergent Children",
+          "description": "A guide for parents supporting children with ADHD, autism, and other neurodivergent traits.",
+          "file_url": ""
+        },
+        {
+          "title": "Teen Mental Health Warning Signs",
+          "description": "How to recognise when your teenager may need professional support.",
+          "file_url": ""
+        }
+      ]
+    }
+  ]
+}

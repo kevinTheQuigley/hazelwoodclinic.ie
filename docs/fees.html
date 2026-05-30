@@ -35,216 +35,26 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10">
                 <div class="fees-intro">
-                    <p class="lead">I am committed to providing high-quality psychological care at transparent and competitive rates. Many of my services may be partially covered by health insurance.</p>
+                    <p id="fees-intro-text" class="lead">I am committed to providing high-quality psychological care at transparent and competitive rates. Many of my services may be partially covered by health insurance.</p>
                 </div>
 
                 <div class="fees-container">
-                    <!-- Service Fees Section -->
-                    <h3 class="section-title">Service Fees</h3>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="fee-card">
-                                <h4 class="fee-title">Individual Therapy</h4>
-                                <p class="fee-description">Regular therapy sessions using evidence-based approaches tailored to your unique needs and goals.</p>
-                                <div class="fee-details">
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Duration</span>
-                                        <span class="fee-detail-value">60 minutes</span>
-                                    </div>
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Frequency</span>
-                                        <span class="fee-detail-value">Weekly or as recommended</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-                            <div class="fee-card">
-                                <h4 class="fee-title">ADHD Assessment</h4>
-                                <p class="fee-description">Comprehensive assessment for ADHD including clinical interviews, standardized measures, and detailed recommendations.</p>
-                                <div class="fee-details">
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Duration</span>
-                                        <span class="fee-detail-value">2-3 sessions</span>
-                                    </div>
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Comprehensive report &amp; feedback</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-                            <div class="fee-card">
-                                <h4 class="fee-title">Cognitive/IQ Testing</h4>
-                                <p class="fee-description">Using the latest versions of the Weschler intelligence tests, the gold standard in IQ testing. It includes tailored recommendations for strengthening specific subdomains of intelligence, in both the school and home setting.</p>
-                                <div class="fee-details">
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Duration</span>
-                                        <span class="fee-detail-value">1-2 sessions</span>
-                                    </div>
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Written report &amp; recommendations</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-                            <div class="fee-card">
-                                <h4 class="fee-title">Child and Adolescent Psychoeducational Assessment</h4>
-                                <p class="fee-description">This in-depth assessment explores your child's cognitive and academic profile to better understand how they learn. It typically includes:</p>
-                                <ul class="fee-list">
-                                    <li>Cognitive (IQ) testing</li>
-                                    <li>Academic attainment testing</li>
-                                    <li>Review of school reports</li>
-                                    <li>Interview with a teacher or school staff member</li>
-                                </ul>
-                                <p class="fee-description">This comprehensive evaluation can help identify specific learning difficulties and guide appropriate educational supports or interventions. A school based observation can also be conducted if required.</p>
-                                <div class="fee-details">
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Duration</span>
-                                        <span class="fee-detail-value">4-5 sessions</span>
-                                    </div>
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Comprehensive report &amp; recommendations</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-                            <div class="fee-card">
-                                <h4 class="fee-title">Court-Mandated Assessment</h4>
-                                <p class="fee-description">Specialized psychological evaluations for legal proceedings such as Post Traumatic Stress Disorder with detailed documentation.</p>
-                                <div class="fee-details">
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Sessions</span>
-                                        <span class="fee-detail-value">Multiple appointments as needed</span>
-                                    </div>
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Includes</span>
-                                        <span class="fee-detail-value">Comprehensive legal report</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4">
-                            <div class="fee-card">
-                                <h4 class="fee-title">Professional Consultation</h4>
-                                <p class="fee-description">Consultation services for healthcare providers, organizations, or educational institutions.</p>
-                                <div class="fee-details">
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Duration</span>
-                                        <span class="fee-detail-value">60 minutes</span>
-                                    </div>
-                                    <div class="fee-detail">
-                                        <span class="fee-detail-label">Format</span>
-                                        <span class="fee-detail-value">In-person or virtual</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="fees-content">
+                        <!-- Dynamically loaded from content/fees.json -->
                     </div>
 
-                    <div class="note-box">
-                        <h4 class="note-title"><i class="fas fa-info-circle"></i> Fee Information</h4>
-                        <p class="note-content">Please contact me directly for current fee information. Fees vary depending on the type and complexity of service required. I'm happy to discuss pricing during an initial consultation.</p>
-                    </div>
-
-                    <!-- Insurance Section -->
-                    <h3 class="section-title">Insurance Coverage</h3>
-                    <p>Many Irish health insurance providers cover sessions with a Chartered Clinical Psychologist. The amount covered varies depending on your specific plan. I am happy to assist you in navigating your insurance options.</p>
-
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="insurance-company">
-                                <h4>Irish Life Health</h4>
-                                <div class="insurance-coverage">
-                                    <div class="coverage-detail">
-                                        <span>Coverage</span>
-                                        <span>Up to 50%</span>
-                                    </div>
-                                    <div class="coverage-detail">
-                                        <span>Depends on</span>
-                                        <span>Specific policy</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-4">
-                            <div class="insurance-company">
-                                <h4>Laya Healthcare</h4>
-                                <div class="insurance-coverage">
-                                    <div class="coverage-detail">
-                                        <span>Coverage</span>
-                                        <span>50% of costs</span>
-                                    </div>
-                                    <div class="coverage-detail">
-                                        <span>Annual limit</span>
-                                        <span>Up to 8 sessions</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 mb-4">
-                            <div class="insurance-company">
-                                <h4>HSF Health Plan</h4>
-                                <div class="insurance-coverage">
-                                    <div class="coverage-detail">
-                                        <span>Coverage</span>
-                                        <span>Varies by plan</span>
-                                    </div>
-                                    <div class="coverage-detail">
-                                        <span>Reimbursement</span>
-                                        <span>After treatment</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="note-box">
-                        <h4 class="note-title"><i class="fas fa-info-circle"></i> Insurance Verification</h4>
-                        <p class="note-content">We recommend contacting your insurance provider directly before your first appointment to verify your specific coverage for psychological services. Upon request, we can provide you with the necessary documentation for insurance reimbursement.</p>
-                    </div>
-
-                    <!-- Payment Options Section -->
+                    <!-- Payment Options Section (static) -->
                     <h3 class="section-title">Payment Options</h3>
                     <p>We offer several convenient payment methods to make your experience as smooth as possible:</p>
-
                     <div class="payment-methods">
                         <div class="payment-method">
-                            <div class="payment-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
+                            <div class="payment-icon"><i class="fas fa-university"></i></div>
                             <div>Bank Transfer</div>
                         </div>
-
                         <div class="payment-method">
-                            <div class="payment-icon">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
+                            <div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div>
                             <div>Cash</div>
                         </div>
-                    </div>
-
-                    <div class="note-box">
-                        <h4 class="note-title"><i class="fas fa-exclamation-circle"></i> Cancellation Policy</h4>
-                        <p class="note-content">I understand that circumstances can change. If you need to cancel or reschedule your appointment, please provide at least 48 hours' notice to avoid a cancellation fee. Late cancellations or missed appointments without notice will incur the full session cost.</p>
-                    </div>
-
-                    <!-- Fees Updated Notice -->
-                    <div class="fees-updated-note">
-                        <p>Please contact me directly for current fee information</p>
                     </div>
 
                     <!-- Contact CTA -->
@@ -265,5 +75,75 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('content/fees.json')
+            .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+            .then(renderFees)
+            .catch(() => {});
+    });
+
+    function renderFees(data) {
+        const container = document.getElementById('fees-content');
+        if (!container) return;
+
+        document.getElementById('fees-intro-text').textContent = data.intro || '';
+
+        let html = '<h3 class="section-title">Service Fees</h3><div class="row">';
+        (data.services || []).forEach(svc => {
+            const details = (svc.details || []).map(d =>
+                '<div class="fee-detail"><span class="fee-detail-label">' + escHtml(d.label) + '</span>' +
+                '<span class="fee-detail-value">' + escHtml(d.value) + '</span></div>'
+            ).join('');
+            html += '<div class="col-md-6 mb-4"><div class="fee-card">' +
+                '<h4 class="fee-title">' + escHtml(svc.title) + '</h4>' +
+                '<p class="fee-description">' + escHtml(svc.description) + '</p>' +
+                '<div class="fee-details">' + details + '</div>' +
+                '</div></div>';
+        });
+        html += '</div>';
+
+        if (data.fee_note) {
+            html += '<div class="note-box"><h4 class="note-title"><i class="fas fa-info-circle"></i> Fee Information</h4>' +
+                '<p class="note-content">' + escHtml(data.fee_note) + '</p></div>';
+        }
+
+        html += '<h3 class="section-title">Insurance Coverage</h3>';
+        if (data.insurance_intro) html += '<p>' + escHtml(data.insurance_intro) + '</p>';
+
+        const colClass = data.insurance_providers && data.insurance_providers.length === 3 ? 'col-md-4' : 'col-md-6';
+        html += '<div class="row">';
+        (data.insurance_providers || []).forEach(provider => {
+            const details = (provider.details || []).map(d =>
+                '<div class="coverage-detail"><span>' + escHtml(d.label) + '</span><span>' + escHtml(d.value) + '</span></div>'
+            ).join('');
+            html += '<div class="' + colClass + ' mb-4"><div class="insurance-company">' +
+                '<h4>' + escHtml(provider.name) + '</h4>' +
+                '<div class="insurance-coverage">' + details + '</div>' +
+                '</div></div>';
+        });
+        html += '</div>';
+
+        if (data.insurance_note) {
+            html += '<div class="note-box"><h4 class="note-title"><i class="fas fa-info-circle"></i> Insurance Verification</h4>' +
+                '<p class="note-content">' + escHtml(data.insurance_note) + '</p></div>';
+        }
+
+        if (data.cancellation_policy) {
+            html += '<div class="note-box"><h4 class="note-title"><i class="fas fa-exclamation-circle"></i> Cancellation Policy</h4>' +
+                '<p class="note-content">' + escHtml(data.cancellation_policy) + '</p></div>';
+        }
+
+        container.innerHTML = html;
+    }
+
+    function escHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+    </script>
 </body>
 </html>

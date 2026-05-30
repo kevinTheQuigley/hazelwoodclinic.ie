@@ -1,0 +1,245 @@
+backend:
+  name: github
+  repo: kevinTheQuigley/hazelwoodclinic.ie
+  branch: main
+  auth_type: pkce
+  app_id: Ov23liLuI2UjLc0lBJEZ
+
+media_folder: docs/assets/img/uploads
+public_folder: assets/img/uploads
+
+collections:
+  - name: pages
+    label: Site Content
+    files:
+
+      - name: home
+        label: Home Page
+        file: docs/content/home.json
+        format: json
+        fields:
+          - label: Bio Text
+            name: bio
+            widget: markdown
+            hint: The text shown in the green card on the home page hero section.
+
+      - name: biography
+        label: About Stephen (Biography Page)
+        file: docs/content/biography.json
+        format: json
+        fields:
+          - label: Biography
+            name: biography
+            widget: markdown
+            hint: The biographical text shown alongside the photo on the About Stephen page.
+          - label: Credentials & Achievements
+            name: credentials
+            widget: list
+            hint: Add, edit, or remove professional credentials shown on the About Stephen page.
+            field:
+              label: Credential
+              name: item
+              widget: string
+
+      - name: contact
+        label: Contact Details
+        file: docs/content/contact.json
+        format: json
+        fields:
+          - label: Email Address
+            name: email
+            widget: string
+          - label: Name (shown on postal address)
+            name: postal_name
+            widget: string
+          - label: Address Lines
+            name: address_lines
+            widget: list
+            hint: Each line of the postal address. Add or remove lines as needed.
+            field:
+              label: Address Line
+              name: line
+              widget: string
+
+      - name: fees
+        label: Fees & Insurance
+        file: docs/content/fees.json
+        format: json
+        fields:
+          - label: Introduction Text
+            name: intro
+            widget: text
+          - label: Service Fees
+            name: services
+            widget: list
+            summary: "{{fields.title}}"
+            hint: Add, remove, or edit fee cards shown on the Fees page.
+            fields:
+              - label: Service Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Details
+                name: details
+                widget: list
+                summary: "{{fields.label}}: {{fields.value}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Value, name: value, widget: string }
+          - label: Fee Note
+            name: fee_note
+            widget: text
+            hint: Shown in the blue info box under service fees.
+          - label: Insurance Introduction
+            name: insurance_intro
+            widget: text
+          - label: Insurance Providers
+            name: insurance_providers
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Provider Name, name: name, widget: string }
+              - label: Coverage Details
+                name: details
+                widget: list
+                summary: "{{fields.label}}: {{fields.value}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Value, name: value, widget: string }
+          - label: Insurance Note
+            name: insurance_note
+            widget: text
+            hint: Shown in the blue info box under insurance providers.
+          - label: Cancellation Policy
+            name: cancellation_policy
+            widget: text
+            hint: Shown in the orange warning box.
+
+      - name: faq
+        label: FAQ
+        file: docs/content/faq.json
+        format: json
+        fields:
+          - label: FAQ Sections
+            name: sections
+            widget: list
+            summary: "{{fields.title}}"
+            hint: Add, remove, or reorder FAQ sections. Each section contains questions and answers.
+            fields:
+              - { label: Section Title, name: title, widget: string }
+              - label: Questions & Answers
+                name: items
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Answer, name: answer, widget: text }
+
+      - name: about
+        label: About Page
+        file: docs/content/about.json
+        format: json
+        fields:
+          - label: Services Available Section
+            name: services_available
+            widget: object
+            fields:
+              - { label: Introduction, name: intro, widget: text }
+              - label: Specialities List
+                name: specialities
+                widget: list
+                hint: The bullet-pointed list of speciality areas.
+                field:
+                  label: Item
+                  name: item
+                  widget: string
+              - { label: Closing Paragraph, name: closing, widget: text }
+              - { label: Liaison Note, name: liaison_note, widget: text }
+          - label: About Stephen (brief)
+            name: about_stephen
+            widget: markdown
+            hint: The "About Stephen" section text on the About page.
+          - label: Approach Cards
+            name: approach_cards
+            widget: list
+            summary: "{{fields.title}}"
+            hint: The four approach cards shown in the My Therapeutic Approach section.
+            fields:
+              - { label: Card Title, name: title, widget: string }
+              - { label: Card Text, name: text, widget: text }
+          - label: Professional Standards Section
+            name: professional_standards
+            widget: object
+            fields:
+              - { label: Introduction, name: intro, widget: text }
+              - label: Credentials List
+                name: credentials
+                widget: list
+                field:
+                  label: Credential
+                  name: item
+                  widget: string
+              - { label: Closing, name: closing, widget: text }
+
+      - name: resources
+        label: Resources
+        file: docs/content/resources.json
+        format: json
+        fields:
+          - { label: Page Introduction, name: intro, widget: text }
+          - label: Recommended Books
+            name: books
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Author, name: author, widget: string }
+              - { label: Description, name: description, widget: text }
+          - label: Recommended Apps
+            name: apps
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: App Name, name: name, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: URL
+                name: url
+                widget: string
+                required: false
+                hint: Leave empty if no URL needed.
+          - label: Trusted Websites
+            name: websites
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Website Name, name: name, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: URL, name: url, widget: string }
+              - label: Tags
+                name: tags
+                widget: list
+                field:
+                  label: Tag
+                  name: tag
+                  widget: string
+          - label: Downloadable Resources
+            name: downloadable_resources
+            widget: list
+            summary: "{{fields.category}}"
+            hint: Organise downloadable resources by category (e.g. Adult Resources, Teen Resources).
+            fields:
+              - { label: Category Name, name: category, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - label: File URL
+                    name: file_url
+                    widget: string
+                    required: false
+                    hint: Link to the downloadable file. Leave empty if not yet available.

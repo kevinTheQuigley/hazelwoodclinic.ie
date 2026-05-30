@@ -1,0 +1,80 @@
+{
+  "intro": "I am committed to providing high-quality psychological care at transparent and competitive rates. Many of my services may be partially covered by health insurance.",
+  "services": [
+    {
+      "title": "Individual Therapy",
+      "description": "Regular therapy sessions using evidence-based approaches tailored to your unique needs and goals.",
+      "details": [
+        { "label": "Duration", "value": "60 minutes" },
+        { "label": "Frequency", "value": "Weekly or as recommended" }
+      ]
+    },
+    {
+      "title": "ADHD Assessment",
+      "description": "Comprehensive assessment for ADHD including clinical interviews, standardised measures, and detailed recommendations.",
+      "details": [
+        { "label": "Duration", "value": "2–3 sessions" },
+        { "label": "Includes", "value": "Comprehensive report & feedback" }
+      ]
+    },
+    {
+      "title": "Cognitive/IQ Testing",
+      "description": "Using the latest versions of the Weschler intelligence tests, the gold standard in IQ testing. It includes tailored recommendations for strengthening specific subdomains of intelligence, in both the school and home setting.",
+      "details": [
+        { "label": "Duration", "value": "1–2 sessions" },
+        { "label": "Includes", "value": "Written report & recommendations" }
+      ]
+    },
+    {
+      "title": "Child and Adolescent Psychoeducational Assessment",
+      "description": "This in-depth assessment explores your child's cognitive and academic profile to better understand how they learn. It typically includes cognitive (IQ) testing, academic attainment testing, review of school reports, and interview with a teacher or school staff member. This comprehensive evaluation can help identify specific learning difficulties and guide appropriate educational supports or interventions. A school-based observation can also be conducted if required.",
+      "details": [
+        { "label": "Duration", "value": "4–5 sessions" },
+        { "label": "Includes", "value": "Comprehensive report & recommendations" }
+      ]
+    },
+    {
+      "title": "Court-Mandated Assessment",
+      "description": "Specialised psychological evaluations for legal proceedings such as Post Traumatic Stress Disorder with detailed documentation.",
+      "details": [
+        { "label": "Sessions", "value": "Multiple appointments as needed" },
+        { "label": "Includes", "value": "Comprehensive legal report" }
+      ]
+    },
+    {
+      "title": "Professional Consultation",
+      "description": "Consultation services for healthcare providers, organisations, or educational institutions.",
+      "details": [
+        { "label": "Duration", "value": "60 minutes" },
+        { "label": "Format", "value": "In-person or virtual" }
+      ]
+    }
+  ],
+  "fee_note": "Please contact me directly for current fee information. Fees vary depending on the type and complexity of service required. I'm happy to discuss pricing during an initial consultation.",
+  "insurance_intro": "Many Irish health insurance providers cover sessions with a Chartered Clinical Psychologist. The amount covered varies depending on your specific plan. I am happy to assist you in navigating your insurance options.",
+  "insurance_providers": [
+    {
+      "name": "Irish Life Health",
+      "details": [
+        { "label": "Coverage", "value": "Up to 50%" },
+        { "label": "Depends on", "value": "Specific policy" }
+      ]
+    },
+    {
+      "name": "Laya Healthcare",
+      "details": [
+        { "label": "Coverage", "value": "50% of costs" },
+        { "label": "Annual limit", "value": "Up to 8 sessions" }
+      ]
+    },
+    {
+      "name": "HSF Health Plan",
+      "details": [
+        { "label": "Coverage", "value": "Varies by plan" },
+        { "label": "Reimbursement", "value": "After treatment" }
+      ]
+    }
+  ],
+  "insurance_note": "We recommend contacting your insurance provider directly before your first appointment to verify your specific coverage for psychological services. Upon request, we can provide you with the necessary documentation for insurance reimbursement.",
+  "cancellation_policy": "I understand that circumstances can change. If you need to cancel or reschedule your appointment, please provide at least 48 hours' notice to avoid a cancellation fee. Late cancellations or missed appointments without notice will incur the full session cost."
+}

@@ -1,0 +1,46 @@
+{
+  "services_available": {
+    "intro": "I offer a comprehensive range of psychological services related to the neurodiversity-affirming identification and support of various forms of neurodivergence. I also assess and treat forms of learning, emotional, behavioral, mental health, and other psychological difficulties.\n\nIn addition to offering individual therapy, consultation and assessment services, I also provide specialised support for:",
+    "specialities": [
+      "Anxiety and mood disorders",
+      "Trauma and PTSD",
+      "Neurodiversity-related issues (ADHD, Autism)",
+      "LGBTQI+ and polyamorous community support",
+      "Identity and relational challenges",
+      "Treatment-resistant mental health disorders"
+    ],
+    "closing": "I work with clients of all ages to develop developmentally appropriate evidence-based plans to help individuals work to their potentials in all settings, while addressing any barriers that might be standing in the way of navigating life's challenges.",
+    "liaison_note": "I also liaise with external professionals and refer clients — where necessary — for other specialist services (e.g., Speech and Language Therapy, Occupational Therapy, Psychiatry, etc.)."
+  },
+  "about_stephen": "I am a registered clinical psychologist with over a decade of experience working with adults and children in both public and private settings. My professional background includes extensive work across diverse settings including Community-Based Teams, Disability Services, and both Child and Adolescent and Adult Mental Health Services.\n\nMy therapeutic approach is influenced by evidence-based modalities including Internal Family Systems (IFS), Compassion Focused Therapy, and Acceptance and Commitment Therapy (ACT). I believe in creating a safe, supportive environment where clients feel respected and understood, establishing trust through empathetic listening and genuine concern for your wellbeing.\n\nI am committed to providing person-centred care that acknowledges and respects the unique experiences, needs, and goals of each client, working collaboratively to develop effective therapeutic strategies.",
+  "approach_cards": [
+    {
+      "title": "Compassionate Care",
+      "text": "I create a safe, supportive space where clients feel respected and understood, establishing trust through empathetic listening and genuine concern for your wellbeing."
+    },
+    {
+      "title": "Evidence-Based Practice",
+      "text": "My interventions are grounded in scientific research and validated therapeutic methods, ensuring you receive the most effective care for your specific concerns."
+    },
+    {
+      "title": "Holistic Perspective",
+      "text": "I consider all aspects of your life—mind, body, relationships, and environment—recognising that wellbeing encompasses more than symptom reduction."
+    },
+    {
+      "title": "Collaborative Partnership",
+      "text": "We work together as active participants in the therapeutic process, establishing goals together and adapting my approach based on your feedback and progress."
+    }
+  ],
+  "professional_standards": {
+    "intro": "I maintain the highest professional standards and credentials:",
+    "credentials": [
+      "Registered with the Psychological Society of Ireland (PSI)",
+      "Doctoral-level qualification in clinical psychology",
+      "Regular continuing professional development training",
+      "Specialised training in evidence-based therapeutic approaches including CBT, EMDR, IFS, ACT, CFT, and Psychodynamic Psychotherapy",
+      "Extensive experience in both public and private healthcare settings",
+      "Commitment to ethical practice and confidentiality"
+    ],
+    "closing": "I am dedicated to providing high-quality care and continually enhancing my knowledge and skills to better serve my clients."
+  }
+}
